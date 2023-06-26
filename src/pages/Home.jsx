@@ -176,13 +176,19 @@ function Home() {
         <div className=" p-[5vw]">
           <div className="max-md:w-full">
             <div className="relative flex justify-around">
-              <img
-                src={hero}
-                className="hidden h-auto lg:block  lg:h-auto lg:w-[300px] xl:h-auto xl:w-[500px]"
-              ></img>
-              <div className=" absolute bottom-0 left-[600px]  rounded-s-xl border-2 border-[#555FD9]">
+              <div className="flex items-end">
+                <img
+                  src={hero}
+                  className="z-0 hidden h-auto  lg:block  lg:h-auto lg:w-[300px] xl:h-auto 2xl:w-[500px] "
+                ></img>
+                {/* <div className="relative right-5  top-10 hidden rounded-bl-xl  rounded-tr-xl border-2 border-[#FF7848] lg:block">
+                  <div className="m-2 "> */}
                 <Carousel></Carousel>
+                {/* </div>
+                </div> */}
               </div>
+
+              {/* <div className=" absolute bottom-0 left-[600px]  rounded-s-xl border-2 border-[#555FD9]"></div> */}
 
               <div className="mt-11 flex flex-col  pt-12">
                 <h1 className=" font-montserrat text-right text-[42px] font-bold text-[#2A264D]">
@@ -234,7 +240,7 @@ function Home() {
         </div>
       </section>
       <section
-        className="relative flex justify-center bg-[#f5f2f0] p-10"
+        className="relative z-20 flex justify-center bg-[#f5f2f0] p-10"
         id="subjects"
       >
         <img src={subjects} className="w-[80%]"></img>
@@ -243,86 +249,16 @@ function Home() {
         <div className="h-1/2 overflow-hidden">
           <img src={about} className="h-full w-full object-cover"></img>
         </div>
-        <div className="flex items-center justify-center p-10">
+        <div id="teachers" className="flex items-center justify-center p-10">
           <img className="" src={teachers}></img>
         </div>
       </section>
-      <section className="relative" id="projects">
+      <section className="relative" id="questions">
         <img src={howItWorks} className="h-[400px] w-[100%]"></img>
 
-        {/* <div className="section-2 absolute left-[15%] top-[15%] flex  h-[60%] w-[70%] justify-end">
-          <div className="flex-end  flex flex-col text-end">
-            <div className="mr-4">קטגוריות</div>
-            <div className="overflow-wrap flex ">
-              <div>
-                <div className="p-1">
-                  <label for="myCheckbox">כימיה</label>
-                  <input className="m-2" type="checkbox" />
-                </div>
-                <div className="p-1">
-                  <label for="myCheckbox">אנגלית</label>
-                  <input className="m-2" type="checkbox" />
-                </div>
-                <div className="p-1">
-                  מתמטיקה
-                  <input
-                    className="m-2  border-2 border-[#555FD9]"
-                    type="checkbox"
-                  />
-                </div>
-                <div className="p-2">
-                  פיסיקה
-                  <input className="m-2" type="checkbox" />
-                </div>
-              </div>
-
-              <div>
-                {" "}
-                <div className="p-1">
-                  <label for="myCheckbox">כימיה</label>
-                  <input className="m-2" type="checkbox" />
-                </div>
-                <div className="p-1">
-                  <label for="myCheckbox">אנגלית</label>
-                  <input className="m-2" type="checkbox" />
-                </div>
-                <div className="p-1">
-                  מתמטיקה
-                  <input
-                    className="m-2  border-2 border-[#555FD9]"
-                    type="checkbox"
-                  />
-                </div>
-                <div className="p-2">
-                  פיסיקה
-                  <input className="m-2" type="checkbox" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="flex w-[200px] flex-col text-end ">
-            <div>שם </div>
-            <input
-              type="text "
-              className="mt-2 rounded-lg border-2 border-[#555FD9] pr-1 text-end focus:outline-none"
-            />
-            <div> טלפון</div>
-            <input
-              type="text "
-              className="mt-2 rounded-lg border-2 border-[#555FD9] pr-1 text-end focus:outline-none"
-            />
-            <div> דואר אלקטרוני</div>
-            <input
-              type="text "
-              className="mt-2 rounded-lg border-2 border-[#555FD9] pr-1 text-end focus:outline-none"
-            />
-          </div>
-
-          <div></div>
-        </div> */}
         <ContactForm></ContactForm>
       </section>
-      <section className="relative flex justify-center p-10" id="projects">
+      <section className="relative flex justify-center p-10">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="1338"

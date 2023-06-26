@@ -17,24 +17,32 @@ import wp5 from "../assets/images/wp5.png";
 
 const Carousel = () => {
   return (
-    <div className="h-[264px] w-[184px] rounded ">
-      <Swiper pagination={true} modules={[Pagination]} className="mySwiper">
-        <SwiperSlide>
-          <img src={wp1} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={wp2} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={wp3} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={wp4} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={wp5} />
-        </SwiperSlide>
-      </Swiper>
+    <div className="relative right-5 top-10  z-10 hidden rounded-bl-xl  rounded-tr-xl border-2 border-[#FF7848] lg:block">
+      <div className="m-2 ">
+        <div className=" h-[264px] w-[184px] ">
+          <Swiper
+            pagination={true}
+            modules={[Pagination]}
+            className="mySwiper z-10  rounded-bl-2xl rounded-tr-2xl"
+          >
+            <SwiperSlide>
+              <img src={wp1} />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src={wp2} />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src={wp3} />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src={wp4} />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src={wp5} />
+            </SwiperSlide>
+          </Swiper>
+        </div>
+      </div>
     </div>
   );
 };

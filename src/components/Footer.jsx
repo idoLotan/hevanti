@@ -14,7 +14,9 @@ const Footer = () => {
           <div className="p-3 transition-all hover:underline"> צור קשר</div>
         </div>
         <div className="p-5 text-white ">
-          <div className="p-3 transition-all hover:underline">המורים שלנו</div>
+          <div className="p-3 transition-all hover:underline">
+            <a href="#teachers">המורים שלנו</a>
+          </div>
           <div className="transition-all hover:underline">איך זה עובד</div>
         </div>
 

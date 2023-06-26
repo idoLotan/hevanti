@@ -3,14 +3,14 @@ import Btn from "./Btn";
 
 const NavBar = () => {
   return (
-    <nav className=" w-[100%] pl-2">
+    <nav className="w-[100%] min-w-[700px] pl-2">
       <div className=" mx-auto flex  h-[65px]  items-center justify-between ">
         <Btn style={"bg-[#FF7848] w-[120px] h-[32px]"} text={"הצטרפות"}></Btn>
         <div className="flex items-center justify-end  ">
           <ul className="flex flex-row font-medium">
             <li>
               <a
-                href="#about"
+                href="#subjects"
                 className="rounded-full px-3	 py-2 text-lg text-[#2A264D] transition-all hover:-translate-y-0.5 hover:bg-white hover:text-black hover:shadow-[0_10px_25px_-15px_rgba(0,0,0,0.4)]"
                 aria-current="page"
               >
@@ -20,7 +20,7 @@ const NavBar = () => {
 
             <li>
               <a
-                href="#skills"
+                href="#about"
                 className=" rounded-full px-3 py-2 text-lg text-[#2A264D]  transition-all hover:-translate-y-0.5 hover:bg-white hover:text-black hover:shadow-[0_10px_25px_-15px_rgba(0,0,0,0.4)]"
                 aria-current="page"
               >
@@ -30,7 +30,7 @@ const NavBar = () => {
 
             <li>
               <a
-                href="#projects"
+                href="#teachers"
                 className="rounded-full px-3 py-2 text-lg text-[#2A264D] transition-all hover:-translate-y-0.5 hover:bg-white hover:text-black hover:shadow-[0_10px_25px_-15px_rgba(0,0,0,0.4)]"
                 aria-current="page"
               >
@@ -40,7 +40,7 @@ const NavBar = () => {
 
             <li>
               <a
-                href="/signup"
+                href="#questions"
                 className=" rounded-full px-3 py-2 text-lg text-[#2A264D] transition-all hover:-translate-y-0.5 hover:bg-white hover:text-black hover:shadow-[0_10px_25px_-15px_rgba(0,0,0,0.4)]"
                 aria-current="page"
               >
