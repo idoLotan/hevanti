@@ -263,10 +263,9 @@ function Home() {
 
         <ContactForm></ContactForm>
       </section>
-      <section
-        id="questions"
-        className="relative flex justify-center p-10"
-      ></section>
+      <section id="questions" className="relative  w-[100%]  p-10">
+        <AccordionTW></AccordionTW>
+      </section>
 
       <Footer></Footer>
     </div>

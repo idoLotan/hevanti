@@ -53,4 +53,30 @@ code {
   object-fit: cover;
 }
 
+summary:first-of-type {
+  list-style-type: none;
+}
+
+summary:after {
+border-radius: 5px;
+content: "+";
+color: #000;
+float: left;
+font-size: 40px;
+font-weight: bold;
+margin: -7px 12px 0 0;
+padding: 0;
+text-align: center;
+width: 20px;
+height: 35px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+details[open] summary:after {
+content: "-";
+ font-size: 40px;
+}
+
+
 
