@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import hero from "../assets/images/hero.png";
 import subjects from "../assets/images/subjects.png";
 import about from "../assets/images/about.png";
@@ -12,11 +12,30 @@ import Footer from "../components/Footer";
 import ContactForm from "../components/ContactForm";
 import Carousel from "../components/Carousel";
 import AccordionTW from "../components/AccordionTW";
+import { Modal } from "flowbite-react";
+import MyModal from "../components/MyModal";
 
 function Home() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggelModal = () => {
+    setIsOpen(!isOpen);
+  };
+  function openWhatsApp() {
+    // Replace the phone number and message with your desired values
+    var phoneNumber = "+972522113937"; // Enter the phone number with the country code
+    var message = "Hello, I have a question.";
+
+    var url =
+      "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
+
+    window.open(url);
+  }
   return (
     <div>
+      <MyModal isShowing={isOpen} onClose={toggelModal}></MyModal>
       <img
+        onClick={openWhatsApp}
         src={whatsAppImg}
         className=" fixed bottom-10 right-20  z-30 h-20 w-20"
       ></img>
@@ -258,13 +277,22 @@ function Home() {
           <img className="" src={teachers}></img>
         </div>
       </section>
-      <section className="relative" id="contact">
-        <img src={howItWorks} className="h-[400px] w-[100%]"></img>
+      <section className="section-1 relative h-[400px] p-3 " id="contact">
+        <h1 className="  text-right text-[35px] font-bold text-[#555FD9]">
+          ?מה אתה רוצה להבין
+        </h1>
+        <h1 className=" text-right text-xl  text-[#2A264D]">
+          ספר/י לנו מה את/ה מצפה שנעשה עבורך, ואנחנו נבנה תוכנית מותאמת אישית
+        </h1>
 
-        <ContactForm></ContactForm>
+        {/* <img src={howItWorks} className="h-[500px] w-[100%]"></img> */}
+
+        <ContactForm toggelModal={toggelModal}></ContactForm>
       </section>
       <section id="questions" className="relative  w-[100%]  p-10">
-        <h1 className="  font-xl text-right font-bold ">שאלות נפוצות</h1>
+        <h1 className="pb-6 text-right text-2xl text-[35px] font-bold text-[#555FD9]">
+          שאלות נפוצות כלליות
+        </h1>
         <AccordionTW></AccordionTW>
       </section>
 

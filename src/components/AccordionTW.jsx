@@ -6,28 +6,27 @@ export default function AccordionTW() {
   return (
     <Accordion>
       <Accordion.Panel>
-        <Accordion.Title>?איך זה עובד</Accordion.Title>
+        <Accordion.Title>?מה התהליך</Accordion.Title>
 
         <Accordion.Content>
           <p className="mb-2 text-right text-gray-500 dark:text-gray-400">
-            <b>מה התהליך?</b>
             <p className="p-3">
               אחרי שקיבלנו את הנתונים של התלמיד, היועצת הפדגוגית בשילוב עם מנהל
               תחום ההוראה יתאימו מורה לתלמיד, המורה כשלעצמו אינו בעל חשיבות. הוא
               כמו מחק או מחדד, הוא כלי להצלחה של התלמיד. הדבר החשוב ביותר הוא
-              .הכימיה בין המורה לתלמיד ואם אין כימיה יוחלף המורה.
+              .הכימיה בין המורה לתלמיד ואם אין כימיה יוחלף המורה
             </p>
             <p>
               אחרי החיבור בין המורה לתלמיד, מתבצע מעקב על התקדמות התהליך באמצעות
               יועץ פדגוגי וקשר רציף עם אחד ההורים לקבלת בקשות ודיווח. הכול בהתאם
-              לרמת ההוראה שנבחרה.
+              לרמת ההוראה שנבחרה
             </p>
           </p>
         </Accordion.Content>
       </Accordion.Panel>
       <Accordion.Panel>
         <Accordion.Title>
-        ?איך לשכנע את הילד להשקיע בלימודים / לקחת שיעורים פרטיים
+          ?איך לשכנע את הילד להשקיע בלימודים / לקחת שיעורים פרטיים
         </Accordion.Title>
         <Accordion.Content>
           <p className="mb-2 text-right text-gray-500 dark:text-gray-400">
@@ -55,13 +54,13 @@ export default function AccordionTW() {
               שהמון מורים טובים לא מלמדים פרונטלי כי זה לא משתלם להם. ההחלטה
               איזה מורה מתאים היא של הילד/ה. צריך להקשיב לילד/ה. לא להחליט מה
               טוב לילד ואז לקבל את האישור למה שאמרנו, אלא לשאול את הילד\ה ובאמת
-              להקשיב.
+              להקשיב
             </p>
           </p>
         </Accordion.Content>
       </Accordion.Panel>
       <Accordion.Panel>
-      <Accordion.Title>?כמה עולה שיעור</Accordion.Title>
+        <Accordion.Title>?כמה עולה שיעור</Accordion.Title>
         <Accordion.Content>
           <p className="mb-2 text-right text-gray-500 dark:text-gray-400">
             <p>
@@ -71,7 +70,7 @@ export default function AccordionTW() {
               לעשות שיעורים למספר תלמידים ביחד? אין מגבלה מבחינת "הבנתי" על מספר
               התלמידים שרוצים לעשות שיעור ביחד, כמובן שאיכות הלימוד יורדת. לגבי
               העלות של שיעור למספר תלמידים, אין הבדל בעלות. "הבנתי" לא נכנסת לאף
-              אחד לכיס. החלטה שלו מה לעשות עם הכסף שלו היא שלו.
+              אחד לכיס. החלטה שלו מה לעשות עם הכסף שלו היא שלו
             </p>
           </p>
         </Accordion.Content>
@@ -86,6 +85,19 @@ export default function AccordionTW() {
               הילד\ה להשגים. מחירי השעורים מתחילים ב ₪150 ומגיעים עד 500₪ בהתאם
               למקצוע, לרמה ולמורה. המחירים כוללים מע"מ. רכישה של חבילות שעורים,
               או הוראת קבע בכרטיס אשראי מורידים את העלות של השעורים
+            </p>
+          </p>
+        </Accordion.Content>
+      </Accordion.Panel>
+      <Accordion.Panel>
+        <Accordion.Title>?האם אפשר לעשות כמה תלמידים ביחד</Accordion.Title>
+        <Accordion.Content>
+          <p className="mb-2 text-right text-gray-500 dark:text-gray-400">
+            <p>
+              אין מגבלה מבחינת "הבנתי" על מספר התלמידים שרוצים לעשות שיעור ביחד,
+              כמובן שאיכות הלימוד יורדת. לגבי העלות של שיעור למספר תלמידים, אין
+              הבדל בעלות. "הבנתי" לא נכנסת לאף אחד לכיס. החלטה שלו מה לעשות עם
+              הכסף שלו היא שלו
             </p>
           </p>
         </Accordion.Content>

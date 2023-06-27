@@ -1,7 +1,19 @@
 import React, { useEffect, useRef, useState } from "react";
 import Btn from "./Btn";
+import { db } from "../firebase-config";
+import { addDoc, collection, getDocs } from "firebase/firestore";
 
-const ContactForm = () => {
+const ContactForm = ({toggelModal}) => {
+  const userInputRef = collection(db, "userInput");
+
+  useEffect(() => {
+    const getData = async () => {
+      const data = await getDocs(userInputRef);
+      console.log(data);
+    };
+    getData();
+  }, []);
+
   const nameRef = useRef();
   const emailRef = useRef();
   const phoneRef = useRef();
@@ -39,11 +51,7 @@ const ContactForm = () => {
     return checkedItems;
   }
 
-  useEffect(() => {
-    console.log(checkboxes);
-  }, [checkboxes]);
-
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
     const checkedItems = getCheckedItems();
     const formData = {
@@ -53,8 +61,9 @@ const ContactForm = () => {
       phone: phoneRef.current.value,
       usersText: textRef.current.value,
     };
-
-    console.log("Form data:", formData);
+    const response = await addDoc(userInputRef, formData);
+    console.log("response", response);
+    toggelModal()
   };
 
   const handleCheckboxChange = (event) => {
@@ -66,17 +75,19 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="section-2 absolute left-[7%] top-[15%] flex h-[80%]  w-[85%] min-w-[800px] justify-between rounded-xl p-10">
+    <div className="section-2 absolute left-[7%] top-[100px] flex w-[85%] min-w-[800px] flex-row  justify-between rounded-xl p-10">
       <textarea
-        className="mb-5 mt-2  rounded-lg border-2 border-[#555FD9] pr-1 text-right  focus:outline-none"
+        className="absolute left-5 top-3 h-[200px] rounded-lg border-2 border-[#555FD9] pr-1 text-right  focus:outline-none"
         placeholder="...תאר את המטרות שלך"
         ref={textRef}
       ></textarea>
       <Btn
-        style={"bg-[#FF7848] w-[200px] h-[40px] absolute bottom-4 left-4"}
+        style={"bg-[#FF7848] w-[200px] h-[40px] absolute bottom-2 left-4"}
         text="שלח"
         onClick={handleFormSubmit}
       ></Btn>
+      <div></div>
+      <div></div>
       <div className="flex-end  flex flex-col text-end">
         <div className="mr-4 font-bold">רמה</div>
         <div className="overflow-wrap flex ">
