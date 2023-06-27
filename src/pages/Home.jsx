@@ -264,6 +264,7 @@ function Home() {
         <ContactForm></ContactForm>
       </section>
       <section id="questions" className="relative  w-[100%]  p-10">
+        <h1 className="  font-xl text-right font-bold ">שאלות נפוצות</h1>
         <AccordionTW></AccordionTW>
       </section>
 

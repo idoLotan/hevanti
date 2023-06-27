@@ -6,7 +6,7 @@ export default function AccordionTW() {
   return (
     <Accordion>
       <Accordion.Panel>
-        <Accordion.Title>איך זה עובד</Accordion.Title>
+        <Accordion.Title>?איך זה עובד</Accordion.Title>
 
         <Accordion.Content>
           <p className="mb-2 text-right text-gray-500 dark:text-gray-400">
@@ -27,7 +27,7 @@ export default function AccordionTW() {
       </Accordion.Panel>
       <Accordion.Panel>
         <Accordion.Title>
-          איך לשכנע את הילד להשקיע בלימודים / לקחת שיעורים פרטיים
+        ?איך לשכנע את הילד להשקיע בלימודים / לקחת שיעורים פרטיים
         </Accordion.Title>
         <Accordion.Content>
           <p className="mb-2 text-right text-gray-500 dark:text-gray-400">
@@ -45,7 +45,7 @@ export default function AccordionTW() {
         </Accordion.Content>
       </Accordion.Panel>
       <Accordion.Panel>
-        <Accordion.Title>מה עדיף? מורה זום או פרונטאלי?</Accordion.Title>
+        <Accordion.Title>?מה עדיף? מורה זום או פרונטאלי</Accordion.Title>
         <Accordion.Content>
           <p className="mb-2 text-right text-gray-500 dark:text-gray-400">
             <p>
@@ -61,7 +61,7 @@ export default function AccordionTW() {
         </Accordion.Content>
       </Accordion.Panel>
       <Accordion.Panel>
-        <Accordion.Title>כמה עולה שיעור?</Accordion.Title>
+      <Accordion.Title>?כמה עולה שיעור</Accordion.Title>
         <Accordion.Content>
           <p className="mb-2 text-right text-gray-500 dark:text-gray-400">
             <p>
@@ -72,6 +72,20 @@ export default function AccordionTW() {
               התלמידים שרוצים לעשות שיעור ביחד, כמובן שאיכות הלימוד יורדת. לגבי
               העלות של שיעור למספר תלמידים, אין הבדל בעלות. "הבנתי" לא נכנסת לאף
               אחד לכיס. החלטה שלו מה לעשות עם הכסף שלו היא שלו.
+            </p>
+          </p>
+        </Accordion.Content>
+      </Accordion.Panel>
+      <Accordion.Panel>
+        <Accordion.Title>?כמה עולה שיעור</Accordion.Title>
+        <Accordion.Content>
+          <p className="mb-2 text-right text-gray-500 dark:text-gray-400">
+            <p>
+              מחירי השעורים נקבעים לפי איכות המורה, האיכות של המורה נגזרת גם
+              מהרמה, אבל בעיקר מהיכולת להתחבר לתלמיד\ה, לעורר מוטיבציה ולהביא את
+              הילד\ה להשגים. מחירי השעורים מתחילים ב ₪150 ומגיעים עד 500₪ בהתאם
+              למקצוע, לרמה ולמורה. המחירים כוללים מע"מ. רכישה של חבילות שעורים,
+              או הוראת קבע בכרטיס אשראי מורידים את העלות של השעורים
             </p>
           </p>
         </Accordion.Content>
