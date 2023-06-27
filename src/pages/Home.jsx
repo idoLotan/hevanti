@@ -4,7 +4,7 @@ import subjects from "../assets/images/subjects.png";
 import about from "../assets/images/about.png";
 import howItWorks from "../assets/images/howItWorks.png";
 import questions from "../assets/images/questions.png";
-import advancedStudies from "../assets/images/advansed-studies.png";
+import whatsAppImg from "../assets/images/whatsapp-3.png";
 import NavBar from "../components/NavBar";
 import Btn from "../components/Btn";
 import teachers from "../assets/images/teachers.png";
@@ -15,6 +15,10 @@ import Carousel from "../components/Carousel";
 function Home() {
   return (
     <div>
+      <img
+        src={whatsAppImg}
+        className=" fixed bottom-10 right-20  z-30 h-20 w-20"
+      ></img>
       <section
         className="section-1 h-[100vh] bg-gray-100 bg-cover bg-no-repeat"
         id="home"
