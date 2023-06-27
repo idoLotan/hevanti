@@ -1,8 +1,11 @@
 import React from "react";
 
-const Btn = ({ text, style }) => {
+const Btn = ({ text, style, onClick }) => {
   return (
-    <button className={` rounded-xl ${style} font-bold text-white`}>
+    <button
+      onClick={onClick}
+      className={` rounded-xl ${style} font-bold text-white`}
+    >
       {text}
     </button>
   );

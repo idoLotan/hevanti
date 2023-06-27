@@ -49,11 +49,11 @@ const NavBar = () => {
             </li>
             <li>
               <a
-                href="/signup"
+                href="#contact"
                 className=" rounded-full px-3 py-2 text-lg text-[#2A264D] transition-all hover:-translate-y-0.5 hover:bg-white hover:text-black hover:shadow-[0_10px_25px_-15px_rgba(0,0,0,0.4)]"
                 aria-current="page"
               >
-                אנשי קשר
+                צור קשר
               </a>
             </li>
           </ul>
