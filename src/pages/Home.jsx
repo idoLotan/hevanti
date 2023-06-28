@@ -161,7 +161,7 @@ function Home() {
         </div>
       </section>
       <section
-        className="section-1 relative flex  h-[1300px] flex-col  p-3 md:h-[400px] "
+        className="section-1 relative flex  h-[900px] flex-col  p-3 md:h-[400px] "
         id="contact"
       >
         <h1 className=" text-right text-[35px] font-bold text-[#555FD9]">

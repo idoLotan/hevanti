@@ -10,7 +10,6 @@ export default function AccordionTW() {
 
         <Accordion.Content>
           <p className="mb-2 text-right text-gray-500 dark:text-gray-400">
-            <b>מה התהליך?</b>
             <p className="p-3">
               אחרי שקיבלנו את הנתונים של התלמיד, היועצת הפדגוגית בשילוב עם מנהל
               תחום ההוראה יתאימו מורה לתלמיד, המורה כשלעצמו אינו בעל חשיבות. הוא

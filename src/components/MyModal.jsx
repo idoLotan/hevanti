@@ -13,7 +13,7 @@ const MyModal = ({ isShowing, onClose, children, style }) =>
             <div
               id="info-popup"
               tabindex="-1"
-              className="fixed left-[calc(50%-240px)]  top-[calc(50%-108.5px)] z-50  "
+              className="fixed left-[calc(50%-205px)]  top-[calc(50%-108.5px)] z-50  "
             >
               <div className="relative h-full w-full max-w-lg p-4 md:h-auto">
                 <div className="relative rounded-lg bg-white p-4 shadow dark:bg-gray-800 md:p-8">
@@ -24,7 +24,7 @@ const MyModal = ({ isShowing, onClose, children, style }) =>
                     <h3 className=" text-right text-2xl font-bold text-gray-900 dark:text-white">
                       !בהקדם
                     </h3>
-                    <p className="text-right">אנא קרא בעיון את התוכן באתר</p>
+                    {/* <p className="text-right">אנא קרא בעיון את התוכן באתר</p> */}
                   </div>
                   <div className="items-center justify-between space-y-4 pt-0 sm:flex sm:space-y-0">
                     {/* <a
@@ -40,7 +40,7 @@ const MyModal = ({ isShowing, onClose, children, style }) =>
                         type="button"
                         className="focus:ring-primary-300 w-full rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-900 focus:z-10 focus:outline-none focus:ring-4 dark:border-gray-500 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-600 sm:w-auto"
                       >
-                        אישור
+                        המשך
                       </button>
                       <button
                         id="confirm-button"
