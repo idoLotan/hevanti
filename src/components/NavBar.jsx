@@ -4,8 +4,7 @@ import Btn from "./Btn";
 const NavBar = () => {
   return (
     <nav className="w-[100%] min-w-[700px] pl-2">
-      <div className=" mx-auto flex  h-[65px]  items-center justify-between ">
-        <Btn style={"bg-[#FF7848] w-[120px] h-[32px]"} text={"הצטרפות"}></Btn>
+      <div className=" mx-auto flex  h-[65px]  items-center justify-end ">
         <div className="flex items-center justify-end  ">
           <ul className="flex flex-row font-medium">
             <li>

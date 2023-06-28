@@ -75,24 +75,28 @@ const ContactForm = ({toggelModal}) => {
   };
 
   return (
-    <div className="section-2 absolute left-[7%] top-[100px] flex w-[85%] min-w-[800px] flex-row  justify-between rounded-xl p-10">
-      {/* <textarea
-        className="absolute left-5 top-3 h-[200px] rounded-lg border-2 border-[#555FD9] pr-1 text-right  focus:outline-none"
-        placeholder="...תאר את המטרות שלך"
-        ref={textRef}
-      ></textarea> */}
-      <Btn
-        style={"bg-[#FF7848] w-[200px] h-[40px] absolute bottom-2 left-4"}
-        text="שלח"
-        onClick={handleFormSubmit}
-      ></Btn>
-      <div></div>
-      <div></div>
+    <div className="section-2 absolute left-[7%] top-[100px] flex w-[90%] min-w-[800px] flex-row  justify-between rounded-xl p-5">
+      <div className="flex flex-col">
+        <h1 className=" text-[16px] font-bold text-[#2A264D]">
+          תאר את הקשיים והמטרות
+        </h1>
+        <textarea
+          className="left-5 top-3 h-[136px] w-[212px] rounded-lg border-2 border-[#555FD9] p-1 pr-1 text-right  focus:outline-none"
+          placeholder="...הקלד כאן"
+          ref={textRef}
+        ></textarea>
+        <Btn
+          style={"bg-[#FF7848] w-[200px] h-[40px] mt-2  "}
+          text="שלח"
+          onClick={handleFormSubmit}
+        ></Btn>
+      </div>
+
       <div className="flex-end  flex flex-col text-end">
         <div className="mr-4 font-bold">רמה</div>
         <div className="overflow-wrap flex ">
           <div>
-            <div className="p-1">
+            <div className="p-2">
               <label for="myCheckbox">צרכים מיוחדים</label>
               <input
                 className="m-2"
@@ -103,7 +107,7 @@ const ContactForm = ({toggelModal}) => {
                 onChange={handleCheckboxChange}
               />
             </div>
-            <div className="p-1">
+            <div className="p-2">
               <label for="myCheckbox">אוטיזים\קשיים סנסוריים</label>
               <input
                 className="m-2"
@@ -114,7 +118,7 @@ const ContactForm = ({toggelModal}) => {
                 onChange={handleCheckboxChange}
               />
             </div>
-            <div className="p-1">
+            <div className="p-2">
               HDD
               <input
                 className="m-2"
@@ -138,7 +142,7 @@ const ContactForm = ({toggelModal}) => {
             </div>
           </div>
           <div>
-            <div className="p-1">
+            <div className="">
               <label for="myCheckbox">בית ספר יסודי</label>
               <input
                 className="m-2"
@@ -149,7 +153,7 @@ const ContactForm = ({toggelModal}) => {
                 onChange={handleCheckboxChange}
               />
             </div>
-            <div className="p-1">
+            <div className="">
               <label for="myCheckbox">חטיבת ביניים</label>
               <input
                 className="m-2"
@@ -160,7 +164,7 @@ const ContactForm = ({toggelModal}) => {
                 onChange={handleCheckboxChange}
               />
             </div>
-            <div className="p-1">
+            <div className="">
               תיכון
               <input
                 className="m-2"
@@ -189,7 +193,7 @@ const ContactForm = ({toggelModal}) => {
         <div className="mr-4 font-bold">תקציב</div>
         <div className="overflow-wrap flex ">
           <div>
-            <div className="p-1">
+            <div className="">
               <label for="myCheckbox">150</label>
               <input
                 className="m-2"
@@ -200,7 +204,7 @@ const ContactForm = ({toggelModal}) => {
                 onChange={handleCheckboxChange}
               />
             </div>
-            <div className="p-1">
+            <div className="">
               <label for="myCheckbox">200</label>
               <input
                 className="m-2"
@@ -211,7 +215,7 @@ const ContactForm = ({toggelModal}) => {
                 onChange={handleCheckboxChange}
               />
             </div>
-            <div className="p-1">
+            <div className="">
               250
               <input
                 className="m-2"
@@ -241,7 +245,7 @@ const ContactForm = ({toggelModal}) => {
 
         <div className="overflow-wrap flex ">
           <div>
-            <div className="p-1">
+            <div className="">
               <label for="myCheckbox">כימיה</label>
               <input
                 className="m-2"
@@ -252,7 +256,7 @@ const ContactForm = ({toggelModal}) => {
                 onChange={handleCheckboxChange}
               />
             </div>
-            <div className="p-1">
+            <div className="">
               <label for="myCheckbox">אנגלית</label>
               <input
                 className="m-2"
@@ -263,7 +267,7 @@ const ContactForm = ({toggelModal}) => {
                 onChange={handleCheckboxChange}
               />
             </div>
-            <div className="p-1">
+            <div className="">
               מתמטיקה
               <input
                 className="m-2"
@@ -289,7 +293,7 @@ const ContactForm = ({toggelModal}) => {
 
           <div>
             {" "}
-            <div className="p-1">
+            <div className="">
               <label for="myCheckbox">מדעי המחשב</label>
               <input
                 className="m-2"
@@ -300,7 +304,7 @@ const ContactForm = ({toggelModal}) => {
                 onChange={handleCheckboxChange}
               />
             </div>
-            <div className="p-1">
+            <div className="">
               <label for="myCheckbox">ביולוגיה</label>
               <input
                 className="m-2"
@@ -311,7 +315,7 @@ const ContactForm = ({toggelModal}) => {
                 onChange={handleCheckboxChange}
               />
             </div>
-            <div className="p-1">
+            <div className="">
               פסיכומטרי
               <input
                 className="m-2"

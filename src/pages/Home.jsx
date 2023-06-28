@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import hero from "../assets/images/hero.png";
 import subjects from "../assets/images/subjects.png";
+import subjectsMobile from "../assets/images/subjectsmobile.png";
 import about from "../assets/images/about.png";
+import aboutMobile from "../assets/images/about-mobile.png";
 import howItWorks from "../assets/images/howItWorks.png";
 import questions from "../assets/images/questions.png";
 import whatsAppImg from "../assets/images/whatsapp-3.png";
@@ -13,8 +15,8 @@ import Footer from "../components/Footer";
 import ContactForm from "../components/ContactForm";
 import Carousel from "../components/Carousel";
 import AccordionTW from "../components/AccordionTW";
-import { Modal } from "flowbite-react";
 import MyModal from "../components/MyModal";
+import TeachersCarousel from "../components/TeachersCarousel";
 
 function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,14 +36,19 @@ function Home() {
   }
   return (
     <div>
+      {/* <div className="flex flex-col">
+        <div className="h-16 w-16 bg-blue-500"></div>
+        <div className="h-16 w-16 bg-red-500 md:order-first"></div>
+      </div> */}
+
       <MyModal isShowing={isOpen} onClose={toggelModal}></MyModal>
       <img
         onClick={openWhatsApp}
         src={whatsAppImg}
-        className=" fixed bottom-10 right-20  z-30 h-20 w-20"
+        className=" fixed bottom-10 right-20    z-30 h-20 w-20"
       ></img>
       <section
-        className="section-1 h-[100vh] bg-gray-100 bg-cover bg-no-repeat"
+        className="section-1 h-[200vh] bg-cover bg-no-repeat md:h-[100vh]"
         id="home"
       >
         <div className="flex items-center justify-end ">
@@ -200,21 +207,14 @@ function Home() {
 
         <div className=" p-[5vw]">
           <div className="max-md:w-full">
-            <div className="relative flex justify-around">
+            <div className="relative flex flex-col justify-around md:flex-row">
               <div className="flex items-end">
                 <img
                   src={hero}
-                  className="z-0 hidden h-auto  lg:block  lg:h-auto lg:w-[300px] xl:h-auto 2xl:w-[500px] "
+                  className="z-0 h-auto  lg:block  lg:h-auto lg:w-[300px] xl:h-auto 2xl:w-[500px] "
                 ></img>
-
-                {/* <div className="relative right-5  top-10 hidden rounded-bl-xl  rounded-tr-xl border-2 border-[#FF7848] lg:block">
-                  <div className="m-2 "> */}
                 <Carousel></Carousel>
-                {/* </div>
-                </div> */}
               </div>
-
-              {/* <div className=" absolute bottom-0 left-[600px]  rounded-s-xl border-2 border-[#555FD9]"></div> */}
 
               <div className="mt-11 flex flex-col  pt-12">
                 <h1 className=" font-montserrat text-right text-[42px] font-bold text-[#2A264D]">
@@ -264,11 +264,10 @@ function Home() {
           </div>
           <div className="w-1/2 max-md:w-full  "></div>
           <div className="relative bottom-12 left-10  flex justify-end">
-            <div className="flex flex-col"> 
+            <div className="flex flex-col">
               <img src={QR} className="w-[64px]"></img>
-            <div className="text-[#555FD9]">whatsApp</div>
+              <div className="text-[#555FD9]">whatsApp</div>
             </div>
-           
           </div>
         </div>
       </section>
@@ -276,14 +275,27 @@ function Home() {
         className="relative z-20 flex justify-center bg-[#f5f2f0] p-10"
         id="subjects"
       >
-        <img src={subjects} className="w-[80%]"></img>
+        <div className="flex flex-col items-center">
+          <img src={subjects} className="hidden w-[80%] md:block"></img>
+          <img src={subjectsMobile} className=" md:hidden"></img>
+        </div>
       </section>
       <section className="relative" id="about">
         <div className="h-1/2 overflow-hidden">
-          <img src={about} className="h-full w-full object-cover"></img>
+          <img
+            src={about}
+            className="hidden h-full w-full object-cover md:block"
+          ></img>
+          <img
+            src={aboutMobile}
+            className="h-full w-full object-cover md:hidden"
+          ></img>
         </div>
-        <div id="teachers" className="flex items-center justify-center p-10">
-          <img className="" src={teachers}></img>
+        <div id="teachers" className="flex items-center justify-center">
+          <div className="flex items-center justify-center">
+            <img className="hidden md:block md:p-10" src={teachers}></img>
+          </div>
+          <TeachersCarousel></TeachersCarousel>
         </div>
       </section>
       <section className="section-1 relative h-[400px] p-3 " id="contact">
