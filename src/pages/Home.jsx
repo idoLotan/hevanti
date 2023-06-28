@@ -11,6 +11,7 @@ import whatsAppImg from "../assets/images/whatsapp-3.png";
 import QR from "../assets/images/QR.png";
 import NavBar from "../components/NavBar";
 import Btn from "../components/Btn";
+
 import teachers from "../assets/images/teachers.png";
 import Footer from "../components/Footer";
 import ContactForm from "../components/ContactForm";
