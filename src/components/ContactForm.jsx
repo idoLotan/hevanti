@@ -3,7 +3,7 @@ import Btn from "./Btn";
 import { db } from "../firebase-config";
 import { addDoc, collection, getDocs } from "firebase/firestore";
 
-const ContactForm = ({toggelModal}) => {
+const ContactForm = ({ toggelModal }) => {
   const userInputRef = collection(db, "userInput");
 
   useEffect(() => {
@@ -63,7 +63,7 @@ const ContactForm = ({toggelModal}) => {
     };
     const response = await addDoc(userInputRef, formData);
     console.log("response", response);
-    toggelModal()
+    toggelModal();
   };
 
   const handleCheckboxChange = (event) => {
@@ -75,8 +75,8 @@ const ContactForm = ({toggelModal}) => {
   };
 
   return (
-    <div className="section-2 absolute left-[7%] top-[100px] flex w-[90%] min-w-[800px] flex-row  justify-between rounded-xl p-5">
-      <div className="flex flex-col">
+    <div className="section-2  flex w-[90%] items-center flex-col  md:flex-row justify-between rounded-xl p-5">
+      <div className="flex flex-col order-3 md:order-1 ">
         <h1 className=" text-[16px] font-bold text-[#2A264D]">
           תאר את הקשיים והמטרות
         </h1>
@@ -91,8 +91,8 @@ const ContactForm = ({toggelModal}) => {
           onClick={handleFormSubmit}
         ></Btn>
       </div>
-
-      <div className="flex-end  flex flex-col text-end">
+<div className="flex order-2 flex-col  items-end md:flex-row  md:items-start ">
+<div className="flex-end  flex flex-col text-end">
         <div className="mr-4 font-bold">רמה</div>
         <div className="overflow-wrap flex ">
           <div>
@@ -340,8 +340,10 @@ const ContactForm = ({toggelModal}) => {
           </div>
         </div>
       </div>
+</div>
+    
 
-      <div className="flex w-[200px] flex-col text-end ">
+      <div className="flex w-[100%] md:w-[200px] order-1 md:order-3 flex-col text-end ">
         <div>שם </div>
         <input
           type="text "

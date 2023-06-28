@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="flex h-[230px] justify-between bg-[#2A264D] p-10">
+    <footer className="flex flex-col md:h-[230px]  h-[450px] justify-between bg-[#2A264D] md:flex-row p-10">
       <div className="text-bold p-5 font-bold text-white">
         <div className="p-1">+972 52 211 39 37</div>
         <div className="p-1">ofer@sharlom.com</div>

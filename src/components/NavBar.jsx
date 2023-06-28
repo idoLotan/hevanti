@@ -1,11 +1,15 @@
 import React from "react";
 import Btn from "./Btn";
-
+import hBar from "../assets/images/h-bar.png";
 const NavBar = () => {
   return (
     <nav className="w-[100%] min-w-[700px] pl-2">
-      <div className=" mx-auto flex  h-[65px]  items-center justify-end ">
-        <div className="flex items-center justify-end  ">
+      <div className=" mx-auto flex  h-[65px]  items-center justify-start  md:justify-end ">
+       
+        <img src={hBar} className="p-3 block  md:hidden fixed left-0"></img>
+    
+       
+        <div className=" items-center justify-end hidden md:block ">
           <ul className="flex flex-row font-medium">
             <li>
               <a
@@ -58,7 +62,7 @@ const NavBar = () => {
           </ul>
         </div>
       </div>
-      <div className="flex w-[100%] justify-center">
+      <div className=" w-[100%] justify-center hidden md:block">
         <div class="ml-1 mr-1 h-[2px] w-[100%] bg-[#555FD9]"></div>
       </div>
     </nav>

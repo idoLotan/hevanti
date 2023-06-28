@@ -1,245 +1,95 @@
-import React, { useEffect } from 'react';
-import { Accordion } from 'flowbite-react';
+"use client";
+
+import { Accordion } from "flowbite-react";
 
 export default function AccordionTW() {
-  useEffect(() => {
-    const accordionButtons = document.querySelectorAll(
-      "[data-accordion-target]"
-    );
-
-    accordionButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        const target = button.getAttribute("data-accordion-target");
-        const body = document.querySelector(target);
-
-        if (body.classList.contains("hidden")) {
-          body.classList.remove("hidden");
-          button.setAttribute("aria-expanded", "true");
-        } else {
-          body.classList.add("hidden");
-          button.setAttribute("aria-expanded", "false");
-        }
-      });
-    });
-  }, []);
-
   return (
-    <div id="accordion-collapse" data-accordion="collapse">
-      <h2 id="accordion-collapse-heading-1">
-        <button
-          type="button"
-          className="flex w-full items-center justify-between rounded-t-xl border border-b-0 border-gray-200 p-5 text-left font-medium text-gray-500"
-          data-accordion-target="#accordion-collapse-body-1"
-          aria-expanded="false"
-          aria-controls="accordion-collapse-body-1"
-        >
-          <span>What is Flowbite?</span>
-        </button>
-      </h2>
-      <div
-        id="accordion-collapse-body-1"
-        className="hidden"
-        aria-labelledby="accordion-collapse-heading-1"
-      >
-        <div className="border border-b-0 border-gray-200 p-5">
-          <p className="mb-2 text-gray-500">
-            Flowbite is an open-source library of interactive components built
-            on top of Tailwind CSS including buttons, dropdowns, modals,
-            navbars, and more.
+    <Accordion>
+      <Accordion.Panel>
+        <Accordion.Title>?איך זה עובד</Accordion.Title>
+
+        <Accordion.Content>
+          <p className="mb-2 text-right text-gray-500 dark:text-gray-400">
+            <b>מה התהליך?</b>
+            <p className="p-3">
+              אחרי שקיבלנו את הנתונים של התלמיד, היועצת הפדגוגית בשילוב עם מנהל
+              תחום ההוראה יתאימו מורה לתלמיד, המורה כשלעצמו אינו בעל חשיבות. הוא
+              כמו מחק או מחדד, הוא כלי להצלחה של התלמיד. הדבר החשוב ביותר הוא
+              .הכימיה בין המורה לתלמיד ואם אין כימיה יוחלף המורה.
+            </p>
+            <p>
+              אחרי החיבור בין המורה לתלמיד, מתבצע מעקב על התקדמות התהליך באמצעות
+              יועץ פדגוגי וקשר רציף עם אחד ההורים לקבלת בקשות ודיווח. הכול בהתאם
+              לרמת ההוראה שנבחרה.
+            </p>
           </p>
-          <p className="text-gray-500">
-            Check out this guide to learn how to{" "}
-            <a
-              href="/docs/getting-started/introduction/"
-              className="text-blue-600 hover:underline"
-            >
-              get started
-            </a>{" "}
-            and start developing websites even faster with components on top of
-            Tailwind CSS.
+        </Accordion.Content>
+      </Accordion.Panel>
+      <Accordion.Panel>
+        <Accordion.Title>
+          ?איך לשכנע את הילד להשקיע בלימודים / לקחת שיעורים פרטיים
+        </Accordion.Title>
+        <Accordion.Content>
+          <p className="mb-2 text-right text-gray-500 dark:text-gray-400">
+            <p>
+              א ילדים רוצים ללמוד ושמחים לקבל עזרה. בנות החל מגיל 12 מנהלות את
+              העניינים שלהן לבד, אין אפשרות להחליט עבורן, אפשר רק להציע אבל הן
+              ינהלו את הנושא. לגבי בנים, מעבר להסכמה עקרונית שהם מוכנים ללמוד,
+              כול השאר על אמא/אבא. תיאום השיעור/מציאת מורה מתאים/ פיתרון בעיות.
+              לרוב כאשר תינתן בחירה לילדים, יסכימו לשיעורים פרטיים, לגבי לכפות
+              על הילדים, פרס בדמות נסיעה לחול, או כול דבר אחר שהילד רוצה, ישכנע
+              להתחיל שעורים פרטיים. שיטה שתמיד עובדת זה לבקש מהם ברכות ולהגיד
+              שאוהבים אותם וזה חשוב לנו, לדבר מהלב.
+            </p>
           </p>
-        </div>
-      </div>
-      <h2 id="accordion-collapse-heading-2">
-        <button
-          type="button"
-          className="flex w-full items-center justify-between border border-b-0 border-gray-200 p-5 text-left font-medium text-gray-500"
-          data-accordion-target="#accordion-collapse-body-2"
-          aria-expanded="false"
-          aria-controls="accordion-collapse-body-2"
-        >
-          <span>Is there a Figma file available?</span>
-        </button>
-      </h2>
-      <div
-        id="accordion-collapse-body-2"
-        className="hidden"
-        aria-labelledby="accordion-collapse-heading-2"
-      >
-        <div className="border border-b-0 border-gray-200 p-5">
-          <p className="mb-2 text-gray-500">
-            Flowbite is first conceptualized and designed using the Figma
-            software so everything you see in the library has a design
-            equivalent in our Figma file.
+        </Accordion.Content>
+      </Accordion.Panel>
+      <Accordion.Panel>
+        <Accordion.Title>?מה עדיף? מורה זום או פרונטאלי</Accordion.Title>
+        <Accordion.Content>
+          <p className="mb-2 text-right text-gray-500 dark:text-gray-400">
+            <p>
+              מורה בזום מוריד בין 30₪-120₪ מהעלות, אם המורה יודע ללמד בזום, זה
+              לגמרי סבבה, הילדים היום נולדו עם טלפון ביד. הקושי הוא שלנו, לא
+              שלהם. מורה פרונטאלי בבית התלמיד מאוד נוח וכדאי, צריך לקחת בחשבון
+              שהמון מורים טובים לא מלמדים פרונטלי כי זה לא משתלם להם. ההחלטה
+              איזה מורה מתאים היא של הילד/ה. צריך להקשיב לילד/ה. לא להחליט מה
+              טוב לילד ואז לקבל את האישור למה שאמרנו, אלא לשאול את הילד\ה ובאמת
+              להקשיב.
+            </p>
           </p>
-          <p className="text-gray-500">
-            Check out the{" "}
-            <a
-              href="https://flowbite.com/figma/"
-              className="text-blue-600 hover:underline"
-            >
-              Figma design system
-            </a>{" "}
-            based on the utility classes from Tailwind CSS and components from
-            Flowbite.
+        </Accordion.Content>
+      </Accordion.Panel>
+      <Accordion.Panel>
+        <Accordion.Title>?כמה עולה שיעור</Accordion.Title>
+        <Accordion.Content>
+          <p className="mb-2 text-right text-gray-500 dark:text-gray-400">
+            <p>
+              משך שיעור 45 דקות, במקרה של שיעור כפול, יש הפסקה של רבע שעה על
+              חשבון "הבנתי". ההפסקה מאוד מומלצת, אין אפשרות לשיעורים של שעה, אלא
+              אם להערכת הצוות המקצועי יש לתלמיד את היכולת להחזיק שעה. האם אפשר
+              לעשות שיעורים למספר תלמידים ביחד? אין מגבלה מבחינת "הבנתי" על מספר
+              התלמידים שרוצים לעשות שיעור ביחד, כמובן שאיכות הלימוד יורדת. לגבי
+              העלות של שיעור למספר תלמידים, אין הבדל בעלות. "הבנתי" לא נכנסת לאף
+              אחד לכיס. החלטה שלו מה לעשות עם הכסף שלו היא שלו.
+            </p>
           </p>
-        </div>
-      </div>
-      <h2 id="accordion-collapse-heading-3">
-        <button
-          type="button"
-          className="flex w-full items-center justify-between border border-b-0 border-gray-200 p-5 text-left font-medium text-gray-500"
-          data-accordion-target="#accordion-collapse-body-3"
-          aria-expanded="false"
-          aria-controls="accordion-collapse-body-3"
-        >
-          <span>
-            What are the differences between Flowbite and Tailwind UI?
-          </span>
-        </button>
-      </h2>
-      <div
-        id="accordion-collapse-body-3"
-        className="hidden"
-        aria-labelledby="accordion-collapse-heading-3"
-      >
-        <div className="border border-b-0 border-gray-200 p-5">
-          <p className="mb-2 text-gray-500">
-            The main difference is that the core components from Flowbite are
-            open source under the MIT license, whereas Tailwind UI is a paid
-            product. Another difference is that Flowbite relies on smaller and
-            standalone components, whereas Tailwind UI offers sections of pages.
+        </Accordion.Content>
+      </Accordion.Panel>
+      <Accordion.Panel>
+        <Accordion.Title>?כמה עולה שיעור</Accordion.Title>
+        <Accordion.Content>
+          <p className="mb-2 text-right text-gray-500 dark:text-gray-400">
+            <p>
+              מחירי השעורים נקבעים לפי איכות המורה, האיכות של המורה נגזרת גם
+              מהרמה, אבל בעיקר מהיכולת להתחבר לתלמיד\ה, לעורר מוטיבציה ולהביא את
+              הילד\ה להשגים. מחירי השעורים מתחילים ב ₪150 ומגיעים עד 500₪ בהתאם
+              למקצוע, לרמה ולמורה. המחירים כוללים מע"מ. רכישה של חבילות שעורים,
+              או הוראת קבע בכרטיס אשראי מורידים את העלות של השעורים
+            </p>
           </p>
-          <p className="mb-2 text-gray-500">
-            However, we actually recommend using both Flowbite, Flowbite Pro,
-            and even Tailwind UI as there is no technical reason stopping you
-            from using the best of two worlds.
-          </p>
-          <p className="mb-2 text-gray-500">
-            Learn more about these technologies:
-          </p>
-          <ul className="list-disc pl-5 text-gray-500">
-            <li>
-              <a
-                href="https://flowbite.com/pro/"
-                className="text-blue-600 hover:underline"
-              >
-                Flowbite Pro
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://tailwindui.com/"
-                rel="nofollow"
-                className="text-blue-600 hover:underline"
-              >
-                Tailwind UI
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <h2 id="accordion-collapse-heading-4">
-        <button
-          type="button"
-          className="flex w-full items-center justify-between border border-b-0 border-gray-200 p-5 text-left font-medium text-gray-500"
-          data-accordion-target="#accordion-collapse-body-4"
-          aria-expanded="false"
-          aria-controls="accordion-collapse-body-4"
-        >
-          <span>Can I customize Flowbite components?</span>
-        </button>
-      </h2>
-      <div
-        id="accordion-collapse-body-4"
-        className="hidden"
-        aria-labelledby="accordion-collapse-heading-4"
-      >
-        <div className="border border-b-0 border-gray-200 p-5">
-          <p className="mb-2 text-gray-500">
-            Yes, you can customize Flowbite components to match your project's
-            design and branding. Flowbite is built on top of Tailwind CSS, which
-            provides extensive customization options through its utility
-            classes. You can also extend Flowbite components or create your own
-            custom components using the building blocks provided by Flowbite.
-          </p>
-          <p className="text-gray-500">
-            Check out the Flowbite documentation for more information on
-            customization and extending components.
-          </p>
-        </div>
-      </div>
-      <h2 id="accordion-collapse-heading-5">
-        <button
-          type="button"
-          className="border-gray flex w-full items-center justify-between border border-b-0
-        p-5 text-left font-medium text-gray-500"
-          data-accordion-target="#accordion-collapse-body-5"
-          aria-expanded="false"
-          aria-controls="accordion-collapse-body-5"
-        >
-          <span>How can I contribute to Flowbite?</span>
-        </button>
-      </h2>
-      <div
-        id="accordion-collapse-body-5"
-        className="hidden"
-        aria-labelledby="accordion-collapse-heading-5"
-      >
-        <div className="border border-b-0 border-gray-200 p-5">
-          <p className="mb-2 text-gray-500">
-            Flowbite is an open-source project, and contributions are welcome!
-            You can contribute to Flowbite by submitting bug reports, feature
-            requests, or pull requests on the official GitHub repository.
-          </p>
-          <p className="text-gray-500">
-            Check out the Flowbite GitHub repository for more information on how
-            to contribute and the contribution guidelines.
-          </p>
-        </div>
-      </div>
-      <h2 id="accordion-collapse-heading-6">
-        <button
-          type="button"
-          className="flex w-full items-center justify-between rounded-b-xl border border-gray-200 p-5 text-left font-medium text-gray-500"
-          data-accordion-target="#accordion-collapse-body-6"
-          aria-expanded="false"
-          aria-controls="accordion-collapse-body-6"
-        >
-          <span>Is Flowbite compatible with other CSS frameworks?</span>
-        </button>
-      </h2>
-      <div
-        id="accordion-collapse-body-6"
-        className="hidden"
-        aria-labelledby="accordion-collapse-heading-6"
-      >
-        <div className="border border-gray-200 p-5">
-          <p className="mb-2 text-gray-500">
-            Flowbite is built on top of Tailwind CSS, which is designed to be
-            highly compatible with other CSS frameworks. You can use Flowbite
-            alongside frameworks like Bootstrap or Foundation without conflicts.
-            However, keep in mind that different CSS frameworks may have their
-            own styles and class naming conventions, so some adjustments might
-            be necessary to achieve seamless integration.
-          </p>
-          <p className="text-gray-500">
-            Check out the Flowbite documentation for more information on using
-            Flowbite with other CSS frameworks.
-          </p>
-        </div>
-      </div>
-    </div>
+        </Accordion.Content>
+      </Accordion.Panel>
+    </Accordion>
   );
 }
-

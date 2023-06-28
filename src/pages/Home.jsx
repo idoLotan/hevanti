@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import hero from "../assets/images/hero.png";
 import subjects from "../assets/images/subjects.png";
+import hBar from "../assets/images/h-bar.png";
+import logo from "../assets/images/logo.png";
 import subjectsMobile from "../assets/images/subjectsmobile.png";
 import about from "../assets/images/about.png";
 import aboutMobile from "../assets/images/about-mobile.png";
@@ -35,7 +37,7 @@ function Home() {
     window.open(url);
   }
   return (
-    <div>
+    <div >
       {/* <div className="flex flex-col">
         <div className="h-16 w-16 bg-blue-500"></div>
         <div className="h-16 w-16 bg-red-500 md:order-first"></div>
@@ -47,14 +49,15 @@ function Home() {
         src={whatsAppImg}
         className=" fixed bottom-10 right-20    z-30 h-20 w-20"
       ></img>
+      
       <section
-        className="section-1 h-[200vh] bg-cover bg-no-repeat md:h-[100vh]"
+        className="section-1 h-[130vh] bg-cover bg-no-repeat md:h-[100vh]"
         id="home"
       >
         <div className="flex items-center justify-end ">
           <NavBar />
-          <svg
-            className="ml-6 mr-4 mt-2"
+          {/* <svg
+            className="ml-6 mr-4 mt-2 min-w-screen-sm"
             xmlns="http://www.w3.org/2000/svg"
             width="72"
             height="57"
@@ -202,10 +205,11 @@ function Home() {
               d="M12.4116 28.1818C11.8604 28.1818 11.4131 27.735 11.4131 27.1844C11.4131 26.6337 11.8604 26.1869 12.4116 26.1869C12.9629 26.1869 13.4102 26.6337 13.4102 27.1844C13.4102 27.735 12.9629 28.1818 12.4116 28.1818ZM12.4116 26.6337C12.1089 26.6337 11.8649 26.8774 11.8649 27.1798C11.8649 27.4822 12.1089 27.726 12.4116 27.726C12.7144 27.726 12.9584 27.4822 12.9584 27.1798C12.9584 26.8774 12.7144 26.6337 12.4116 26.6337Z"
               fill="#555FD9"
             />
-          </svg>
+          </svg> */}
+          <img src={logo} alt="" />
         </div>
 
-        <div className=" p-[5vw]">
+        <div className=" p-[5vw] ">
           <div className="max-md:w-full">
             <div className="relative flex flex-col justify-around md:flex-row">
               <div className="flex items-end">
@@ -263,7 +267,7 @@ function Home() {
             </div>
           </div>
           <div className="w-1/2 max-md:w-full  "></div>
-          <div className="relative bottom-12 left-10  flex justify-end">
+          <div className="relative bottom-4 right-80 sm:right-0  flex justify-end">
             <div className="flex flex-col">
               <img src={QR} className="w-[64px]"></img>
               <div className="text-[#555FD9]">whatsApp</div>
@@ -298,8 +302,9 @@ function Home() {
           <TeachersCarousel></TeachersCarousel>
         </div>
       </section>
-      <section className="section-1 relative h-[400px] p-3 " id="contact">
-        <h1 className="  text-right text-[35px] font-bold text-[#555FD9]">
+      <section className="section-1 flex flex-col  relative h-[1300px]  md:h-[400px] p-3 " id="contact">
+      
+        <h1 className=" text-right text-[35px] font-bold text-[#555FD9]">
           ?מה אתה רוצה להבין
         </h1>
         <h1 className=" text-right text-xl  text-[#2A264D]">
@@ -307,8 +312,10 @@ function Home() {
         </h1>
 
         {/* <img src={howItWorks} className="h-[500px] w-[100%]"></img> */}
-
-        <ContactForm toggelModal={toggelModal}></ContactForm>
+<div className="flex justify-center items-center w-[100%]">
+<ContactForm toggelModal={toggelModal}></ContactForm>
+</div>
+   
       </section>
       <section id="questions" className="relative  w-[100%]  p-10">
         <h1 className="pb-6 text-right text-2xl text-[35px] font-bold text-[#555FD9]">
