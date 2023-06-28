@@ -17,7 +17,7 @@ import wp5 from "../assets/images/wp5.png";
 
 const Carousel = () => {
   return (
-    <div className="relative right-5 top-10  z-10 hidden rounded-bl-xl  rounded-tr-xl border-2 border-[#FF7848] lg:block">
+    <div className="relative right-[190px] top-10   z-10  rounded-bl-xl  rounded-tr-xl border-2 border-[#FF7848] lg:block">
       <div className="m-2 ">
         <div className=" h-[264px] w-[184px] ">
           <Swiper
