@@ -5,6 +5,7 @@ import about from "../assets/images/about.png";
 import howItWorks from "../assets/images/howItWorks.png";
 import questions from "../assets/images/questions.png";
 import whatsAppImg from "../assets/images/whatsapp-3.png";
+import QR from "../assets/images/QR.png";
 import NavBar from "../components/NavBar";
 import Btn from "../components/Btn";
 import teachers from "../assets/images/teachers.png";
@@ -205,6 +206,7 @@ function Home() {
                   src={hero}
                   className="z-0 hidden h-auto  lg:block  lg:h-auto lg:w-[300px] xl:h-auto 2xl:w-[500px] "
                 ></img>
+
                 {/* <div className="relative right-5  top-10 hidden rounded-bl-xl  rounded-tr-xl border-2 border-[#FF7848] lg:block">
                   <div className="m-2 "> */}
                 <Carousel></Carousel>
@@ -261,6 +263,13 @@ function Home() {
             </div>
           </div>
           <div className="w-1/2 max-md:w-full  "></div>
+          <div className="relative bottom-12 left-10  flex justify-end">
+            <div className="flex flex-col"> 
+              <img src={QR} className="w-[64px]"></img>
+            <div className="text-[#555FD9]">whatsApp</div>
+            </div>
+           
+          </div>
         </div>
       </section>
       <section

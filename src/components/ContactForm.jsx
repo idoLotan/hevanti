@@ -76,11 +76,11 @@ const ContactForm = ({toggelModal}) => {
 
   return (
     <div className="section-2 absolute left-[7%] top-[100px] flex w-[85%] min-w-[800px] flex-row  justify-between rounded-xl p-10">
-      <textarea
+      {/* <textarea
         className="absolute left-5 top-3 h-[200px] rounded-lg border-2 border-[#555FD9] pr-1 text-right  focus:outline-none"
         placeholder="...תאר את המטרות שלך"
         ref={textRef}
-      ></textarea>
+      ></textarea> */}
       <Btn
         style={"bg-[#FF7848] w-[200px] h-[40px] absolute bottom-2 left-4"}
         text="שלח"
