@@ -9,8 +9,8 @@ const Section = ({ title, content }) => {
         className="accordion-title font-bold flex flex-col text-end"
         onClick={() => setIsActive(!isActive)}
       >
-        <div className="">{title}</div>
-        <div className="p-2">
+        <div className="flex flex-row justify-between items-end">
+        <div className="p-2 ">
           {isActive ? (
             <div
               className="h-0 w-0 
@@ -27,6 +27,10 @@ const Section = ({ title, content }) => {
             ></div>
           )}
         </div>
+        <div className="">{title}</div>
+      
+        </div>
+       
       
         <div className="h-[2px] w-[100%] bg-[#555FD9]"></div>
       </div>
