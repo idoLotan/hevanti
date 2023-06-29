@@ -49,8 +49,8 @@ function Home() {
         <div className="h-16 w-16 bg-red-500 md:order-first"></div>
       </div> */}
       <div>
-      <img src={phoneBtn}  className=" md:hidden fixed bottom-10 left-10 z-30 h-20 w-20" alt="" />
-   <a href="tel:+972509929788"className=" md:hidden fixed bottom-10 left-10 z-30 h-20 w-20 "></a> 
+         <img src={phoneBtn}  className=" md:hidden fixed bottom-10 left-10 z-30 h-20 w-20" alt="" />
+          <a href="tel:+972509929788"className=" md:hidden fixed bottom-10 left-10 z-30 h-20 w-20 "></a> 
       </div>
      
     

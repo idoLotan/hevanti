@@ -83,14 +83,12 @@ const ContactForm = ({ toggelModal }) => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-  
+    const checkedItems = getCheckedItems();
     const form = e.target;
     const emailInput = form.querySelector('#email');
     const nameInput = form.querySelector('#name');
     const phoneInput = form.querySelector('#phone');
     const messageInput = form.querySelector('#message');
-   
-  
   
     // Access the values of the form elements
     const email = emailInput.value;
@@ -98,19 +96,28 @@ const ContactForm = ({ toggelModal }) => {
     const phone = phoneInput.value;
     const message = messageInput.value;
   
-    // Use the values as needed (e.g., send email)
+    // Add the checked items to the form data
+    checkedItems.forEach((item) => {
+      const input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = 'checkedItems';
+      input.value = item;
+      form.appendChild(input);
+    });
   
+    // Use the values as needed (e.g., send email)
     console.log(email);
     console.log(name);
     console.log(phone);
     console.log(message);
-    console.log(form)
+  
+    console.log(form);
   
     emailjs.sendForm("service_ouhaspm", "template_ino3nuf", form, "Q0KuceYtG9tHt_72N");
-
-    handleFormSubmit()
+  
+    handleFormSubmit();
   }
-
+  
   return (
    
    <form onSubmit={sendEmail} className="section-2  flex w-[90%] flex-col items-center  justify-between rounded-xl p-5 md:flex-row">

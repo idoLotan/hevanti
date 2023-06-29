@@ -1,101 +1,13 @@
-// "use client";
 
-// import { Accordion } from "flowbite-react";
-
-// export default function AccordionTW() {
-//   return (
-//     <Accordion>
-//       <Accordion.Panel>
-//         <Accordion.Title>?איך זה עובד</Accordion.Title>
-
-//         <Accordion.Content>
-//           <p className="mb-2 text-right text-gray-500 dark:text-gray-400">
-//             <p className="p-3">
-//               אחרי שקיבלנו את הנתונים של התלמיד, היועצת הפדגוגית בשילוב עם מנהל
-//               תחום ההוראה יתאימו מורה לתלמיד, המורה כשלעצמו אינו בעל חשיבות. הוא
-//               כמו מחק או מחדד, הוא כלי להצלחה של התלמיד. הדבר החשוב ביותר הוא
-//               .הכימיה בין המורה לתלמיד ואם אין כימיה יוחלף המורה.
-//             </p>
-//             <p>
-//               אחרי החיבור בין המורה לתלמיד, מתבצע מעקב על התקדמות התהליך באמצעות
-//               יועץ פדגוגי וקשר רציף עם אחד ההורים לקבלת בקשות ודיווח. הכול בהתאם
-//               לרמת ההוראה שנבחרה.
-//             </p>
-//           </p>
-//         </Accordion.Content>
-//       </Accordion.Panel>
-//       <Accordion.Panel>
-//         <Accordion.Title>
-//           ?איך לשכנע את הילד להשקיע בלימודים / לקחת שיעורים פרטיים
-//         </Accordion.Title>
-//         <Accordion.Content>
-//           <p className="mb-2 text-right text-gray-500 dark:text-gray-400">
-//             <p>
-//               א ילדים רוצים ללמוד ושמחים לקבל עזרה. בנות החל מגיל 12 מנהלות את
-//               העניינים שלהן לבד, אין אפשרות להחליט עבורן, אפשר רק להציע אבל הן
-//               ינהלו את הנושא. לגבי בנים, מעבר להסכמה עקרונית שהם מוכנים ללמוד,
-//               כול השאר על אמא/אבא. תיאום השיעור/מציאת מורה מתאים/ פיתרון בעיות.
-//               לרוב כאשר תינתן בחירה לילדים, יסכימו לשיעורים פרטיים, לגבי לכפות
-//               על הילדים, פרס בדמות נסיעה לחול, או כול דבר אחר שהילד רוצה, ישכנע
-//               להתחיל שעורים פרטיים. שיטה שתמיד עובדת זה לבקש מהם ברכות ולהגיד
-//               שאוהבים אותם וזה חשוב לנו, לדבר מהלב.
-//             </p>
-//           </p>
-//         </Accordion.Content>
-//       </Accordion.Panel>
-//       <Accordion.Panel>
-//         <Accordion.Content>
-//           <p className="mb-2 text-right text-gray-500 dark:text-gray-400">
-//               מורה בזום מוריד בין 30₪-120₪ מהעלות, אם המורה יודע ללמד בזום, זה
-//               לגמרי סבבה, הילדים היום נולדו עם טלפון ביד. הקושי הוא שלנו, לא
-//               שלהם. מורה פרונטאלי בבית התלמיד מאוד נוח וכדאי, צריך לקחת בחשבון
-//               שהמון מורים טובים לא מלמדים פרונטלי כי זה לא משתלם להם. ההחלטה
-//               איזה מורה מתאים היא של הילד/ה. צריך להקשיב לילד/ה. לא להחליט מה
-//               טוב לילד ואז לקבל את האישור למה שאמרנו, אלא לשאול את הילד\ה ובאמת
-//               להקשיב.
-//             </p>
-//           </p>
-//         </Accordion.Content>
-//       </Accordion.Panel>
-//       <Accordion.Panel>
-//         <Accordion.Title>?כמה עולה שיעור</Accordion.Title>
-//         <Accordion.Content>
-//           <p className="mb-2 text-right text-gray-500 dark:text-gray-400">
-//             <p>
-//               משך שיעור 45 דקות, במקרה של שיעור כפול, יש הפסקה של רבע שעה על
-//               חשבון "הבנתי". ההפסקה מאוד מומלצת, אין אפשרות לשיעורים של שעה, אלא
-//               אם להערכת הצוות המקצועי יש לתלמיד את היכולת להחזיק שעה. האם אפשר
-//               לעשות שיעורים למספר תלמידים ביחד? אין מגבלה מבחינת "הבנתי" על מספר
-//               התלמידים שרוצים לעשות שיעור ביחד, כמובן שאיכות הלימוד יורדת. לגבי
-//               העלות של שיעור למספר תלמידים, אין הבדל בעלות. "הבנתי" לא נכנסת לאף
-//               אחד לכיס. החלטה שלו מה לעשות עם הכסף שלו היא שלו.
-//             </p>
-//           </p>
-//         </Accordion.Content>
-//       </Accordion.Panel>
-//       <Accordion.Panel>
-//         <Accordion.Title>?כמה עולה שיעור</Accordion.Title>
-//         <Accordion.Content>
-//           <p className="mb-2 text-right text-gray-500 dark:text-gray-400">
-//             <p>
-//               מחירי השעורים נקבעים לפי איכות המורה, האיכות של המורה נגזרת גם
-//               מהרמה, אבל בעיקר מהיכולת להתחבר לתלמיד\ה, לעורר מוטיבציה ולהביא את
-//               הילד\ה להשגים. מחירי השעורים מתחילים ב ₪150 ומגיעים עד 500₪ בהתאם
-//               למקצוע, לרמה ולמורה. המחירים כוללים מע"מ. רכישה של חבילות שעורים,
-//               או הוראת קבע בכרטיס אשראי מורידים את העלות של השעורים
-//             </p>
-//           </p>
-//         </Accordion.Content>
-//       </Accordion.Panel>
-//     </Accordion>
-//   );
-// }
-
-import React from "react";
+import React, { useState } from "react";
 
 import Section from "./Section";
 
 const AccordionTW = () => {
+  const [activeIndex, setActiveIndex] = useState(null);
+  const toggleSection = (index) => {
+    setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
+  };
   const accordionData = [
     {
       title: "?איך זה עובד",
@@ -162,11 +74,10 @@ const AccordionTW = () => {
 
   return (
     <div>
-      <div className="accordion">
-        {accordionData.map(({ title, content }) => (
-          <Section title={title} content={content} />
-        ))}
-      </div>
+      {accordionData.map((section, index) => (
+        <Section key={index} index={index} section={section} activeIndex={activeIndex} toggleSection={toggleSection}/>
+        
+      ))}
     </div>
   );
 };
