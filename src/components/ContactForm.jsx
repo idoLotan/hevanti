@@ -2,10 +2,16 @@ import React, { useEffect, useRef, useState } from "react";
 import Btn from "./Btn";
 import { db } from "../firebase-config";
 import { addDoc, collection, getDocs } from "firebase/firestore";
+import emailjs from '@emailjs/browser'
 
 const ContactForm = ({ toggelModal }) => {
   const userInputRef = collection(db, "userInput");
-
+  
+//   const sendEmail =(e) =>{
+//     e.preventDefault()
+// emailjs.sendForm("service_ouhaspm", "template_ino3nuf", e.target, "Q0KuceYtG9tHt_72N")
+// console.log(e.target)
+//  }
   useEffect(() => {
     const getData = async () => {
       const data = await getDocs(userInputRef);
@@ -13,6 +19,8 @@ const ContactForm = ({ toggelModal }) => {
     };
     getData();
   }, []);
+
+
 
   const nameRef = useRef();
   const emailRef = useRef();
@@ -51,8 +59,7 @@ const ContactForm = ({ toggelModal }) => {
     return checkedItems;
   }
 
-  const handleFormSubmit = async (e) => {
-    e.preventDefault();
+  const handleFormSubmit = async () => {
     const checkedItems = getCheckedItems();
     const formData = {
       items: checkedItems,
@@ -74,8 +81,40 @@ const ContactForm = ({ toggelModal }) => {
     }));
   };
 
+  const sendEmail = (e) => {
+    e.preventDefault();
+  
+    const form = e.target;
+    const emailInput = form.querySelector('#email');
+    const nameInput = form.querySelector('#name');
+    const phoneInput = form.querySelector('#phone');
+    const messageInput = form.querySelector('#message');
+   
+  
+  
+    // Access the values of the form elements
+    const email = emailInput.value;
+    const name = nameInput.value;
+    const phone = phoneInput.value;
+    const message = messageInput.value;
+  
+    // Use the values as needed (e.g., send email)
+  
+    console.log(email);
+    console.log(name);
+    console.log(phone);
+    console.log(message);
+    console.log(form)
+  
+    emailjs.sendForm("service_ouhaspm", "template_ino3nuf", form, "Q0KuceYtG9tHt_72N");
+
+    handleFormSubmit()
+  }
+
   return (
-    <div className="section-2  flex w-[90%] flex-col items-center  justify-between rounded-xl p-5 md:flex-row">
+   
+   <form onSubmit={sendEmail} className="section-2  flex w-[90%] flex-col items-center  justify-between rounded-xl p-5 md:flex-row">
+  
       <div className="order-3 flex flex-col  md:order-1 ">
         <div className="flex flex-col items-center">
           <div className="flex w-[100%] justify-end">
@@ -85,17 +124,16 @@ const ContactForm = ({ toggelModal }) => {
           </div>
 
           <textarea
+            name="message" 
+            id="message"
             className="bg:w-[212px] left-5 top-3  h-[136px] w-[300px] rounded-lg border-2 border-[#555FD9] p-1 pr-1 text-right  focus:outline-none"
             placeholder="...הקלד כאן"
             ref={textRef}
           ></textarea>
         </div>
         <div className="flex  w-[100%] flex-col items-center md:items-start">
-          <Btn
-            style={"bg-[#FF7848] w-[200px] h-[40px] mt-2  "}
-            text="שלח"
-            onClick={handleFormSubmit}
-          ></Btn>
+        
+           <button type="submit" className="bg-[#FF7848] w-[200px] h-[40px] mt-2 rounded-lg font-bold text-white  ">שלח</button>
         </div>
       </div>
       <div className="order-2 flex flex-col  items-end md:flex-row  md:items-start ">
@@ -355,24 +393,30 @@ const ContactForm = ({ toggelModal }) => {
       <div className="order-2 flex w-[100%] flex-col text-end md:order-3 md:w-[200px] ">
         <div className="font-bold">שם </div>
         <input
+        id="name"
+        name="name"
           type="text "
           className="mt-2 rounded-lg border-2 border-[#555FD9] pr-1 text-end focus:outline-none"
           ref={nameRef}
         />
         <div className="font-bold"> טלפון</div>
         <input
+          id="phone"
+          name="phone"
           type="text "
           className="mt-2 rounded-lg border-2 border-[#555FD9] pr-1 text-end focus:outline-none"
           ref={emailRef}
         />
         <div className="font-bold"> דואר אלקטרוני</div>
         <input
+          id="email"
+          name="email"
           type="text "
           className="mt-2 rounded-lg border-2 border-[#555FD9] pr-1 text-end focus:outline-none"
           ref={phoneRef}
         />
       </div>
-    </div>
+    </form>
   );
 };
 

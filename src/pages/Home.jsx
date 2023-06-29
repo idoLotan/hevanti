@@ -11,7 +11,7 @@ import whatsAppImg from "../assets/images/whatsapp-3.png";
 import QR from "../assets/images/QR.png";
 import NavBar from "../components/NavBar";
 import Btn from "../components/Btn";
-
+import phoneBtn from "../assets/images/phone-btn.png";
 import teachers from "../assets/images/teachers.png";
 import Footer from "../components/Footer";
 import ContactForm from "../components/ContactForm";
@@ -26,28 +26,39 @@ function Home() {
   const toggelModal = () => {
     setIsOpen(!isOpen);
   };
+
+
   function openWhatsApp() {
     // Replace the phone number and message with your desired values
     var phoneNumber = "+972522113937"; // Enter the phone number with the country code
-    var message = "Hello, I have a question.";
+    var message = ".שלום, יש לי שאלה";
 
     var url =
       "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
 
     window.open(url);
   }
+
+
+
+
   return (
     <div>
       {/* <div className="flex flex-col">
         <div className="h-16 w-16 bg-blue-500"></div>
         <div className="h-16 w-16 bg-red-500 md:order-first"></div>
       </div> */}
-
+      <div>
+      <img src={phoneBtn}  className=" md:hidden fixed bottom-10 left-10 z-30 h-20 w-20" alt="" />
+   <a href="tel:+972509929788"className=" md:hidden fixed bottom-10 left-10 z-30 h-20 w-20 "></a> 
+      </div>
+     
+    
       <MyModal isShowing={isOpen} onClose={toggelModal}></MyModal>
       <img
         onClick={openWhatsApp}
         src={whatsAppImg}
-        className=" fixed bottom-10 right-20    z-30 h-20 w-20"
+        className=" fixed bottom-10 right-5    z-30 h-20 w-20"
       ></img>
 
       <section
