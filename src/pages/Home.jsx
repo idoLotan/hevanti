@@ -126,7 +126,7 @@ function Home() {
             </div>
           </div>
           <div className="w-1/2 max-md:w-full  "></div>
-          <div className="relative bottom-8 right-60 flex  justify-end sm:right-0">
+          <div className="relative bottom-8 hidden  flex  justify-end sm:right-0">
             <div className="flex flex-col">
               <img src={QR} className="w-[64px]"></img>
               <div className="text-[#555FD9]">whatsApp</div>

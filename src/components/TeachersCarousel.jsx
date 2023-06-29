@@ -8,21 +8,35 @@ import "swiper/css/pagination";
 import "../index.css";
 
 // import required modules
-import { Pagination } from "swiper";
+
 import joana from "../assets/images/joana.png";
 import meir from "../assets/images/meir.png";
 import ofir from "../assets/images/ofir.png";
 import amit from "../assets/images/amit.png";
 import sigal from "../assets/images/sigal.png";
+import { Autoplay, Pagination, Navigation } from "swiper";
+ 
 
 const TeachersCarousel = () => {
+
   return (
     <div className="  z-10  flex w-max  justify-center md:hidden">
       <div className="m-2 ">
         <div className=" h-[300px] w-[345px] ">
           <Swiper
-            pagination={true}
-            modules={[Pagination]}
+          spaceBetween={30}
+          centeredSlides={true}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          pagination={{
+            clickable: true,
+          }}
+          navigation={true}
+          modules={[Autoplay, Pagination, Navigation]}
+           
+           
             className="mySwiper z-10  rounded-bl-2xl rounded-tr-2xl"
           >
             <SwiperSlide>
