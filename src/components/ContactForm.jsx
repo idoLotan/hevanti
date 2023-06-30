@@ -27,13 +27,14 @@ const ContactForm = ({ toggelModal }) => {
   const phoneRef = useRef();
   const textRef = useRef();
   const [checkboxes, setCheckboxes] = useState({
-    150: false,
-    200: false,
-    250: false,
+    ils150: false,
+    ils200: false,
+    ils250: false,
     vip: false,
     chemistry: false,
     math: false,
     physics: false,
+    english:false, 
     computerScience: false,
     biology: false,
     psychometric: false,
@@ -120,7 +121,7 @@ const ContactForm = ({ toggelModal }) => {
   
   return (
    
-   <form onSubmit={sendEmail} className="section-2  flex w-[90%] flex-col items-center  justify-between rounded-xl p-5 md:flex-row">
+   <form onSubmit={sendEmail} className="section-2  flex w-[1200px] flex-col items-center  justify-between rounded-xl p-5 md:flex-row">
   
       <div className="order-3 flex flex-col  md:order-1 ">
         <div className="flex flex-col items-center">
@@ -145,22 +146,15 @@ const ContactForm = ({ toggelModal }) => {
       </div>
       <div className="order-2 flex flex-col  items-end md:flex-row  md:items-start ">
         <div className="flex flex-col  items-end md:flex-row  md:items-start ">
+          <div className="flex">
+         
           <div className="flex-end   order-3 flex  flex-col text-end md:order-1 ">
-            <div className="mr-4 font-bold">רמה</div>
+            <div className="mr-4 font-bold">צרכים מיוחדים</div>
             <div className="overflow-wrap flex ">
               <div>
-                <div className="">
-                  <label for="myCheckbox">צרכים מיוחדים</label>
-                  <input
-                    className="m-2"
-                    type="checkbox"
-                    id="specialNeeds"
-                    name="specialNeeds"
-                    checked={checkboxes.specialNeeds}
-                    onChange={handleCheckboxChange}
-                  />
-                </div>
-                <div className="">
+             
+           
+                <div className="flex justify-end">
                   <label for="myCheckbox">אוטיזים\קשיים סנסוריים</label>
                   <input
                     className="m-2"
@@ -171,7 +165,7 @@ const ContactForm = ({ toggelModal }) => {
                     onChange={handleCheckboxChange}
                   />
                 </div>
-                <div className="">
+                <div className="flex justify-end">
                   HDD
                   <input
                     className="m-2"
@@ -182,7 +176,7 @@ const ContactForm = ({ toggelModal }) => {
                     onChange={handleCheckboxChange}
                   />
                 </div>
-                <div className="">
+                <div className="flex justify-end">
                   HDAD
                   <input
                     className="m-2"
@@ -194,8 +188,16 @@ const ContactForm = ({ toggelModal }) => {
                   />
                 </div>
               </div>
+             
+            </div>
+            
+          </div>
+          <div className="flex-end   order-3 flex  flex-col text-end md:order-1 ">
+            <div className="mr-4 font-bold">רמה</div>
+            <div className="overflow-wrap flex ">
+           
               <div>
-                <div className="">
+                <div className="flex justify-end ">
                   <label for="myCheckbox">בית ספר יסודי</label>
                   <input
                     className="m-2"
@@ -206,7 +208,7 @@ const ContactForm = ({ toggelModal }) => {
                     onChange={handleCheckboxChange}
                   />
                 </div>
-                <div className="">
+                <div className="flex justify-end">
                   <label for="myCheckbox">חטיבת ביניים</label>
                   <input
                     className="m-2"
@@ -217,8 +219,8 @@ const ContactForm = ({ toggelModal }) => {
                     onChange={handleCheckboxChange}
                   />
                 </div>
-                <div className="">
-                  תיכון
+                <div className="flex justify-end">
+                   <label for="myCheckbox">תיכון</label>
                   <input
                     className="m-2"
                     type="checkbox"
@@ -228,26 +230,29 @@ const ContactForm = ({ toggelModal }) => {
                     onChange={handleCheckboxChange}
                   />
                 </div>
-                <div className="">
+                <div className="flex justify-end">
                   אוניברסטיה\מכינה
                   <input
                     className="m-2"
                     type="checkbox"
-                    id="University"
-                    name="University"
-                    checked={checkboxes.University}
+                    id="university"
+                    name="university"
+                    checked={checkboxes.university}
                     onChange={handleCheckboxChange}
                   />
                 </div>
               </div>
             </div>
+            
           </div>
+          </div>
+   
           <div className="order-1 flex md:flex-row">
             <div className="flex-end  order-2  flex flex-col text-end md:order-3">
               <div className="mr-4 font-bold">קטגוריות</div>
               <div className="overflow-wrap flex ">
                 <div>
-                  <div className="">
+                  <div className="flex justify-end ">
                     <label for="myCheckbox">כימיה</label>
                     <input
                       className="m-2"
@@ -258,36 +263,36 @@ const ContactForm = ({ toggelModal }) => {
                       onChange={handleCheckboxChange}
                     />
                   </div>
-                  <div className="">
+                  <div className="flex justify-end">
                     <label for="myCheckbox">אנגלית</label>
                     <input
                       className="m-2"
                       type="checkbox"
-                      id="English"
-                      name="English"
-                      checked={checkboxes.checkbox5}
+                      id="english"
+                      name="english"
+                      checked={checkboxes.english}
                       onChange={handleCheckboxChange}
                     />
                   </div>
-                  <div className="">
+                  <div className="flex justify-end">
                     מתמטיקה
                     <input
                       className="m-2"
                       type="checkbox"
                       id="math"
                       name="math"
-                      checked={checkboxes.checkbox6}
+                      checked={checkboxes.math}
                       onChange={handleCheckboxChange}
                     />
                   </div>
-                  <div className="">
+                  <div className="flex justify-end">
                     פיסיקה
                     <input
                       className="m-2"
                       type="checkbox"
                       id="physics"
                       name="physics"
-                      checked={checkboxes.checkbox6}
+                      checked={checkboxes.physics}
                       onChange={handleCheckboxChange}
                     />
                   </div>
@@ -295,29 +300,29 @@ const ContactForm = ({ toggelModal }) => {
 
                 <div>
                   {" "}
-                  <div className="">
+                  <div className="flex justify-end">
                     <label for="myCheckbox">מדעי המחשב</label>
                     <input
                       className="m-2"
                       type="checkbox"
                       id="computerScience"
                       name="computerScience"
-                      checked={checkboxes.checkbox7}
+                      checked={checkboxes.computerScience}
                       onChange={handleCheckboxChange}
                     />
                   </div>
-                  <div className="">
+                  <div className="flex justify-end">
                     <label for="myCheckbox">ביולוגיה</label>
                     <input
                       className="m-2"
                       type="checkbox"
-                      id="Biology"
-                      name="Biology"
-                      checked={checkboxes.Biology}
+                      id="biology"
+                      name="biology"
+                      checked={checkboxes.biology}
                       onChange={handleCheckboxChange}
                     />
                   </div>
-                  <div className="">
+                  <div className="flex justify-end">
                     פסיכומטרי
                     <input
                       className="m-2"
@@ -328,7 +333,7 @@ const ContactForm = ({ toggelModal }) => {
                       onChange={handleCheckboxChange}
                     />
                   </div>
-                  <div className="">
+                  <div className="flex justify-end">
                     לשון
                     <input
                       className="m-2"
@@ -346,47 +351,47 @@ const ContactForm = ({ toggelModal }) => {
               <div className="mr-4 font-bold">תקציב</div>
               <div className="overflow-wrap flex ">
                 <div>
-                  <div className="">
+                  <div className="flex justify-end">
                     <label for="myCheckbox">150</label>
                     <input
                       className="m-2"
                       type="checkbox"
-                      id="150"
-                      name="150"
-                      checked={checkboxes.checkbox1}
+                      id="ils150"
+                      name="ils150"
+                      checked={checkboxes.ils150}
                       onChange={handleCheckboxChange}
                     />
                   </div>
-                  <div className="">
+                  <div className="flex justify-end">
                     <label for="myCheckbox">200</label>
                     <input
                       className="m-2"
                       type="checkbox"
-                      id="200"
-                      name="200"
-                      checked={checkboxes.checkbox2}
+                      id="ils200"
+                      name="ils200"
+                      checked={checkboxes.ils200}
                       onChange={handleCheckboxChange}
                     />
                   </div>
-                  <div className="">
-                    250
+                  <div className="flex justify-end">
+                  <label for="myCheckbox">250</label>  
                     <input
                       className="m-2"
                       type="checkbox"
-                      id="250"
-                      name="250"
-                      checked={checkboxes.checkbox3}
+                      id="ils250"
+                      name="ils250"
+                      checked={checkboxes.ils250}
                       onChange={handleCheckboxChange}
                     />
                   </div>
-                  <div className="p-2">
-                    vip
+                  <div className="flex justify-end">
+                  <label for="myCheckbox">vip</label>  
                     <input
                       className="m-2"
                       type="checkbox"
                       id="vip"
                       name="vip"
-                      checked={checkboxes.checkbox3}
+                      checked={checkboxes.vip}
                       onChange={handleCheckboxChange}
                     />
                   </div>

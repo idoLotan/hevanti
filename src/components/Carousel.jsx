@@ -22,7 +22,7 @@ const Carousel = () => {
   return (
 
  
-    <div className="relative right-[190px] top-10 z-10 rounded-bl-xl rounded-tr-xl border-2 border-[#FF7848] lg:block">
+    <div className="relative right-[114px]  md:right-[60px] top-10 z-10 rounded-bl-xl rounded-tr-xl border-2 border-[#FF7848] lg:block">
       <div className="m-2">
         <div className="h-[264px] w-[184px]">
           <Swiper 
@@ -40,11 +40,11 @@ const Carousel = () => {
          
            
            
-            className="mySwiper z-10 rounded-bl-2xl rounded-tr-2xl"
+            className="mySwiper z-10 rounded-bl-2xl  rounded-tr-2xl"
          
           >
             <SwiperSlide>
-              <img src={wp1} />
+              <img src={wp1} className=" w-[104px]" />
             </SwiperSlide>
             <SwiperSlide>
               <img src={wp2} />

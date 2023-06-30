@@ -2,9 +2,9 @@
 
 const Section = ({  section, activeIndex, index, toggleSection }) => {
   return (
-    <div className="accordion-item p-2">
+    <div className="accordion-item p-2 ">
       <div
-        className="accordion-title font-bold flex flex-col text-end"
+        className="accordion-title font-bold flex flex-col text-end cursor-pointer"
         onClick={() => toggleSection(index)}
       >
         <div className="flex flex-row justify-between items-end">
@@ -13,7 +13,7 @@ const Section = ({  section, activeIndex, index, toggleSection }) => {
             <div
               className="h-0 w-0 
   border-b-[13px] border-l-[10px]
-  border-r-[10px] border-b-yellow-500
+  border-r-[10px] border-b-blue-500
   border-l-transparent border-r-transparent"
             ></div>
           ) : (
@@ -21,7 +21,7 @@ const Section = ({  section, activeIndex, index, toggleSection }) => {
               className="h-0 w-0 
   border-l-[10px] border-r-[10px]
   border-t-[13px] border-l-transparent
-  border-r-transparent border-t-[#555FD9]"
+  border-r-transparent border-t-[#FF7848]"
             ></div>
           )}
         </div>
@@ -33,7 +33,7 @@ const Section = ({  section, activeIndex, index, toggleSection }) => {
         <div className="h-[2px] w-[100%] bg-[#555FD9]"></div>
       </div>
       {activeIndex === index && (
-        <div className="accordion-content flex text-end">{section.content}</div>
+        <div className="accordion-content flex text-end mt-1">{section.content}</div>
       )}
     </div>
   );
