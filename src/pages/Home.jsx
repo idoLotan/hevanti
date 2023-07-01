@@ -54,7 +54,7 @@ function Home() {
         <div className="h-16 w-16 bg-red-500 md:order-first"></div>
       </div> */}
       <div>
-         <img src={phoneBtn}  className=" md:hidden fixed bottom-11 left-1 z-30  w-[70px]" alt="" />
+         <img src={phoneBtn}  className=" md:hidden fixed bottom-[36px] left-1 z-30  w-[70px]" alt="" />
           <a href="tel:+972522113937"className=" md:hidden fixed bottom-10 left-10 z-30 h-20 w-20 "></a> 
       </div>
      
@@ -63,7 +63,7 @@ function Home() {
       <img
         onClick={openWhatsApp}
         src={whatsAppImg}
-        className=" fixed bottom-10 right-5    z-30 h-20 w-20"
+        className=" fixed bottom-[33px] md:bottom-[53px] right-1 md:right-4   z-30 h-20 w-20"
       ></img>
 
       <section
