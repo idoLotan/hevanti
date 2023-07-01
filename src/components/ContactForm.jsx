@@ -6,7 +6,7 @@ import emailjs from '@emailjs/browser'
 
 import CheckBox from "./CheckBox";
 
-const ContactForm = ({ toggelModal }) => {
+const ContactForm = ({ toggelModal, subjectsClicked }) => {
   const userInputRef = collection(db, "userInput");
   
 //   const sendEmail =(e) =>{
@@ -14,15 +14,20 @@ const ContactForm = ({ toggelModal }) => {
 // emailjs.sendForm("service_ouhaspm", "template_ino3nuf", e.target, "Q0KuceYtG9tHt_72N")
 // console.log(e.target)
 //  }
-  useEffect(() => {
-    const getData = async () => {
-      const data = await getDocs(userInputRef);
-      console.log(data);
-    };
-    getData();
-  }, []);
+  // useEffect(() => {
+  //   const getData = async () => {
+  //     const data = await getDocs(userInputRef);
+  //     console.log(data);
+  //   };
+  //   getData();
+  // }, []);
 
+  useEffect(()=>{
+    const updatedCheckboxes = { ...checkboxes, ...subjectsClicked };
+    setCheckboxes(updatedCheckboxes);
+   
 
+  }, [subjectsClicked])
 
   const nameRef = useRef();
   const emailRef = useRef();
@@ -40,6 +45,7 @@ const ContactForm = ({ toggelModal }) => {
     computerScience: false,
     biology: false,
     psychometric: false,
+    tongue:false, 
     specialNeeds: false,
     autism: false,
     hdd: false,
@@ -50,54 +56,45 @@ const ContactForm = ({ toggelModal }) => {
     university: false,
   });
 
-  const labels = [
-  {label: "150"},
-  { label: "200"},
-  {  label: "250"},
-   { label: "vip"},
-   { label: "כימיה"},
-   { label: "מתמטיקה"},
-    {label: "פיסיקה"},
-   { label:"אנגלית"}, 
-   { label: "מדעי המחשב"},
-   { label: "ביולוגיה"},
-    {label: "פסיכומטרי"},
-   { label: "צרכים מיוחדים"},
-   { label: "אוטיזם"},
-   { label: "hdd"},
-   { label: "hdad"},
-  {  label: "יסודי"},
-   { label: "חטיבה"},
-    {label: "תיכון"},
-   { label: "אוניברסיטה"},
-  ]
 
 
 
-const dataObt = [
-     { id: 'autism', name: 'autism', checked: false, onChange: undefined },
-     { id: 'hdd', name: 'hdd', checked: false, onChange: undefined },
-  { id: 'hdad', name: 'hdad', checked: false, onChange: undefined },
-   { id: 'elementarySchool', name: 'elementarySchool', checked: false, onChange: undefined },
-   { id: 'juniorHigh', name: 'juniorHigh', checked: false, onChange: undefined },
-  { id: 'highSchool', name: 'highSchool', checked: false, onChange: undefined },
-{ id: 'university', name: 'university', checked: false, onChange: undefined },
- { id: 'chemistry', name: 'chemistry', checked: false, onChange: undefined },
-   { id: 'english', name: 'english', checked: false, onChange: undefined },
-   { id: 'math', name: 'math', checked: false, onChange: undefined },
-  { id: 'physics', name: 'physics', checked: false, onChange: undefined },
- { id: 'computerScience', name: 'computerScience', checked: false, onChange: undefined },
-   { id: 'biology', name: 'biology', checked: false, onChange: undefined },
-   { id: 'psychometric', name: 'psychometric', checked: false, onChange: undefined },
-   { id: 'Tongue', name: 'Tongue', checked: false, onChange: undefined },
-   { id: 'ils150', name: 'ils150', checked: false, onChange: undefined },
-   { id: 'ils200', name: 'ils200', checked: false, onChange: undefined },
-   { id: 'ils250', name: 'ils250', checked: false, onChange: undefined },
-   { id: 'vip', name: 'vip', checked: false, onChange: undefined },
-    { id: 'label.index', name: '', checked: false, onChange: undefined },
-    { id: 'default-checkbox', name: '', checked: false, onChange: undefined },
-     { id: 'A3-yes', name: 'A3-confirmation', checked: false, onChange: undefined }
+    const buget = [
+   { id: 'ils150', name: 'ils150', checked: false, onChange: undefined, label:"150" },
+   { id: 'ils200', name: 'ils200', checked: false, onChange: undefined, label:"200" },
+   { id: 'ils250', name: 'ils250', checked: false, onChange: undefined, label:"250" },
+   { id: 'vip', name: 'vip', checked: false, onChange: undefined, label: "vip"},
+   
     ]
+
+    const subjects = [
+      { id: 'chemistry', name: 'chemistry', checked: false, onChange: undefined, label: "כימיה" },
+      { id: 'english', name: 'english', checked: false, onChange: undefined, label: "אנגלית" },
+      { id: 'math', name: 'math', checked: false, onChange: undefined, label: "מתמטיקה" },
+      { id: 'physics', name: 'physics', checked: false, onChange: undefined, label: "פיסיקה" },
+      { id: 'computerScience', name: 'computerScience', checked: false, onChange: undefined, label: "מדעי המחשב" },
+      { id: 'biology', name: 'biology', checked: false, onChange: undefined, label: "ביולוגיה" },
+      { id: 'psychometric', name: 'psychometric', checked: false, onChange: undefined, label: "פסיכומטרי" },
+      { id: 'Tongue', name: 'Tongue', checked: false, onChange: undefined, label: "לשון" },
+    ];
+
+    const level = [
+      { id: 'elementarySchool', name: 'elementarySchool', checked: false, onChange: undefined, label: "בית ספר יסודי" },
+      { id: 'juniorHigh', name: 'juniorHigh', checked: false, onChange: undefined, label: "חטיבת ביניים" },
+      { id: 'highSchool', name: 'highSchool', checked: false, onChange: undefined, label: "תיכון" },
+      { id: 'university', name: 'university', checked: false, onChange: undefined, label: "אוניברסיטה/מכינה" }
+    ];
+    
+
+    const specialNeeds = [
+      { id: 'autism', name: 'autism', checked: false, onChange: undefined, label: "אוטיזים/קשיים סנסוריים" },
+      { id: 'hdd', name: 'hdd', checked: false, onChange: undefined, label: "HDD" },
+      { id: 'hdad', name: 'hdad', checked: false, onChange: undefined, label: "HDAD" }
+    ];
+    
+
+
+
 
   function getCheckedItems() {
     const checkedItems = [];
@@ -213,38 +210,18 @@ const dataObt = [
               <div>
              
            
-                <div className="flex justify-end">
-                  <label for="myCheckbox">אוטיזים\קשיים סנסוריים</label>
-                  <input
-                    className="m-2"
-                    type="checkbox"
-                    id="autism"
-                    name="autism"
-                    checked={checkboxes.autism}
-                    onChange={handleCheckboxChange}
-                  />
+             
+
+                <div className="flex justify-end mr-2">
+                <CheckBox checked={checkboxes.autism}  name={"autism"} id={"autism"} onChange={handleCheckboxChange} label={"אוטיזים/קשיים סנסוריים"}></CheckBox>
                 </div>
-                <div className="flex justify-end">
-                  HDD
-                  <input
-                    className="m-2"
-                    type="checkbox"
-                    id="hdd"
-                    name="hdd"
-                    checked={checkboxes.hdd}
-                    onChange={handleCheckboxChange}
-                  />
+                
+                <div className="flex justify-end mr-2">
+                <CheckBox checked={checkboxes.hdd}  name={"hdd"} id={"hdd"} onChange={handleCheckboxChange} label={"HDD"}></CheckBox>
                 </div>
-                <div className="flex justify-end">
-                  HDAD
-                  <input
-                    className="m-2"
-                    type="checkbox"
-                    id="hdad"
-                    name="hdad"
-                    checked={checkboxes.hdad}
-                    onChange={handleCheckboxChange}
-                  />
+             
+                <div className="flex justify-end mr-2">
+                <CheckBox checked={checkboxes.hdad}  name={"hdad"} id={"hdad"} onChange={handleCheckboxChange} label={"HDAD"}></CheckBox>
                 </div>
               </div>
              
@@ -256,50 +233,20 @@ const dataObt = [
             <div className="overflow-wrap flex ">
            
               <div>
-                <div className="flex justify-end ">
-                  <label for="myCheckbox">בית ספר יסודי</label>
-                  <input
-                    className="m-2"
-                    type="checkbox"
-                    id="elementarySchool"
-                    name="elementarySchool"
-                    checked={checkboxes.elementarySchool}
-                    onChange={handleCheckboxChange}
-                  />
+       
+                <div className="flex justify-end mr-2">
+                <CheckBox checked={checkboxes.elementarySchool}  name={"elementarySchool"} id={"elementarySchool"} onChange={handleCheckboxChange} label={"בית ספר יסודי"}></CheckBox>
                 </div>
-                <div className="flex justify-end">
-                  <label for="myCheckbox">חטיבת ביניים</label>
-                  <input
-                    className="m-2"
-                    type="checkbox"
-                    id="juniorHigh"
-                    name="juniorHigh"
-                    checked={checkboxes.juniorHigh}
-                    onChange={handleCheckboxChange}
-                  />
+                <div className="flex justify-end mr-2">
+                <CheckBox checked={checkboxes.juniorHigh}  name={"juniorHigh"} id={"juniorHigh"} onChange={handleCheckboxChange} label={"חטיבת ביניים"}></CheckBox>
                 </div>
-                <div className="flex justify-end">
-                   <label for="myCheckbox">תיכון</label>
-                  <input
-                    className="m-2"
-                    type="checkbox"
-                    id="highSchool"
-                    name="highSchool"
-                    checked={checkboxes.highSchool}
-                    onChange={handleCheckboxChange}
-                  />
+                <div className="flex justify-end mr-2">
+                <CheckBox checked={checkboxes.highSchool}  name={"highSchool"} id={"highSchool"} onChange={handleCheckboxChange} label={"תיכון"}></CheckBox>
                 </div>
-                <div className="flex justify-end">
-                  אוניברסטיה\מכינה
-                  <input
-                    className="m-2"
-                    type="checkbox"
-                    id="university"
-                    name="university"
-                    checked={checkboxes.university}
-                    onChange={handleCheckboxChange}
-                  />
+                <div className="flex justify-end mr-2">
+                <CheckBox checked={checkboxes.university}  name={"university"} id={"university"} onChange={handleCheckboxChange} label={"אוניברסיטה/מכינה"}></CheckBox>
                 </div>
+                
               </div>
             </div>
             
@@ -311,98 +258,50 @@ const dataObt = [
               <div className="mr-4 font-bold">קטגוריות</div>
               <div className="overflow-wrap flex ">
                 <div>
-                  <div className="flex justify-end ">
-                    <label for="myCheckbox">כימיה</label>
-                    <input
-                      className="m-2"
-                      type="checkbox"
-                      id="chemistry"
-                      name="chemistry"
-                      checked={checkboxes.checkbox4}
-                      onChange={handleCheckboxChange}
-                    />
-                  </div>
-                  <div className="flex justify-end">
-                    <label for="myCheckbox">אנגלית</label>
-                    <input
-                      className="m-2"
-                      type="checkbox"
-                      id="english"
-                      name="english"
-                      checked={checkboxes.english}
-                      onChange={handleCheckboxChange}
-                    />
-                  </div>
-                  <div className="flex justify-end">
-                    מתמטיקה
-                    <input
-                      className="m-2"
-                      type="checkbox"
-                      id="math"
-                      name="math"
-                      checked={checkboxes.math}
-                      onChange={handleCheckboxChange}
-                    />
-                  </div>
-                  <div className="flex justify-end">
-                    פיסיקה
-                    <input
-                      className="m-2"
-                      type="checkbox"
-                      id="physics"
-                      name="physics"
-                      checked={checkboxes.physics}
-                      onChange={handleCheckboxChange}
-                    />
-                  </div>
+              
+
+              <div className="flex justify-end mr-2">
+                <CheckBox checked={checkboxes.chemistry}  name={"chemistry"} id={"chemistry"} onChange={handleCheckboxChange} label={"כימיה"}></CheckBox>
+                </div>
+
+                <div className="flex justify-end mr-2">
+                <CheckBox checked={checkboxes.english}  name={"english"} id={"english"} onChange={handleCheckboxChange} label={"אנגלית"}></CheckBox>
+                </div>
+
+                <div className="flex justify-end mr-2">
+                <CheckBox checked={checkboxes.math}  name={"math"} id={"math"} onChange={handleCheckboxChange} label={"מתמטיקה"}></CheckBox>
+                </div>
+                  
+        
+                <div className="flex justify-end mr-2">
+                <CheckBox checked={checkboxes.physics}  name={"physics"} id={"physics"} onChange={handleCheckboxChange} label={"פיסיקה"}></CheckBox>
+                </div>
+                  
+                 
                 </div>
 
                 <div>
-                  {" "}
-                  <div className="flex justify-end">
-                    <label for="myCheckbox">מדעי המחשב</label>
-                    <input
-                      className="m-2"
-                      type="checkbox"
-                      id="computerScience"
-                      name="computerScience"
-                      checked={checkboxes.computerScience}
-                      onChange={handleCheckboxChange}
-                    />
-                  </div>
-                  <div className="flex justify-end">
-                    <label for="myCheckbox">ביולוגיה</label>
-                    <input
-                      className="m-2"
-                      type="checkbox"
-                      id="biology"
-                      name="biology"
-                      checked={checkboxes.biology}
-                      onChange={handleCheckboxChange}
-                    />
-                  </div>
-                  <div className="flex justify-end">
-                    פסיכומטרי
-                    <input
-                      className="m-2"
-                      type="checkbox"
-                      id="psychometric"
-                      name="psychometric"
-                      checked={checkboxes.psychometric}
-                      onChange={handleCheckboxChange}
-                    />
-                  </div>
-                  <div className="flex justify-end">
-                    לשון
-                    <input
-                      className="m-2"
-                      type="checkbox"
-                      id="Tongue"
-                      name="Tongue"
-                      checked={checkboxes.Tongue}
-                      onChange={handleCheckboxChange}
-                    />
-                  </div>
+              
+
+
+                  <div className="flex justify-end mr-2">
+                <CheckBox checked={checkboxes.computerScience}  name={"computerScience"} id={"computerScience"} onChange={handleCheckboxChange} label={"מדעי המחשב"}></CheckBox>
+                </div>
+
+
+                <div className="flex justify-end mr-2">
+                <CheckBox checked={checkboxes.biology}  name={"biology"} id={"biology"} onChange={handleCheckboxChange} label={"ביולוגיה"}></CheckBox>
+                </div>
+
+                <div className="flex justify-end mr-2">
+                <CheckBox checked={checkboxes.psychometric}  name={"psychometric"} id={"psychometric"} onChange={handleCheckboxChange} label={"פסיכומטרי"}></CheckBox>
+                </div>
+                  
+                <div className="flex justify-end mr-2">
+                <CheckBox checked={checkboxes.tongue}  name={"tongue"} id={"tongue"} onChange={handleCheckboxChange} label={"לשון"}></CheckBox>
+                </div>
+                  
+                  
                 </div>
               </div>
             </div>
@@ -410,50 +309,23 @@ const dataObt = [
               <div className="mr-4 font-bold">תקציב</div>
               <div className="overflow-wrap flex ">
                 <div>
-                  <div className="flex justify-end">
-                    <label for="myCheckbox">150</label>
-                    <input
-                      className="m-2"
-                      type="checkbox"
-                      id="ils150"
-                      name="ils150"
-                      checked={checkboxes.ils150}
-                      onChange={handleCheckboxChange}
-                    />
-                  </div>
-                  <div className="flex justify-end">
-                    <label for="myCheckbox">200</label>
-                    <input
-                      className="m-2"
-                      type="checkbox"
-                      id="ils200"
-                      name="ils200"
-                      checked={checkboxes.ils200}
-                      onChange={handleCheckboxChange}
-                    />
-                  </div>
-                  <div className="flex justify-end">
-                  <label for="myCheckbox">250</label>  
-                    <input
-                      className="m-2"
-                      type="checkbox"
-                      id="ils250"
-                      name="ils250"
-                      checked={checkboxes.ils250}
-                      onChange={handleCheckboxChange}
-                    />
-                  </div>
-                  <div className="flex justify-end">
-                  <label for="myCheckbox">vip</label>  
-                    <input
-                      className="m-2"
-                      type="checkbox"
-                      id="vip"
-                      name="vip"
-                      checked={checkboxes.vip}
-                      onChange={handleCheckboxChange}
-                    />
-                  </div>
+                <div className="flex justify-end mr-2">
+                <CheckBox checked={checkboxes.ils150}  name={"ils150"} id={"ils150"} onChange={handleCheckboxChange} label={"150"}></CheckBox>
+                </div>
+                <div className="flex justify-end mr-2">
+                <CheckBox checked={checkboxes.ils200}  name={"ils200"} id={"ils200"} onChange={handleCheckboxChange} label={"200"}></CheckBox>
+                </div>
+                  
+                <div className="flex justify-end mr-2">
+                <CheckBox checked={checkboxes.ils150}  name={"ils150"} id={"ils150"} onChange={handleCheckboxChange} label={"150"}></CheckBox>
+                </div>
+                  
+                <div className="flex justify-end mr-2">
+                <CheckBox checked={checkboxes.vip}  name={"vip"} id={"vip"} onChange={handleCheckboxChange} label={"vip"}></CheckBox>
+                </div>
+                  
+                  
+                
                 </div>
               </div>
             </div>
@@ -487,10 +359,13 @@ const dataObt = [
           ref={phoneRef}
         />
       </div>
-      {/* {labels.map((subject)=> (<CheckBox checked={checkboxes.highSchool}  name={""} id={"label.index"} onChange={handleCheckboxChange} label={subject.label}></CheckBox>)
+      {/* <div className="flex flex-col items-end">
+      {subjects.map((subject)=> (<CheckBox checked={checkboxes.highSchool} className={""} name={""} id={"label.index"} onChange={handleCheckboxChange} label={subject.label}></CheckBox>)
         
-      )}
-      <CheckBox checked={checkboxes.highSchool}  name="highSchool" id="highSchool" onChange={handleCheckboxChange} label={"תיכון"}></CheckBox> */}
+        )}
+      </div> */}
+   
+      {/* <CheckBox checked={checkboxes.highSchool}  name={"highSchool"} id={"highSchool"} onChange={handleCheckboxChange} label={"תיכון"}></CheckBox> */}
     </form>
   );
 };
