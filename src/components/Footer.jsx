@@ -1,30 +1,51 @@
 import React from "react";
+import phoneBtn from "../assets/images/phone-btn.png";
 
 
 const Footer = () => {
 
   return (
     <footer className="flex flex-col md:h-[230px]  h-[450px] justify-between bg-[#2A264D] md:flex-row p-10">
-      <div className="text-bold p-5 font-bold text-white">
-        <div className="p-1">+972 52 211 39 37</div>
-        <div className="p-1">ofer@sharlom.com</div>
+      <div className="text-bold flex flex-col p-5 z-0 font-bold text-white">
+        <a href="tel:+972522113937" className="cursor-pointer p-1">+972 52 211 39 37</a> 
+        <a href="mailto:ofer@sharlom.com" className="cursor-pointer p-1">ofer@sharlom.com</a>
         <div className="p-1"> 06:00-22:00</div>
         <div className="p-1"> הרב חיים ימיני 4 קריית אונו</div>
       </div>
       <div className="flex w-[40%] justify-between ">
-        <div className="p-5 text-white ">
-          <div className="p-3 transition-all hover:underline"> צור קשר</div>
+        <div className="mt-8 ml-5 text-white ">
+          
+          <a href="#contact" className="flex hover:underline flex-row">צור קשר</a>
         </div>
-        <div className="p-5 text-white ">
-          <div className="p-3 transition-all hover:underline">
+        <div className="m-5 text-white ">
+          <div className="m-3 transition-all hover:underline">
             <a href="#teachers">המורים שלנו</a>
           </div>
-          <div className="transition-all hover:underline">איך זה עובד</div>
+          <div className="m-3  flex transition-all hover:underline">
+            <a href="#qestions" className="flex flex-row">איך זה עובד</a>
+          </div>
         </div>
 
-        <div className="p-5 text-white ">
-          <div className="p-3 transition-all hover:underline">אדותינו</div>
-          <div className="p-3 transition-all hover:underline">מקצועות</div>
+        <div className="m-5 text-white ">
+
+      
+          <div className="m-3 transition-all hover:underline">
+          <a
+                  href="#about"
+                  aria-current="page"
+                >
+                  אודותינו
+                </a>
+          </div>
+          <div className="m-3 transition-all hover:underline">
+          <a
+                  href="#subjects"
+                  aria-current="page"
+                >
+                  מקצועות
+                </a>
+       
+            </div>
         </div>
         <svg
           className="ml-6 mr-4 mt-8"

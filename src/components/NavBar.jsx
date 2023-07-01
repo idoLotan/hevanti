@@ -13,7 +13,7 @@ const NavBar = () => {
     <nav className="w-[100%] min-w-[700px] pl-2">
       <div className=" relative mx-auto  flex h-[65px] items-center justify-start  md:justify-end ">
         {isOpen && (
-          <div className="absolute  right-0  top-0 z-50 flex h-[100vh]   w-[100vw] flex-row items-start justify-between bg-[#2A264D] p-5 text-white">
+          <div className="fixed  right-0  top-0 z-50 flex h-[100vh]   w-[100vw] flex-row items-start justify-between bg-[#2A264D] p-5 text-white">
             <img src={esc} className="p-3" onClick={handleHBar}></img>
             <ul className="flex flex-col items-end font-medium">
               <li className="p-3" onClick={handleHBar}>
