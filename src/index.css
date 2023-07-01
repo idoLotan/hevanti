@@ -128,5 +128,12 @@ content: "-";
   border: none;
 }
 
+input:checked + div {  
+  @apply border-blue-100;  
+}  
+input:checked + div svg {  
+  @apply block;  
+}
+
 
 

@@ -4,6 +4,8 @@ import { db } from "../firebase-config";
 import { addDoc, collection, getDocs } from "firebase/firestore";
 import emailjs from '@emailjs/browser'
 
+import CheckBox from "./CheckBox";
+
 const ContactForm = ({ toggelModal }) => {
   const userInputRef = collection(db, "userInput");
   
@@ -47,6 +49,55 @@ const ContactForm = ({ toggelModal }) => {
     highSchool: false,
     university: false,
   });
+
+  const labels = [
+  {label: "150"},
+  { label: "200"},
+  {  label: "250"},
+   { label: "vip"},
+   { label: "כימיה"},
+   { label: "מתמטיקה"},
+    {label: "פיסיקה"},
+   { label:"אנגלית"}, 
+   { label: "מדעי המחשב"},
+   { label: "ביולוגיה"},
+    {label: "פסיכומטרי"},
+   { label: "צרכים מיוחדים"},
+   { label: "אוטיזם"},
+   { label: "hdd"},
+   { label: "hdad"},
+  {  label: "יסודי"},
+   { label: "חטיבה"},
+    {label: "תיכון"},
+   { label: "אוניברסיטה"},
+  ]
+
+
+
+const dataObt = [
+     { id: 'autism', name: 'autism', checked: false, onChange: undefined },
+     { id: 'hdd', name: 'hdd', checked: false, onChange: undefined },
+  { id: 'hdad', name: 'hdad', checked: false, onChange: undefined },
+   { id: 'elementarySchool', name: 'elementarySchool', checked: false, onChange: undefined },
+   { id: 'juniorHigh', name: 'juniorHigh', checked: false, onChange: undefined },
+  { id: 'highSchool', name: 'highSchool', checked: false, onChange: undefined },
+{ id: 'university', name: 'university', checked: false, onChange: undefined },
+ { id: 'chemistry', name: 'chemistry', checked: false, onChange: undefined },
+   { id: 'english', name: 'english', checked: false, onChange: undefined },
+   { id: 'math', name: 'math', checked: false, onChange: undefined },
+  { id: 'physics', name: 'physics', checked: false, onChange: undefined },
+ { id: 'computerScience', name: 'computerScience', checked: false, onChange: undefined },
+   { id: 'biology', name: 'biology', checked: false, onChange: undefined },
+   { id: 'psychometric', name: 'psychometric', checked: false, onChange: undefined },
+   { id: 'Tongue', name: 'Tongue', checked: false, onChange: undefined },
+   { id: 'ils150', name: 'ils150', checked: false, onChange: undefined },
+   { id: 'ils200', name: 'ils200', checked: false, onChange: undefined },
+   { id: 'ils250', name: 'ils250', checked: false, onChange: undefined },
+   { id: 'vip', name: 'vip', checked: false, onChange: undefined },
+    { id: 'label.index', name: '', checked: false, onChange: undefined },
+    { id: 'default-checkbox', name: '', checked: false, onChange: undefined },
+     { id: 'A3-yes', name: 'A3-confirmation', checked: false, onChange: undefined }
+    ]
 
   function getCheckedItems() {
     const checkedItems = [];
@@ -105,19 +156,27 @@ const ContactForm = ({ toggelModal }) => {
       input.value = item;
       form.appendChild(input);
     });
-  
-    // Use the values as needed (e.g., send email)
-    console.log(email);
-    console.log(name);
-    console.log(phone);
-    console.log(message);
-  
-    console.log(form);
-  
+ 
     emailjs.sendForm("service_ouhaspm", "template_ino3nuf", form, "Q0KuceYtG9tHt_72N");
   
     handleFormSubmit();
   }
+
+
+//   const checkboxElements = document.querySelectorAll('input[type="checkbox"]');
+// const checkboxData = {};
+
+// checkboxElements.forEach((checkbox) => {
+//   checkboxData[checkbox.id] = {
+//     id: checkbox.id,
+//     name: checkbox.name,
+//     checked:checkbox.checked,
+//     onChange:checkbox.onChange
+
+//   };
+// });
+
+
   
   return (
    
@@ -428,8 +487,25 @@ const ContactForm = ({ toggelModal }) => {
           ref={phoneRef}
         />
       </div>
+      {/* {labels.map((subject)=> (<CheckBox checked={checkboxes.highSchool}  name={""} id={"label.index"} onChange={handleCheckboxChange} label={subject.label}></CheckBox>)
+        
+      )}
+      <CheckBox checked={checkboxes.highSchool}  name="highSchool" id="highSchool" onChange={handleCheckboxChange} label={"תיכון"}></CheckBox> */}
     </form>
   );
 };
 
 export default ContactForm;
+
+
+{/* <div className="flex justify-end">
+<label for="myCheckbox">תיכון</label>
+<input
+ className="m-2"
+ type="checkbox"
+ id="highSchool"
+ name="highSchool"
+ checked={checkboxes.highSchool}
+ onChange={handleCheckboxChange}
+/>
+</div> */}
