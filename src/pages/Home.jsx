@@ -1,17 +1,9 @@
 import React, { useState } from "react";
-import hero from "../assets/images/hero.png";
-import subjects from "../assets/images/subjects.png";
-import hBar from "../assets/images/h-bar.png";
-import subjectsMobile from "../assets/images/subjectsmobile.png";
+import hero from "../assets/images/hero-min.png";
 import about from "../assets/images/about.png";
 import aboutMobile from "../assets/images/about-mobile.png";
-import howItWorks from "../assets/images/howItWorks.png";
-import questions from "../assets/images/questions.png";
-import whatsAppImg from "../assets/images/whatsapp-3.png";
 import QR from "../assets/images/QR.png";
 import NavBar from "../components/NavBar";
-import Btn from "../components/Btn";
-import phoneBtn from "../assets/images/phone-btn.png";
 import teachers from "../assets/images/teachers.png";
 import Footer from "../components/Footer";
 import ContactForm from "../components/ContactForm";
@@ -19,6 +11,7 @@ import Carousel from "../components/Carousel";
 import AccordionTW from "../components/AccordionTW";
 import MyModal from "../components/MyModal";
 import TeachersCarousel from "../components/TeachersCarousel";
+import ContactBtn from "../components/ContactBtn";
 
 function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -55,17 +48,7 @@ function Home() {
   };
 
 
-  function openWhatsApp() {
-    // Replace the phone number and message with your desired values
-    var phoneNumber = "+972522113937"; // Enter the phone number with the country code
-    var message = ".שלום, יש לי שאלה";
-
-    var url =
-      "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
-
-    window.open(url);
-  }
-
+ 
 
 
 
@@ -75,19 +58,10 @@ function Home() {
         <div className="h-16 w-16 bg-blue-500"></div>
         <div className="h-16 w-16 bg-red-500 md:order-first"></div>
       </div> */}
-      <div>
-         <img src={phoneBtn}  className=" md:hidden fixed bottom-[36px] left-1 z-30  w-[70px]" alt="" />
-          <a href="tel:+972522113937"className=" md:hidden fixed bottom-10 left-10 z-30 h-20 w-20 "></a> 
-      </div>
-     
+    <ContactBtn></ContactBtn>
     
       <MyModal isShowing={isOpen} onClose={toggelModal}></MyModal>
-      <img
-        onClick={openWhatsApp}
-        src={whatsAppImg}
-        className=" fixed bottom-[33px] md:bottom-[53px] right-1 md:right-4   z-30 h-20 w-20"
-      ></img>
-
+ 
       <section
         className="section-1  bg-cover bg-no-repeat pb-2 md:h-[auto]"
         id="home"
@@ -249,10 +223,12 @@ function Home() {
       <section className="relative" id="about">
         <div className="h-1/2 overflow-hidden">
           <img
+            loading="lazy"
             src={about}
             className="hidden h-full w-full object-cover md:block"
           ></img>
           <img
+            loading="lazy"
             src={aboutMobile}
             className="h-full w-full object-cover md:hidden"
           ></img>
@@ -280,7 +256,7 @@ function Home() {
           </div>
 
           <div className="flex items-center justify-center">
-            <img className="hidden md:block md:p-10" src={teachers}></img>
+            <img loading="lazy" className="hidden md:block md:p-10" src={teachers}></img>
           </div>
           <TeachersCarousel></TeachersCarousel>
         </div>
