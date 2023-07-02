@@ -74,7 +74,7 @@ const NavBar = () => {
           className="fixed left-4 z-0 block  sm:hidden"
         ></img> */}
 
-<svg xmlns="http://www.w3.org/2000/svg"  onClick={handleHBar}  className="fixed left-4 z-0 block  sm:hidden" width="32" height="29" viewBox="0 0 32 29" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg"  onClick={handleHBar}  className="fixed left-4 z-10 block  sm:hidden" width="32" height="29" viewBox="0 0 32 29" fill="none">
 <line x1="1.5" y1="-1.5" x2="30.5" y2="-1.5" transform="matrix(1 0.000147656 -6.04879e-05 1 0 3.99707)" stroke="#FF7848" stroke-width="3" stroke-linecap="round"/>
 <line x1="1.5" y1="15.0011" x2="22.5" y2="15.0011" stroke="#FF7848" stroke-width="3" stroke-linecap="round"/>
 <line x1="1.5" y1="27.5" x2="14.5" y2="27.5" stroke="#FF7848" stroke-width="3" stroke-linecap="round"/>

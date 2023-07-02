@@ -109,7 +109,7 @@ function Home() {
 
               <div className="mt-11 flex flex-col pt-0 md:pt-12">
                 <h1 className="flex flex-col md:flex-col font-montserrat text-right text-[24px] md:text-[40px] font-bold text-[#2A264D]">
-                  <p className="flex flex-row justify-end">התחל\י את מסע ההצלחה</p>
+                  <p className="flex flex-row justify-end">התחל/י את מסע ההצלחה</p>
                   <p className="flex items-center justify-end ">
                   <svg xmlns="http://www.w3.org/2000/svg" className="p-1 w-[75px] md:w-[130px]"  viewBox="0 0 84 38" fill="none">
 <path d="M6.50391 10.8213V20.4746H2.54883V10.8213H6.50391ZM41.1182 17.9844V29H31.6406V25.4551H37.1631V18.7461C37.1631 17.4277 37.0752 16.4854 36.8994 15.9189C36.7236 15.3623 36.4307 14.9668 36.0205 14.7324C35.6104 14.4883 35.0098 14.3662 34.2188 14.3662H32.4756V10.8213H34.9658C36.6455 10.8213 37.9004 11.0459 38.7305 11.4951C39.5605 11.9443 40.166 12.6816 40.5469 13.707C40.9277 14.7324 41.1182 16.1582 41.1182 17.9844ZM80.6396 18.4678V29H76.6699V18.4385C76.6699 16.9443 76.3525 15.8945 75.7178 15.2891C75.083 14.6738 73.9795 14.3662 72.4072 14.3662H64.9805V10.8213H72.6562C74.5801 10.8213 76.123 11.0801 77.2852 11.5977C78.457 12.1152 79.3066 12.9355 79.834 14.0586C80.3711 15.1719 80.6396 16.6416 80.6396 18.4678ZM69.2285 17.9551V29H65.2734V17.9551H69.2285Z" fill="#555FD9"/>
@@ -274,7 +274,7 @@ function Home() {
 <rect x="48" y="31" width="8" height="2" fill="#555FD9"/>
           </svg>
           <h1 className=" text-right text-[32px] font-bold text-[#555FD9]">
-         המורים של
+         המורים/מורות של 
         </h1>
    
           </div>
@@ -290,7 +290,7 @@ function Home() {
         id="contact"
       >
         <h1 className=" text-right text-[32px] font-bold text-[#555FD9]">
-          ?מה אתה רוצה להבין
+          ?מה את/ה רוצה להבין
         </h1>
         <h1 className=" text-right text-xl  text-[#2A264D]">
           ספר/י לנו מה את/ה מצפה שנעשה עבורך, ואנחנו נבנה תוכנית מותאמת אישית

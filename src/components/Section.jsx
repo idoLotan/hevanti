@@ -25,8 +25,11 @@ const Section = ({  section, activeIndex, index, toggleSection }) => {
             ></div>
           )}
         </div>
-        <div className="">{section.title}</div>
-      
+      <div className="">
+        <span dir="rtl" class="mr-1">{section.title}</span>
+      </div>
+     
+
         </div>
        
       
