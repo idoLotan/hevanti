@@ -6,7 +6,7 @@ const CheckBox = ({id, name, onChange, label, checked, className}) => {
 return (
 <div className="ml-0 mt-2">
   <label className="flex items-center  cursor-pointer">
-    <span className="mr-2 select-none">{label}</span>
+    <span className="mr-2 select-none"  role="button">{label}</span>
     <input type="checkbox" id={id} checked={checked} onChange={onChange} name={name} value="yes" className="hidden" />
     <div className="relative">
       <div className="bg-white border-2 border-[#555FD9] w-4 h-4 flex justify-center items-center">

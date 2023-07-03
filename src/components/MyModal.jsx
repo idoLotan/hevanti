@@ -5,7 +5,7 @@ const MyModal = ({ isShowing, onClose, children, style }) =>
   isShowing
     ? ReactDOM.createPortal(
         <React.Fragment>
-          <div
+          <div role="button"
             className="fixed inset-0 z-30 bg-gray-900 bg-opacity-25"
             onClick={onClose}
           />

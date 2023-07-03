@@ -16,7 +16,7 @@ const NavBar = () => {
           <div className="fixed  right-0  top-0 z-50 flex h-[100vh]   w-[100vw] flex-row items-start justify-between bg-[#2A264D] p-5 text-white">
             <img src={esc} className="p-3" onClick={handleHBar}></img>
             <ul className="flex flex-col items-end font-medium">
-              <li className="p-3" onClick={handleHBar}>
+              <li className="p-3" role="button" onClick={handleHBar}>
                 <a
                   href="#subjects"
                   className="rounded-full  px-3 	 py-2 text-lg  transition-all hover:-translate-y-0.5 hover:bg-white hover:text-black hover:shadow-[0_10px_25px_-15px_rgba(0,0,0,0.4)]"
@@ -26,7 +26,7 @@ const NavBar = () => {
                 </a>
               </li>
 
-              <li className="p-3" onClick={handleHBar}>
+              <li className="p-3" role="button" onClick={handleHBar}>
                 <a
                   href="#about"
                   className=" rounded-full px-3 py-2 text-lg   transition-all hover:-translate-y-0.5 hover:bg-white hover:text-black hover:shadow-[0_10px_25px_-15px_rgba(0,0,0,0.4)]"
@@ -36,7 +36,7 @@ const NavBar = () => {
                 </a>
               </li>
 
-              <li className="p-3" onClick={handleHBar}>
+              <li className="p-3" role="button" onClick={handleHBar}>
                 <a
                   href="#teachers"
                   className="rounded-full px-3 py-2 text-lg transition-all hover:-translate-y-0.5 hover:bg-white hover:text-black hover:shadow-[0_10px_25px_-15px_rgba(0,0,0,0.4)]"
@@ -46,7 +46,7 @@ const NavBar = () => {
                 </a>
               </li>
 
-              <li className="p-3" onClick={handleHBar}>
+              <li className="p-3" role="button" onClick={handleHBar}>
                 <a
                   href="#questions"
                   className=" rounded-full px-3 py-2 text-lg  transition-all hover:-translate-y-0.5 hover:bg-white hover:text-black hover:shadow-[0_10px_25px_-15px_rgba(0,0,0,0.4)]"
@@ -55,7 +55,7 @@ const NavBar = () => {
                   איך זה עובד
                 </a>
               </li>
-              <li className="p-3" onClick={handleHBar}>
+              <li className="p-3" role="button" onClick={handleHBar}>
                 <a
                   href="#contact"
                   className=" rounded-full px-3 py-2 text-lg  transition-all hover:-translate-y-0.5 hover:bg-white hover:text-black hover:shadow-[0_10px_25px_-15px_rgba(0,0,0,0.4)]"

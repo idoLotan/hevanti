@@ -177,7 +177,7 @@ const ContactForm = ({ toggelModal, subjectsClicked }) => {
   
   return (
    
-   <form onSubmit={sendEmail} className="section-2  flex w-[1200px] flex-col items-start  justify-between rounded-xl p-5 md:flex-row">
+   <form onSubmit={sendEmail} className="section-2  flex w-[1200px] flex-col items-center  justify-between rounded-xl p-5 md:flex-row">
   
       <div className="order-3 flex flex-col  md:order-1 ">
         <div className="flex flex-col items-center">
@@ -280,7 +280,7 @@ const ContactForm = ({ toggelModal, subjectsClicked }) => {
                  
                 </div>
 
-                <div>
+                   <div>
               
 
 

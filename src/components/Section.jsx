@@ -4,6 +4,7 @@ const Section = ({  section, activeIndex, index, toggleSection }) => {
   return (
     <div className="accordion-item p-2 ">
       <div
+        role="button"
         className="accordion-title font-bold flex flex-col text-end cursor-pointer"
         onClick={() => toggleSection(index)}
       >
