@@ -44,19 +44,19 @@ const Carousel = () => {
          
           >
             <SwiperSlide>
-              <img src={wp1} className=" w-[104px]" />
+              <img src={wp1} className=" " alt="תכתובת צ'אט בוואצפ" />
             </SwiperSlide>
             <SwiperSlide>
-              <img src={wp2} />
+              <img src={wp2} alt="תכתובת צ'אט בוואצפ" />
             </SwiperSlide>
             <SwiperSlide>
-              <img src={wp3} />
+              <img src={wp3} alt="תכתובת צ'אט בוואצפ" />
             </SwiperSlide>
             <SwiperSlide>
-              <img src={wp4} />
+              <img src={wp4} alt="תכתובת צ'אט בוואצפ" />
             </SwiperSlide>
             <SwiperSlide>
-              <img src={wp5} />
+              <img src={wp5} alt="תכתובת צ'אט בוואצפ" />
             </SwiperSlide>
           </Swiper>
         </div>

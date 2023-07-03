@@ -41,20 +41,20 @@ const TeachersCarousel = () => {
           >
             <SwiperSlide>
               <div className="flex ">
-                <img src={joana} />
-                <img src={meir} />
+                <img src={joana} alt="תמונה של המורה גואנה"   />
+                <img src={meir} alt="תמונה של המורה מאיר" />
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="flex ">
-                <img src={ofir} />
-                <img src={amit} />
+                <img src={ofir}alt="תמונה של המורה אופיר" />
+                <img src={amit}alt="תמונה של המורה עמית" />
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="flex justify-center">
                 <div className="w-[170px]">
-                  <img className="" src={sigal} />
+                  <img className="" src={sigal} alt="תמונה של המורה סיגל" />
                 </div>
               </div>
             </SwiperSlide>

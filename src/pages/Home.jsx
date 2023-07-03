@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import hero from "../assets/images/hero-min.png";
 import about from "../assets/images/about.png";
 import aboutMobile from "../assets/images/about-mobile.png";
-import QR from "../assets/images/QR.png";
 import NavBar from "../components/NavBar";
 import teachers from "../assets/images/teachers.png";
 import Footer from "../components/Footer";
@@ -71,6 +70,7 @@ function Home() {
             <div className="relative flex flex-col justify-around md:flex-row">
               <div className="flex items-end">
                 <img
+                  alt="תמונת מרכזית מורה עוזרת לתלמיד"
                   src={hero}
                   className="z-0 h-auto  w-[250px]  lg:block  lg:h-auto lg:w-[300px] xl:h-auto 2xl:w-[500px] "
                 ></img>
@@ -115,13 +115,6 @@ function Home() {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-         
-          <div className="absolute bottom-1 right-5 hidden md:block  ">
-            <div className="flex flex-col">
-              <img src={QR} className="w-[64px]"></img>
-              <div className="text-[#555FD9]">whatsApp</div>
             </div>
           </div>
         </div>
@@ -207,20 +200,18 @@ function Home() {
             <h2 className="p-3 text-[#FF7848] ">ביולוגיה</h2>
           </div>
           </div>
-        
-          
-          {/* <img src={subjects} className="hidden w-[80%] md:block"></img> */}
-        {/*   <img src={subjectsMobile} className=" md:hidden"></img> */}
         </div>
       </section>
       <section className="relative" id="about">
         <div className="h-1/2 overflow-hidden">
           <img
+            alt="אודות החברה"
             loading="lazy"
             src={about}
             className="hidden h-full w-full object-cover md:block"
           ></img>
           <img
+            alt="אודות החברה"
             loading="lazy"
             src={aboutMobile}
             className="h-full w-full object-cover md:hidden"
@@ -249,7 +240,7 @@ function Home() {
           </div>
 
           <div className="flex items-center justify-center">
-            <img loading="lazy" className="hidden md:block md:p-10" src={teachers}></img>
+            <img loading="lazy" alt="תמונה של המורים שלנו" className="hidden md:block md:p-10" src={teachers}></img>
           </div>
           <TeachersCarousel></TeachersCarousel>
         </div>
@@ -264,8 +255,6 @@ function Home() {
         <h3 className=" text-right text-xl  text-[#2A264D]">
           ספר/י לנו מה את/ה מצפה שנעשה עבורך, ואנחנו נבנה תוכנית מותאמת אישית
         </h3>
-
-        {/* <img src={howItWorks} className="h-[500px] w-[100%]"></img> */}
         <div className="flex w-[100%] items-center justify-center">
           <ContactForm toggelModal={toggelModal} subjectsClicked={subjects}></ContactForm>
           

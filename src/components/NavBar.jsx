@@ -13,8 +13,8 @@ const NavBar = () => {
     <nav className="w-[100%] min-w-[700px] pl-2">
       <div className=" relative mx-auto  flex h-[65px] items-center justify-start  md:justify-end ">
         {isOpen && (
-          <div className="fixed  right-0  top-0 z-50 flex h-[100vh]   w-[100vw] flex-row items-start justify-between bg-[#2A264D] p-5 text-white">
-            <img src={esc} className="p-3" onClick={handleHBar}></img>
+          <div className="fixed  right-0  top-0 z-50 flex h-[100vh] w-[100vw] flex-row items-start justify-between bg-[#2A264D] p-5 text-white">
+            <img src={esc} className="p-3" onClick={handleHBar} role="button" ></img>
             <ul className="flex flex-col items-end font-medium">
               <li className="p-3" role="button" onClick={handleHBar}>
                 <a
@@ -67,12 +67,7 @@ const NavBar = () => {
             </ul>
           </div>
         )}
-{/* 
-        <img
-          src={hBar}
-          onClick={handleHBar}
-          className="fixed left-4 z-0 block  sm:hidden"
-        ></img> */}
+
 
 <svg xmlns="http://www.w3.org/2000/svg"  onClick={handleHBar}  className="fixed left-4 z-10 block  sm:hidden" width="32" height="29" viewBox="0 0 32 29" fill="none">
 <line x1="1.5" y1="-1.5" x2="30.5" y2="-1.5" transform="matrix(1 0.000147656 -6.04879e-05 1 0 3.99707)" stroke="#FF7848" stroke-width="3" stroke-linecap="round"/>
@@ -170,7 +165,6 @@ const NavBar = () => {
 <path d="M12.4113 27.9562C12.838 27.9562 13.1839 27.6106 13.1839 27.1844C13.1839 26.7581 12.838 26.4126 12.4113 26.4126C11.9846 26.4126 11.6387 26.7581 11.6387 27.1844C11.6387 27.6106 11.9846 27.9562 12.4113 27.9562Z" fill="#555FD9"/>
 <path d="M12.4116 28.1817C11.8604 28.1817 11.4131 27.7349 11.4131 27.1842C11.4131 26.6336 11.8604 26.1868 12.4116 26.1868C12.9629 26.1868 13.4102 26.6336 13.4102 27.1842C13.4102 27.7349 12.9629 28.1817 12.4116 28.1817ZM12.4116 26.6336C12.1089 26.6336 11.8649 26.8773 11.8649 27.1797C11.8649 27.4821 12.1089 27.7258 12.4116 27.7258C12.7144 27.7258 12.9584 27.4821 12.9584 27.1797C12.9584 26.8773 12.7144 26.6336 12.4116 26.6336Z" fill="#555FD9"/>
 </svg>
-        {/* <img src={logo} alt="" className="absolute right-4 md:right-0 md:relative" /> */}
       </div>
 
       <div className=" hidden w-[100%] pl-4 pr-[75px] justify-center md:block">
