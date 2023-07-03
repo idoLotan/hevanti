@@ -159,22 +159,6 @@ const ContactForm = ({ toggelModal, subjectsClicked }) => {
     handleFormSubmit();
   }
 
-
-//   const checkboxElements = document.querySelectorAll('input[type="checkbox"]');
-// const checkboxData = {};
-
-// checkboxElements.forEach((checkbox) => {
-//   checkboxData[checkbox.id] = {
-//     id: checkbox.id,
-//     name: checkbox.name,
-//     checked:checkbox.checked,
-//     onChange:checkbox.onChange
-
-//   };
-// });
-
-
-  
   return (
    
    <form onSubmit={sendEmail} className="section-2  flex w-[1200px] flex-col items-center  justify-between rounded-xl p-5 md:flex-row">
@@ -188,6 +172,7 @@ const ContactForm = ({ toggelModal, subjectsClicked }) => {
           </div>
 
           <textarea
+            aria-label="message"
             name="message" 
             id="message"
             className="bg:w-[212px] left-5 top-3  h-[136px] w-[300px] rounded-lg border-2 border-[#555FD9] p-1 pr-1 text-right  focus:outline-none"
@@ -280,7 +265,7 @@ const ContactForm = ({ toggelModal, subjectsClicked }) => {
                  
                 </div>
 
-                   <div>
+                <div>
               
 
 
@@ -336,6 +321,7 @@ const ContactForm = ({ toggelModal, subjectsClicked }) => {
       <div className="order-2 flex w-[100%] flex-col text-end md:order-3 md:w-[200px] ">
         <div className="font-bold">שם </div>
         <input
+        aria-label="name"
         id="name"
         name="name"
           type="text "
@@ -344,6 +330,7 @@ const ContactForm = ({ toggelModal, subjectsClicked }) => {
         />
         <div className="font-bold"> טלפון</div>
         <input
+          aria-label="phone"
           id="phone"
           name="phone"
           type="text "
@@ -352,6 +339,7 @@ const ContactForm = ({ toggelModal, subjectsClicked }) => {
         />
         <div className="font-bold"> דואר אלקטרוני</div>
         <input
+          aria-label="phone"
           id="email"
           name="email"
           type="text "

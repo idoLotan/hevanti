@@ -1,12 +1,16 @@
+import { handleKeyPress } from "../helper"
 
 
 const Section = ({  section, activeIndex, index, toggleSection }) => {
+
   return (
     <div className="accordion-item p-2 ">
-      <div
+      <div 
+        tabindex="0"
         role="button"
         className="accordion-title font-bold flex flex-col text-end cursor-pointer"
         onClick={() => toggleSection(index)}
+        onKeyUp={handleKeyPress}
       >
         <div className="flex flex-row justify-between items-end">
         <div className="p-2 ">

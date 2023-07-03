@@ -69,7 +69,7 @@ const NavBar = () => {
         )}
 
 
-<svg xmlns="http://www.w3.org/2000/svg"  onClick={handleHBar}  className="fixed left-4 z-10 block  sm:hidden" width="32" height="29" viewBox="0 0 32 29" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg"  role="presentation" onClick={handleHBar}  className="fixed left-4 z-10 block  sm:hidden" width="32" height="29" viewBox="0 0 32 29" fill="none">
 <line x1="1.5" y1="-1.5" x2="30.5" y2="-1.5" transform="matrix(1 0.000147656 -6.04879e-05 1 0 3.99707)" stroke="#FF7848" stroke-width="3" stroke-linecap="round"/>
 <line x1="1.5" y1="15.0011" x2="22.5" y2="15.0011" stroke="#FF7848" stroke-width="3" stroke-linecap="round"/>
 <line x1="1.5" y1="27.5" x2="14.5" y2="27.5" stroke="#FF7848" stroke-width="3" stroke-linecap="round"/>
@@ -127,7 +127,7 @@ const NavBar = () => {
             </li>
           </ul>
         </div>
-        <svg xmlns="http://www.w3.org/2000/svg" className="absolute right-4 md:right-0 md:relative"  width="60"  viewBox="0 0 72 57" fill="none">
+        <svg xmlns="http://www.w3.org/2000/svg" role="presentation" className="absolute right-4 md:right-0 md:relative"  width="60"  viewBox="0 0 72 57" fill="none">
 <path d="M55.0286 19.0058C54.9066 15.7607 55.7606 13.6394 52.408 13.6394H47.361C43.5701 13.6394 41.0263 12.3576 40.5293 12.2131L43.1454 7.37476C43.9135 7.68618 46.8324 8.24585 49.2587 8.24585L54.3825 8.14655C59.4521 8.14655 60.7308 11.7392 60.7308 17.5841L60.7624 32.4739H55.0557L55.0286 19.0058Z" fill="#FF7848"/>
 <path d="M45.6133 37.4749H42.9023V44.0013H45.6133V37.4749Z" fill="#FF7848"/>
 <path d="M56.1953 37.4648L56.0195 43.9661L58.7294 44.0392L58.9052 37.5379L56.1953 37.4648Z" fill="#555FD9"/>
