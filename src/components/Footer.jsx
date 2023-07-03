@@ -14,8 +14,11 @@ const Footer = () => {
       </div>
       <div className="flex w-[40%] justify-between ">
         <div className="mt-8 ml-5 text-white ">
-          
           <a href="#contact" className="flex hover:underline flex-row">צור קשר</a>
+
+          <div className="m-3 transition-all hover:underline">
+          <a href="/accessibility" className="flex hover:underline flex-row">הצהרת נגישות</a>
+          </div>
         </div>
         <div className="m-5 text-white ">
           <div className="m-3 transition-all hover:underline">
