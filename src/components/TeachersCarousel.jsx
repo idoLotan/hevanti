@@ -15,40 +15,36 @@ import ofir from "../assets/images/ofir.png";
 import amit from "../assets/images/amit.png";
 import sigal from "../assets/images/sigal.png";
 import { Autoplay, Pagination, Navigation } from "swiper";
- 
 
 const TeachersCarousel = () => {
-
   return (
     <div className="  z-10  flex w-max  justify-center md:hidden">
       <div className="m-2 ">
         <div className=" h-[300px] w-[345px] ">
           <Swiper
-          spaceBetween={30}
-          centeredSlides={true}
-          autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
-          }}
-          pagination={{
-            clickable: true,
-          }}
-          navigation={true}
-          modules={[Autoplay, Pagination, Navigation]}
-           
-           
+            spaceBetween={30}
+            centeredSlides={true}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            pagination={{
+              clickable: true,
+            }}
+            navigation={true}
+            modules={[Autoplay, Pagination, Navigation]}
             className="mySwiper z-10  rounded-bl-2xl rounded-tr-2xl"
           >
             <SwiperSlide>
               <div className="flex ">
-                <img src={joana} alt="תמונה של המורה גואנה"   />
+                <img src={joana} alt="תמונה של המורה גואנה" />
                 <img src={meir} alt="תמונה של המורה מאיר" />
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="flex ">
-                <img src={ofir}alt="תמונה של המורה אופיר" />
-                <img src={amit}alt="תמונה של המורה עמית" />
+                <img src={ofir} className="w-[50px]" alt="תמונה של המורה אופיר" />
+                <img src={amit} className="w-[50px]" alt="תמונה של המורה עמית" />
               </div>
             </SwiperSlide>
             <SwiperSlide>

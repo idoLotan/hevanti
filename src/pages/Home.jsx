@@ -43,8 +43,8 @@ function Home() {
   };
 
   return (
-    <div>
-      <ContactBtn></ContactBtn>
+    <div className="">
+      {/* <ContactBtn></ContactBtn> */}
 
       <MyModal isShowing={isOpen} onClose={toggelModal}></MyModal>
 
@@ -61,7 +61,7 @@ function Home() {
             <div className="relative flex flex-col items-center justify-center md:flex-row">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="absolute top-20 mr-4"
+                className=" mr-4 hidden md:block"
                 width="40"
                 height="40"
                 fill="none"
@@ -84,17 +84,17 @@ function Home() {
                 />
               </svg>
 
-              <div className="flex items-end  ">
+              <div className="flex items-center mb-20">
                 <img
                   alt="תמונת מרכזית מורה עוזרת לתלמיד"
                   src={hero}
-                  className="z-0 h-auto w-[250px] md:mt-[31px]  lg:block   lg:h-auto lg:w-[310px] xl:h-auto 2xl:w-[518px] "
+                  className="z-0 h-auto w-[250px] mr-[-50px] md:mt-[31px]  lg:block   lg:h-auto lg:w-[310px] xl:h-auto 2xl:w-[518px] "
                 ></img>
 
                 <Carousel></Carousel>
               </div>
 
-              <div className="flex flex-col   pt-0  ">
+              <div className="flex flex-col mb-40 2xl:mb-60">
                 <h1 className="font-montserrat flex flex-col items-end text-right text-[24px] font-bold text-[#2A264D] md:flex-col md:text-[33px] 2xl:text-[42px]">
                   <div className="flex justify-start w-[100%] relative 2xl:bottom-20 right-40" >
                     <svg
@@ -119,7 +119,7 @@ function Home() {
 
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="relative left-10 top-6 hidden md:block"
+                    className="relative left-8 top-6 hidden md:block"
                     width="38"
                     height="41"
                     fill="none"
@@ -223,7 +223,7 @@ function Home() {
               onClick={() => handleSubjectChange("physics")}
               tabindex="0"
               onKeyUp={handleKeyPress}
-              className="group m-3 flex h-[119px] w-[181px] cursor-pointer flex-col items-center justify-center border-2 border-[#FF7848] pt-3 hover:border-[#555FD9]"
+              className="group m-3 flex h-[119px] w-[181px]   cursor-pointer flex-col items-center justify-center border-2 border-[#FF7848] pt-3 hover:border-[#555FD9]"
             >
               <svg
                 role="presentation"
