@@ -75,7 +75,7 @@ const NavBar = () => {
           xmlns="http://www.w3.org/2000/svg"
           role="presentation"
           onClick={handleHBar}
-          className="fixed left-4 z-50 block  sm:hidden"
+          className="fixed left-4 z-40 block  sm:hidden"
           width="32"
           height="29"
           viewBox="0 0 32 29"

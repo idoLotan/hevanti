@@ -44,7 +44,7 @@ function Home() {
 
   return (
     <div className="">
-      {/* <ContactBtn></ContactBtn> */}
+      <ContactBtn></ContactBtn>
 
       <MyModal isShowing={isOpen} onClose={toggelModal}></MyModal>
 
