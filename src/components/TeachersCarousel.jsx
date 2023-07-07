@@ -18,9 +18,9 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 
 const TeachersCarousel = () => {
   return (
-    <div className="  z-10  flex w-max  justify-center md:hidden">
+    <div className="  z-10  flex w-max  justify-center lg:hidden">
       <div className="m-2 ">
-        <div className=" h-[300px] w-[345px] ">
+        <div className=" h-[330px] w-[100vw] ">
           <Swiper
             spaceBetween={30}
             centeredSlides={true}
@@ -33,24 +33,46 @@ const TeachersCarousel = () => {
             }}
             navigation={true}
             modules={[Autoplay, Pagination, Navigation]}
-            className="mySwiper z-10  rounded-bl-2xl rounded-tr-2xl"
+            className="mySwiper z-10   rounded-bl-2xl rounded-tr-2xl"
           >
             <SwiperSlide>
-              <div className="flex ">
-                <img src={joana} alt="תמונה של המורה גואנה" />
-                <img src={meir} alt="תמונה של המורה מאיר" />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="flex ">
-                <img src={ofir} className="w-[50px]" alt="תמונה של המורה אופיר" />
-                <img src={amit} className="w-[50px]" alt="תמונה של המורה עמית" />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
               <div className="flex justify-center">
-                <div className="w-[170px]">
-                  <img className="" src={sigal} alt="תמונה של המורה סיגל" />
+                <div className="m-5 flex w-[150px] h-[150px] flex-col">
+                  <img src={joana} className="" alt="תמונה של המורה גואנה" />
+                  <h2 className="text-[#555FD9] text-[20px] leading-8  font-semibold">ג'יואנא</h2>
+                  <h3 className="font-[#2A264D] text-[14px] ">ג'יואנא, מנהלת תחום מתמטיקה 8 שנות ניסיון</h3>
+                </div>
+                <div className="m-5 flex w-[150px] h-[150px] flex-col">
+                  <img src={meir} className="" alt="תמונה של המורה גואנה" />
+                  <h2 className="text-[#555FD9] text-[20px] leading-8  font-semibold">מאיר</h2>
+                  <h3  className="font-[#2A264D] text-[14px] ">מאיר, מנהל תחום פיזיקה 18 שנה</h3>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+
+            <div className="flex justify-center">
+                <div className="m-5 flex w-[150px] h-[150px] flex-col">
+                  <img src={ofir} className="" alt="תמונה של המורה אופיר" />
+                  <h2 className="text-[#555FD9] text-[20px] leading-8  font-semibold">אופיר</h2>
+                  <h3 className="font-[#2A264D] text-[14px] ">אופיר מלמדת לשון, פיזיקה, אנגלית, סטטיסטיקה,פסיכולוגיה, אזרחות 5 שנות ניסיון</h3>
+                </div>
+                <div className="m-5 flex w-[150px] h-[150px] flex-col">
+                  <img src={amit} className="" alt="תמונה של המורה עמית" />
+                  <h2 className="text-[#555FD9] text-[20px] leading-8  font-semibold">עמית</h2>
+                  <h3  className="font-[#2A264D] text-[14px] ">מנהל תחום מדעי המחשב, 9 שנות ניסיון</h3>
+                </div>
+               
+              </div>
+             
+            </SwiperSlide>
+            <SwiperSlide>
+             
+              <div className="flex justify-center">
+                <div className="m-5 flex w-[150px] h-[150px] flex-col">
+                  <img src={sigal} className="" alt="תמונה של המורה סיגל" />
+                  <h2 className="text-[#555FD9] text-[20px] leading-8  font-semibold">סיגל</h2>
+                  <h3 className="font-[#2A264D] text-[14px] ">סיגל, מנהלת תחום אנגלית, 6 שנות נסיון</h3>
                 </div>
               </div>
             </SwiperSlide>

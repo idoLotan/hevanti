@@ -128,6 +128,27 @@ content: "-";
   border: none;
 }
 
+
+:active.shadow-start-btn {
+  box-shadow: 6px 6px 4px 0px rgba(66, 74, 164, 0.65) inset;
+
+}
+
+
+
+
+:active.shadow-send-btn {
+  box-shadow: 3px 3px 4px 0px rgba(224, 95, 50, 0.85) inset;
+
+}
+
+
+
+.pressed-button {
+  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+
 input:checked + div {  
   @apply border-blue-100;  
 }  

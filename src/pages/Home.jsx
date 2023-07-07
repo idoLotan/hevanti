@@ -12,6 +12,11 @@ import MyModal from "../components/MyModal";
 import TeachersCarousel from "../components/TeachersCarousel";
 import ContactBtn from "../components/ContactBtn";
 import { handleKeyPress } from "../helper";
+import joana from "../assets/images/joana.png";
+import meir from "../assets/images/meir.png";
+import ofir from "../assets/images/ofir.png";
+import amit from "../assets/images/amit.png";
+import sigal from "../assets/images/sigal.png";
 
 function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -84,19 +89,19 @@ function Home() {
                 />
               </svg>
 
-              <div className="flex items-center mb-20">
+              <div className="mb-20 flex items-center">
                 <img
                   alt="תמונת מרכזית מורה עוזרת לתלמיד"
                   src={hero}
-                  className="z-0 h-auto w-[250px] mr-[-50px] md:mt-[31px]  lg:block   lg:h-auto lg:w-[310px] xl:h-auto 2xl:w-[518px] "
+                  className="z-0 mr-[-50px] h-auto w-[250px] md:mt-[31px]  lg:block   lg:h-auto lg:w-[310px] xl:h-auto 2xl:w-[518px] "
                 ></img>
 
                 <Carousel></Carousel>
               </div>
 
-              <div className="flex flex-col mb-40 2xl:mb-60">
+              <div className="mb-10 flex flex-col 2xl:mb-60">
                 <h1 className="font-montserrat flex flex-col items-end text-right text-[24px] font-bold text-[#2A264D] md:flex-col md:text-[33px] 2xl:text-[42px]">
-                  <div className="flex justify-start w-[100%] relative 2xl:bottom-20 right-40" >
+                  <div className="relative right-40 flex w-[100%] justify-start 2xl:bottom-20">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="hidden md:block"
@@ -169,25 +174,27 @@ function Home() {
                     <p className=""> שלך עם</p>
                   </p>
                 </h1>
-                <div class="ml-1 mr-1 h-[2px] bg-[#555FD9]"></div>
+                <div class="ml-1 mr-1 h-[2px] bg-[#555FD9] "></div>
                 <h3 className="mb-6 max-w-2xl  text-center  font-light  text-gray-600 md:text-end ">
                   שחרר את הפוטנציאל שלך עם הוראה מעולה
                 </h3>
-                <div className="flex justify-center  md:justify-end">
+                <button
+                  className=" flex justify-center md:justify-end"
+                >
                   <div>
                     <a
                       href="#contact"
-                      className=" h-[46px] w-[210px] rounded-xl bg-[#555FD9] pb-2 pl-20 pr-20 pt-2 text-[20px] font-bold text-white"
+                      className=" h-[46px] w-[210px] rounded-xl bg-[#555FD9] shadow-start-btn pb-2 pl-20 pr-20 pt-2 text-[20px] font-bold text-white"
                       aria-current="page"
                     >
                       התחל
                     </a>
                   </div>
-                </div>
+                </button>
                 <div className="flex justify-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="relative top-[100px] 2xl:top-[300px]"
+                    className="relative top-[100px] hidden md:block 2xl:top-[300px]"
                     width="50"
                     height="48"
                     fill="none"
@@ -557,19 +564,63 @@ function Home() {
               <circle cx="76.5" cy="32.5" r="1.5" fill="#FF7848" />
               <rect x="48" y="31" width="8" height="2" fill="#555FD9" />
             </svg>
-            <h2 className=" text-right text-[32px] font-bold text-[#555FD9]">
+            <h2 className=" text-center text-[32px] font-bold text-[#555FD9]">
               המורים/מורות של
             </h2>
           </div>
+          <div className="hidden lg:block">
+            <div className="flex h-80 w-[100%] flex-row justify-evenly ">
+              <div className="m-5 flex h-[150px] w-[150px] flex-col items-center">
+                <img src={joana} className="" alt="תמונה של המורה גואנה" />
+                <h2 className="text-[20px] font-semibold leading-8  text-[#555FD9]">
+                  ג'יואנא
+                </h2>
+                <h3 className="text-center font-[#2A264D] text-[14px]">
+                  ג'יואנא, מנהלת תחום מתמטיקה 8 שנות ניסיון
+                </h3>
+              </div>
+              <div className="m-5 flex h-[150px] w-[150px] flex-col items-center  text-center">
+                <img src={meir} className="" alt="תמונה של המורה גואנה" />
+                <h2 className="text-[20px] font-semibold leading-8  text-[#555FD9]">
+                  מאיר
+                </h2>
+                <h3 className="text-center font-[#2A264D] text-[14px] ">
+                  מאיר, מנהל תחום פיזיקה 18 שנה
+                </h3>
+              </div>
 
-          <div className="flex items-center justify-center">
-            <img
-              loading="lazy"
-              alt="תמונה של המורים שלנו"
-              className="hidden md:block md:p-10"
-              src={teachers}
-            ></img>
+              <div className="m-5 flex h-[150px] w-[150px] flex-col items-center">
+                <img src={ofir} className="" alt="תמונה של המורה אופיר" />
+                <h2 className="text-[20px] font-semibold leading-8  text-[#555FD9]">
+                  אופיר
+                </h2>
+                <h3 className="text-center font-[#2A264D]  text-[14px]">
+                  אופיר מלמדת לשון, פיזיקה, אנגלית, סטטיסטיקה,פסיכולוגיה, אזרחות
+                  5 שנות ניסיון
+                </h3>
+              </div>
+              <div className="m-5 flex h-[150px] w-[150px] flex-col items-center">
+                <img src={amit} className="" alt="תמונה של המורה עמית" />
+                <h2 className="text-[20px] font-semibold leading-8  text-[#555FD9]">
+                  עמית
+                </h2>
+                <h3 className="text-center font-[#2A264D] text-[14px]">
+                  מנהל תחום מדעי המחשב, 9 שנות ניסיון
+                </h3>
+              </div>
+
+              <div className="m-5 flex h-[150px] w-[150px] flex-col items-center">
+                <img src={sigal} className="" alt="תמונה של המורה סיגל" />
+                <h2 className="text-[20px] font-semibold leading-8  text-[#555FD9]">
+                  סיגל
+                </h2>
+                <h3 className="text-center font-[#2A264D] text-[14px]">
+                  סיגל, מנהלת תחום אנגלית, 6 שנות נסיון
+                </h3>
+              </div>
+            </div>
           </div>
+
           <TeachersCarousel></TeachersCarousel>
         </div>
       </section>

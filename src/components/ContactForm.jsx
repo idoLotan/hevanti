@@ -182,7 +182,7 @@ const ContactForm = ({ toggelModal, subjectsClicked }) => {
         </div>
         <div className="flex  w-[100%] flex-col items-center md:items-start">
         
-           <button type="submit" className="bg-[#FF7848] w-[200px] h-[40px] mt-2 rounded-lg font-bold text-white  ">שלח</button>
+           <button type="submit" className="bg-[#FF7848] w-[200px] h-[40px] mt-2 rounded-lg font-bold text-white shadow-send-btn  ">שלח/י</button>
         </div>
       </div>
       <div className="order-2 flex flex-col  items-end md:flex-row  md:items-start ">
