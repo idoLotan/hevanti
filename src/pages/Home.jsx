@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import hero from "../assets/images/hero-min.png";
 import about from "../assets/images/about.png";
+import ofer from "../assets/images/ofer.png";
 import aboutMobile from "../assets/images/about-mobile.png";
 import NavBar from "../components/NavBar";
 import teachers from "../assets/images/teachers.png";
@@ -178,13 +179,11 @@ function Home() {
                 <h3 className="mb-6 max-w-2xl  text-center  font-light  text-gray-600 md:text-end ">
                   שחרר את הפוטנציאל שלך עם הוראה מעולה
                 </h3>
-                <button
-                  className=" flex justify-center md:justify-end"
-                >
+                <button className=" flex justify-center md:justify-end">
                   <div>
                     <a
                       href="#contact"
-                      className=" h-[46px] w-[210px] rounded-xl bg-[#555FD9] shadow-start-btn pb-2 pl-20 pr-20 pt-2 text-[20px] font-bold text-white"
+                      className=" shadow-start-btn h-[46px] w-[210px] rounded-xl bg-[#555FD9] pb-2 pl-20 pr-20 pt-2 text-[20px] font-bold text-white"
                       aria-current="page"
                     >
                       התחל
@@ -518,7 +517,164 @@ function Home() {
         </div>
       </section>
       <section className="relative" id="about">
-        <div className="h-1/2 overflow-hidden">
+        <div className="about-bg  relative  flex w-[100vw]  flex-col  items-center  justify-center md:flex-row">
+          <div className="Rectangle100 relative  order-1 m-4 flex  w-[90%] flex-col items-end  rounded-br-[46px] bg-slate-200 p-10  md:bottom-48 md:w-[760px] md:min-w-[660px] 2xl:bottom-48">
+            <div className="flex flex-row items-center p-2  ">
+              <div dir="rtl" className=" mr-2">
+                בהבנתי המורה והשיעור מותאמים לתלמיד לפי הצרכים והיכולות של
+                התלמיד.
+              </div>
+              <div className="  flex min-h-[50px] min-w-[50px] items-center justify-center   rounded-full border border-indigo-600 text-[32px] font-semibold text-indigo-600">
+                1
+              </div>
+            </div>
+            <div className=" flex flex-row items-center p-2">
+              <div dir="rtl" className=" mr-2">
+                לכול מקצוע ישנן 4 רמות הוראה מותאמות עלות.
+              </div>
+
+              <div className="mr-12 flex min-h-[50px] min-w-[50px] items-center justify-center   rounded-full border border-indigo-600 text-[32px] font-semibold text-indigo-600">
+                2
+              </div>
+            </div>
+            <div className=" flex flex-row items-center p-2">
+              <div dir="rtl" className=" mr-2">
+                בכול רמה ניתן ללמוד בבית המורה/התלמיד או זום.
+              </div>
+
+              <div className="  flex min-h-[50px] min-w-[50px] items-center justify-center   rounded-full border border-indigo-600 text-[32px] font-semibold text-indigo-600">
+                3
+              </div>
+            </div>
+            <div className=" flex flex-row items-center p-2">
+              <div dir="rtl" className=" mr-2">
+                ישנה אפשרות להרשם לשעורים משותפים בזום בעלות מופחתת.
+              </div>
+
+              <div className="mr-12 flex min-h-[50px] min-w-[50px] items-center justify-center   rounded-full border border-indigo-600 text-[32px] font-semibold text-indigo-600">
+                4
+              </div>
+            </div>
+          </div>
+          <div className="order-2 flex flex-col  items-end  md:order-1 ">
+            {/* flex-col items-center w-[100%] justify-center mt-5 */}
+            <img
+              alt="ofer"
+              className="order-2 mr-0 rounded-xl md:h-[450px] md:w-[300px] 2xl:h-[590px] 2xl:w-[386px]"
+              src={ofer}
+            />
+
+            <div
+              dir="rtl"
+              className="oreder-1 about-text-window relative  hidden   h-[185px] w-[615px] p-4 text-right text-[20px] font-medium  leading-loose text-neutral-100  md:bottom-40 md:right-[300px] md:order-2 md:block md:h-[185px] md:w-[615px] 2xl:h-[185px] 2xl:w-[615px]"
+            >
+              לפני 28 שנים, בתור סטודנט למדתי מתמטיקה. אחרי סיום התואר וכשעברו
+              מספר שנים, פגשתי בסניף מקדונלד בקניון קרית אונו תלמיד לשעבר שמאוד
+              שמח לראות אותי ואמר "אתה שינית את חיי. מאז ועד היום מיישם את שיטות
+              הלימוד שלי בהבנתי".
+            </div>
+
+            <div className="relative md:hidden ">
+              {/* <div
+                dir="rtl"
+                className="oreder-1 about-text-window  relative h-[185px] w-[615px] rotate-180 -scale-x-100 transform "
+              ></div> */}
+
+              <div class="container">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="oreder-1 h-[250px] w-[400px] rounded-xl"
+                  viewBox="90 20 200 91"
+                  fill="none"
+                >
+                  <path
+                    d="M277.084 95.9582C285.287 95.9582 293.283 99.4552 296 101C296 75.6344 295.556 23.511 295.556 13.0427C295.556 2.13273 292.437 -0.0144043 287.637 7.62939e-05C197.261 0.27269 15.3537 7.62939e-05 8.59128 7.62939e-05C2.22961 7.62939e-05 0.155313 5.58906 2.41655e-06 8.67869L0 88.8667C0 94.118 4.21172 95.9582 5.99749 95.9582H277.084Z"
+                    fill="#555FD9"
+                  />
+                </svg>
+                <div class="content absolute top-0 p-4 text-right text-[15px] font-medium leading-loose text-neutral-100 md:text-[20px]">
+                  לפני 28 שנים, בתור סטודנט למדתי מתמטיקה. אחרי סיום התואר
+                  וכשעברו מספר שנים, פגשתי בסניף מקדונלד בקניון קרית אונו תלמיד
+                  לשעבר שמאוד שמח לראות אותי ואמר "אתה שינית את חיי. מאז ועד
+                  היום מיישם את שיטות הלימוד שלי בהבנתי".
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* <div className="about-bg relative h-[752px]">
+          <div className="absolute left-0 top-0 h-[784px] ">
+            <div className="Rectangle45 absolute left-[0.50px] h-[784px] bg-white bg-opacity-0 backdrop-blur-[160px]" />
+          </div>
+          <div className="absolute left-[1920.50px] top-[1232px] h-[480px]  rotate-180">
+            <div className="Rectangle45 absolute left-[-0.50px] h-[480px]  origin-top-left bg-white bg-opacity-0 backdrop-blur-[160px]" />
+          </div>
+          <img
+            className="absolute left-[1280px] top-[96px] h-[590px] w-[386px] rounded-xl"
+            src={ofer}
+          />
+          <div className="Rectangle100 absolute left-[216px] top-[152px] h-80 w-[760px] rounded-br-[46px] bg-slate-200" />
+          <div
+            dir="rtl"
+            className="28 about-text-window absolute left-[722px] top-[553px] h-[185px] w-[615px] p-4 text-right text-[20px] font-medium leading-loose text-neutral-100"
+          >
+            לפני 28 שנים, בתור סטודנט למדתי מתמטיקה. אחרי סיום התואר וכשעברו
+            מספר שנים, פגשתי בסניף מקדונלד בקניון קרית אונו תלמיד לשעבר שמאוד
+            שמח לראות אותי ואמר "אתה שינית את חיי. מאז ועד היום מיישם את שיטות
+            הלימוד שלי בהבנתי".
+          </div>
+          <div className="absolute left-[904px] top-[184px] h-10 w-10">
+            <div className="Ellipse26 absolute  h-10 w-10 rounded-full border border-indigo-600" />
+            <div className="relative bottom-1 flex items-center justify-center text-[32px] font-semibold text-indigo-600">
+              1
+            </div>
+          </div>
+          <div
+            dir="rtl"
+            className="text-indigo absolute left-[257px] top-[197px] h-[24.46px] w-[632px]"
+          >
+            בהבנתי המורה והשיעור מותאמים לתלמיד לפי הצרכים והיכולות של התלמיד.
+          </div>
+          <div className="absolute left-[848px] top-[248px] h-10 w-10">
+            <div className="Ellipse26 absolute  h-10 w-10 rounded-full border border-indigo-600" />
+            <div className="relative bottom-1 flex items-center justify-center text-[32px] font-semibold text-indigo-600">
+              2
+            </div>
+          </div>
+          <div
+            dir="rtl"
+            className="text-indigo absolute left-[424px] top-[261px] h-6 w-[409px]"
+          >
+            לכול מקצוע ישנן 4 רמות הוראה מותאמות עלות.
+          </div>
+          <div className="absolute left-[904px] top-[312px] h-10 w-10">
+            <div className="Ellipse26 absolute  h-10 w-10 rounded-full border border-indigo-600" />
+            <div className="relative bottom-1 flex items-center justify-center text-[32px] font-semibold text-indigo-600">
+              3
+            </div>
+          </div>
+          <div
+            dir="rtl"
+            className="text-indigo absolute left-[472.50px] top-[325.19px] h-[24.46px] w-[416px]"
+          >
+            בכול רמה ניתן ללמוד בבית המורה/התלמיד או זום.
+          </div>
+          <div className="absolute left-[849px] top-[376px] h-[40.77px] w-10">
+            <div className="Ellipse26 absolute  h-10 w-10 rounded-full border border-indigo-600" />
+            <div className="relative bottom-1 flex items-center justify-center text-[32px] font-semibold text-indigo-600">
+              4
+            </div>
+          </div>
+          <div
+            dir="rtl"
+            className="text-indigo absolute left-[308px] top-[389px] h-[24.46px] w-[526px]"
+          >
+            ישנה אפשרות להרשם לשעורים משותפים בזום בעלות מופחתת.
+          </div>
+        </div> */}
+
+        {/* <div className="h-1/2 overflow-hidden">
           <img
             alt="אודות החברה"
             loading="lazy"
@@ -569,27 +725,8 @@ function Home() {
             </h2>
           </div>
           <div className="hidden lg:block">
-            <div className="flex h-80 w-[100%] flex-row justify-evenly ">
-              <div className="m-5 flex h-[150px] w-[150px] flex-col items-center">
-                <img src={joana} className="" alt="תמונה של המורה גואנה" />
-                <h2 className="text-[20px] font-semibold leading-8  text-[#555FD9]">
-                  ג'יואנא
-                </h2>
-                <h3 className="text-center font-[#2A264D] text-[14px]">
-                  ג'יואנא, מנהלת תחום מתמטיקה 8 שנות ניסיון
-                </h3>
-              </div>
-              <div className="m-5 flex h-[150px] w-[150px] flex-col items-center  text-center">
-                <img src={meir} className="" alt="תמונה של המורה גואנה" />
-                <h2 className="text-[20px] font-semibold leading-8  text-[#555FD9]">
-                  מאיר
-                </h2>
-                <h3 className="text-center font-[#2A264D] text-[14px] ">
-                  מאיר, מנהל תחום פיזיקה 18 שנה
-                </h3>
-              </div>
-
-              <div className="m-5 flex h-[150px] w-[150px] flex-col items-center">
+            <div className="flex h-80 w-[100%] flex-row p-2 justify-evenly ">
+            <div className="m-5 flex h-[150px] w-[150px] flex-col items-center">
                 <img src={ofir} className="" alt="תמונה של המורה אופיר" />
                 <h2 className="text-[20px] font-semibold leading-8  text-[#555FD9]">
                   אופיר
@@ -608,6 +745,26 @@ function Home() {
                   מנהל תחום מדעי המחשב, 9 שנות ניסיון
                 </h3>
               </div>
+              <div className="m-5 flex h-[150px] w-[150px] flex-col items-center">
+                <img src={joana} className="" alt="תמונה של המורה גואנה" />
+                <h2 className="text-[20px] font-semibold leading-8  text-[#555FD9]">
+                  ג'יואנא
+                </h2>
+                <h3 className="text-center font-[#2A264D] text-[14px]">
+                  ג'יואנא, מנהלת תחום מתמטיקה 8 שנות ניסיון
+                </h3>
+              </div>
+              <div className="m-5 flex h-[150px] w-[150px] flex-col items-center  text-center">
+                <img src={meir} className="" alt="תמונה של המורה גואנה" />
+                <h2 className="text-[20px] font-semibold leading-8  text-[#555FD9]">
+                  מאיר
+                </h2>
+                <h3 className="text-center font-[#2A264D] text-[14px] ">
+                  מאיר, מנהל תחום פיזיקה 18 שנה
+                </h3>
+              </div>
+            
+
 
               <div className="m-5 flex h-[150px] w-[150px] flex-col items-center">
                 <img src={sigal} className="" alt="תמונה של המורה סיגל" />
@@ -622,16 +779,16 @@ function Home() {
           </div>
 
           <TeachersCarousel></TeachersCarousel>
-        </div>
+        </div> */}
       </section>
       <section
-        className="section-1 relative flex  h-[900px] flex-col  p-3 md:h-[400px] "
+        className="section-1 relative flex  h-[1000px] flex-col  p-3 md:h-[400px] "
         id="contact"
       >
         <h2 className=" text-right text-[32px] font-bold text-[#555FD9]">
           ?מה את/ה רוצה להבין
         </h2>
-        <h3 className=" text-right text-xl  text-[#2A264D]">
+        <h3 className=" mb-5 text-right text-xl text-[#2A264D]">
           ספר/י לנו מה את/ה מצפה שנעשה עבורך, ואנחנו נבנה תוכנית מותאמת אישית
         </h3>
         <div className="flex w-[100%] items-center justify-center">

@@ -27,6 +27,17 @@ code {
 
 .section-2{
   background-image: url('assets/images/howItWorks.png');
+
+}
+
+.about-text-window{
+  background-image: url('assets/images/about-text-window.png');
+  
+}
+
+.about-bg{
+  background-image: url('assets/images/about-bg.png');
+  
 }
 
 

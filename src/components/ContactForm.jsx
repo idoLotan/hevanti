@@ -161,9 +161,9 @@ const ContactForm = ({ toggelModal, subjectsClicked }) => {
 
   return (
    
-   <form onSubmit={sendEmail} className="section-2  flex w-[1200px] flex-col items-center  justify-between rounded-xl p-5 md:flex-row">
+   <form onSubmit={sendEmail} className=" bg-[#555FD9] bg-opacity-10  z-10 flex w-[1491px] flex-col md:items-start items-center  justify-between rounded-xl p-5 md:flex-row">
   
-      <div className="order-3 flex flex-col  md:order-1 ">
+      <div className="order-3 flex flex-col mb-5 md:mb-0 md:order-1 ">
         <div className="flex flex-col items-center">
           <div className="flex w-[100%] justify-end">
             <h1 className=" text-[20px] font-bold text-[#2A264D]">
@@ -175,7 +175,7 @@ const ContactForm = ({ toggelModal, subjectsClicked }) => {
             aria-label="message"
             name="message" 
             id="message"
-            className="bg:w-[212px] left-5 top-3  h-[136px] w-[300px] rounded-lg border-2 border-[#555FD9] p-1 pr-1 text-right  focus:outline-none"
+            className="bg:w-[212px] left-5 top-3  h-[136px] w-[300px] rounded-lg border border-[#555FD9] p-1 pr-1 text-right  focus:outline-none"
             placeholder="...הקלד כאן"
             ref={textRef}
           ></textarea>
@@ -185,9 +185,9 @@ const ContactForm = ({ toggelModal, subjectsClicked }) => {
            <button type="submit" className="bg-[#FF7848] w-[200px] h-[40px] mt-2 rounded-lg font-bold text-white shadow-send-btn  ">שלח/י</button>
         </div>
       </div>
-      <div className="order-2 flex flex-col  items-end md:flex-row  md:items-start ">
+      <div className="order-2 flex flex-col mb-5 md:mb-0  items-end md:flex-row  md:items-start ">
         <div className="flex flex-col  items-end md:flex-row  md:items-start ">
-          <div className="flex">
+          <div className="flex order-3 md:order-1 p-5 md:p-0">
          
           <div className="flex-end   order-3 flex  flex-col text-end md:order-1 ">
             <div className="mr-4 font-bold">צרכים מיוחדים</div>
@@ -239,7 +239,7 @@ const ContactForm = ({ toggelModal, subjectsClicked }) => {
           </div>
    
           <div className="order-1 flex md:flex-row">
-            <div className="flex-end  order-2  flex flex-col text-end md:order-3">
+            <div className="flex-end  order-2 flex flex-col text-end md:order-3">
               <div className="mr-4 font-bold">קטגוריות</div>
               <div className="overflow-wrap flex ">
                 <div>
@@ -318,14 +318,14 @@ const ContactForm = ({ toggelModal, subjectsClicked }) => {
         </div>
       </div>
 
-      <div className="order-2 flex w-[100%] flex-col text-end md:order-3 md:w-[200px] ">
+      <div className="order-1 flex w-[100%] mb-5 md:mb-0  flex-col text-end md:order-3 md:w-[200px] ">
         <div className="font-bold">שם </div>
         <input
         aria-label="name"
         id="name"
         name="name"
           type="text "
-          className="mt-2 rounded-lg border-2 border-[#555FD9] pr-1 text-end focus:outline-none"
+          className="mt-2 rounded-lg border border-[#555FD9] pr-1 text-end focus:outline-none"
           ref={nameRef}
         />
         <div className="font-bold"> טלפון</div>
@@ -334,7 +334,7 @@ const ContactForm = ({ toggelModal, subjectsClicked }) => {
           id="phone"
           name="phone"
           type="text "
-          className="mt-2 rounded-lg border-2 border-[#555FD9] pr-1 text-end focus:outline-none"
+          className="mt-2 rounded-lg border border-[#555FD9] pr-1 text-end focus:outline-none"
           ref={emailRef}
         />
         <div className="font-bold"> דואר אלקטרוני</div>
@@ -343,7 +343,7 @@ const ContactForm = ({ toggelModal, subjectsClicked }) => {
           id="email"
           name="email"
           type="text "
-          className="mt-2 rounded-lg border-2 border-[#555FD9] pr-1 text-end focus:outline-none"
+          className="mt-2 rounded-lg border border-[#555FD9] pr-1 text-end focus:outline-none"
           ref={phoneRef}
         />
       </div>
