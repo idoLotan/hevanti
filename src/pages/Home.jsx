@@ -18,6 +18,7 @@ import meir from "../assets/images/meir.png";
 import ofir from "../assets/images/ofir.png";
 import amit from "../assets/images/amit.png";
 import sigal from "../assets/images/sigal.png";
+import oferMobile from "../assets/images/ofer-mobile.png";
 
 function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -516,9 +517,23 @@ function Home() {
           </div>
         </div>
       </section>
-      <section className="relative" id="about">
-        <div className="about-bg  relative  flex w-[100vw]  flex-col  items-center  justify-center md:flex-row">
-          <div className="Rectangle100 relative  order-1 m-4 flex  w-[90%] flex-col items-end  rounded-br-[46px] bg-slate-200 p-10  md:bottom-48 md:w-[760px] md:min-w-[660px] 2xl:bottom-48">
+      <section className="relative about-bg" id="about">
+      <div className="h-1/2 overflow-hidden">
+          <img
+            alt="אודות החברה"
+            loading="lazy"
+            src={about}
+            className="hidden h-full w-full object-cover md:block"
+          ></img>
+          <img
+            alt="אודות החברה"
+            loading="lazy"
+            src={aboutMobile}
+            className="h-full w-full object-cover md:hidden"
+          ></img>
+        </div>
+        {/* <div className="  relative  flex    flex-col  items-center  justify-center md:flex-row">
+          <div className="Rectangle100 relative  order-1 mb-4  flex  w-[90%] flex-col items-end  rounded-br-[46px] rounded-tl-[46px] bg-[#555FD9] bg-opacity-20 p-2   md:bottom-48  md:w-[760px] md:min-w-[660px]  2xl:bottom-48">
             <div className="flex flex-row items-center p-2  ">
               <div dir="rtl" className=" mr-2">
                 בהבנתי המורה והשיעור מותאמים לתלמיד לפי הצרכים והיכולות של
@@ -557,14 +572,25 @@ function Home() {
             </div>
           </div>
           <div className="order-2 flex flex-col  items-end  md:order-1 ">
-            {/* flex-col items-center w-[100%] justify-center mt-5 */}
+         
+          <div className="order-2 p-5 md:h-auto  justify-center flex flex-col items-end">
+           
             <img
               alt="ofer"
-              className="order-2 mr-0 rounded-xl md:h-[450px] md:w-[300px] 2xl:h-[590px] 2xl:w-[386px]"
+              className="hidden md:block mr-0 rounded-xl w-[270px]  md:h-[450px] md:w-[300px] 2xl:h-[590px] 2xl:w-[386px]"
               src={ofer}
             />
+               <img
+              alt="ofer"
+              className="md:hidden mr-0 rounded-xl w-[270px]  md:h-[450px] md:w-[300px] 2xl:h-[590px] 2xl:w-[386px]"
+              src={oferMobile}
+            />
+           
+       
+           <p>עופר אביטל, הבעלים</p>
+          </div>
 
-            <div
+            <p
               dir="rtl"
               className="oreder-1 about-text-window relative  hidden   h-[185px] w-[615px] p-4 text-right text-[20px] font-medium  leading-loose text-neutral-100  md:bottom-40 md:right-[300px] md:order-2 md:block md:h-[185px] md:w-[615px] 2xl:h-[185px] 2xl:w-[615px]"
             >
@@ -572,18 +598,13 @@ function Home() {
               מספר שנים, פגשתי בסניף מקדונלד בקניון קרית אונו תלמיד לשעבר שמאוד
               שמח לראות אותי ואמר "אתה שינית את חיי. מאז ועד היום מיישם את שיטות
               הלימוד שלי בהבנתי".
-            </div>
-
+            </p>
+         
             <div className="relative md:hidden ">
-              {/* <div
-                dir="rtl"
-                className="oreder-1 about-text-window  relative h-[185px] w-[615px] rotate-180 -scale-x-100 transform "
-              ></div> */}
-
-              <div class="container">
+              <div class="container mr-40 mb-[-90px]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="oreder-1 h-[250px] w-[400px] rounded-xl"
+                  class="oreder-1 h-[250px] w-[400px]   rounded-xl"
                   viewBox="90 20 200 91"
                   fill="none"
                 >
@@ -592,7 +613,7 @@ function Home() {
                     fill="#555FD9"
                   />
                 </svg>
-                <div class="content absolute top-0 p-4 text-right text-[15px] font-medium leading-loose text-neutral-100 md:text-[20px]">
+                <div class="content absolute top-0 mr-40 p-4 text-right text-[15px] font-medium leading-loose text-neutral-100 md:text-[20px]">
                   לפני 28 שנים, בתור סטודנט למדתי מתמטיקה. אחרי סיום התואר
                   וכשעברו מספר שנים, פגשתי בסניף מקדונלד בקניון קרית אונו תלמיד
                   לשעבר שמאוד שמח לראות אותי ואמר "אתה שינית את חיי. מאז ועד
@@ -601,7 +622,7 @@ function Home() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* <div className="about-bg relative h-[752px]">
           <div className="absolute left-0 top-0 h-[784px] ">

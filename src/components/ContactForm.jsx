@@ -1,8 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import Btn from "./Btn";
 import { db } from "../firebase-config";
-import { addDoc, collection, getDocs } from "firebase/firestore";
+import { addDoc, collection, getDoc } from "firebase/firestore";
 import emailjs from '@emailjs/browser'
+
+
 
 import CheckBox from "./CheckBox";
 
