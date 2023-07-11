@@ -363,14 +363,3 @@ const ContactForm = ({ toggelModal, subjectsClicked }) => {
 export default ContactForm;
 
 
-{/* <div className="flex justify-end">
-<label for="myCheckbox">תיכון</label>
-<input
- className="m-2"
- type="checkbox"
- id="highSchool"
- name="highSchool"
- checked={checkboxes.highSchool}
- onChange={handleCheckboxChange}
-/>
-</div> */}

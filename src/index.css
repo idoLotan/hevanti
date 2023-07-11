@@ -40,6 +40,12 @@ code {
   
 }
 
+.about-text-container{
+  background-image: url('assets/images/about-text-container.png');
+  
+}
+
+
 
 .swiper {
   width: 100%;

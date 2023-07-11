@@ -3,22 +3,17 @@ import hero from "../assets/images/hero-min.png";
 import about from "../assets/images/about.png";
 import ofer from "../assets/images/ofer.png";
 import aboutMobile from "../assets/images/about-mobile.png";
+import oferMobile from "../assets/images/ofer-mobile.png";
+import aboutTextContainer from "../assets/images/about-text-container.png";
+
 import NavBar from "../components/NavBar";
-import teachers from "../assets/images/teachers.png";
 import Footer from "../components/Footer";
 import ContactForm from "../components/ContactForm";
 import Carousel from "../components/Carousel";
 import AccordionTW from "../components/AccordionTW";
 import MyModal from "../components/MyModal";
-import TeachersCarousel from "../components/TeachersCarousel";
 import ContactBtn from "../components/ContactBtn";
 import { handleKeyPress } from "../helper";
-import joana from "../assets/images/joana.png";
-import meir from "../assets/images/meir.png";
-import ofir from "../assets/images/ofir.png";
-import amit from "../assets/images/amit.png";
-import sigal from "../assets/images/sigal.png";
-import oferMobile from "../assets/images/ofer-mobile.png";
 
 function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -52,9 +47,7 @@ function Home() {
   return (
     <div className="">
       <ContactBtn></ContactBtn>
-
       <MyModal isShowing={isOpen} onClose={toggelModal}></MyModal>
-
       <section
         className="section-1 bg-cover bg-no-repeat pb-2 md:h-[100vh]"
         id="home"
@@ -517,8 +510,8 @@ function Home() {
           </div>
         </div>
       </section>
-      <section className="relative about-bg" id="about">
-      <div className="h-1/2 overflow-hidden">
+      <section className="about-bg relative" id="about">
+        {/* <div className="h-1/2 overflow-hidden">
           <img
             alt="אודות החברה"
             loading="lazy"
@@ -531,9 +524,9 @@ function Home() {
             src={aboutMobile}
             className="h-full w-full object-cover md:hidden"
           ></img>
-        </div>
-        {/* <div className="  relative  flex    flex-col  items-center  justify-center md:flex-row">
-          <div className="Rectangle100 relative  order-1 mb-4  flex  w-[90%] flex-col items-end  rounded-br-[46px] rounded-tl-[46px] bg-[#555FD9] bg-opacity-20 p-2   md:bottom-48  md:w-[760px] md:min-w-[660px]  2xl:bottom-48">
+        </div> */}
+        <div className="  relative  flex  flex-col   items-center  justify-around  p-1 md:flex-row">
+          <div className="Rectangle100 relative  order-1 mb-4   flex  w-[90%] flex-col items-end  rounded-br-[46px] rounded-tl-[46px] bg-[#555FD9] bg-opacity-20 p-2   md:bottom-28  md:w-[760px] md:min-w-[660px]   2xl:bottom-28">
             <div className="flex flex-row items-center p-2  ">
               <div dir="rtl" className=" mr-2">
                 בהבנתי המורה והשיעור מותאמים לתלמיד לפי הצרכים והיכולות של
@@ -571,40 +564,50 @@ function Home() {
               </div>
             </div>
           </div>
-          <div className="order-2 flex flex-col  items-end  md:order-1 ">
-         
-          <div className="order-2 p-5 md:h-auto  justify-center flex flex-col items-end">
-           
-            <img
-              alt="ofer"
-              className="hidden md:block mr-0 rounded-xl w-[270px]  md:h-[450px] md:w-[300px] 2xl:h-[590px] 2xl:w-[386px]"
-              src={ofer}
-            />
-               <img
-              alt="ofer"
-              className="md:hidden mr-0 rounded-xl w-[270px]  md:h-[450px] md:w-[300px] 2xl:h-[590px] 2xl:w-[386px]"
-              src={oferMobile}
-            />
-           
-       
-           <p>עופר אביטל, הבעלים</p>
-          </div>
+          <div className="relative order-2 flex flex-col  items-end  md:order-1 ">
+            <div className=" order-2 flex flex-col  items-end justify-center p-5 md:h-auto">
+              <img
+                alt="ofer"
+                className="mr-0 hidden min-w-[270px] rounded-xl md:block  md:h-[450px] md:w-[300px] 2xl:h-[590px] 2xl:w-[386px]"
+                src={ofer}
+              />
+              <img
+                alt="ofer"
+                className="mr-0 w-[270px] rounded-xl md:hidden  md:h-[450px] md:w-[300px] 2xl:h-[590px] 2xl:w-[386px]"
+                src={oferMobile}
+              />
+
+              <p>עופר אביטל, הבעלים</p>
+            </div>
 
             <p
               dir="rtl"
-              className="oreder-1 about-text-window relative  hidden   h-[185px] w-[615px] p-4 text-right text-[20px] font-medium  leading-loose text-neutral-100  md:bottom-40 md:right-[300px] md:order-2 md:block md:h-[185px] md:w-[615px] 2xl:h-[185px] 2xl:w-[615px]"
+              className="oreder-1 about-text-window absolute bottom-3  hidden   h-[185px] w-[615px] p-4 text-right text-[20px] font-medium  leading-loose text-neutral-100   md:right-[340px] md:order-2 md:block md:h-[185px] md:w-[615px] 2xl:h-[185px] 2xl:w-[615px]"
             >
               לפני 28 שנים, בתור סטודנט למדתי מתמטיקה. אחרי סיום התואר וכשעברו
               מספר שנים, פגשתי בסניף מקדונלד בקניון קרית אונו תלמיד לשעבר שמאוד
               שמח לראות אותי ואמר "אתה שינית את חיי. מאז ועד היום מיישם את שיטות
               הלימוד שלי בהבנתי".
             </p>
-         
-            <div className="relative md:hidden ">
-              <div class="container mr-40 mb-[-90px]">
+
+            <div className="relative z-10 mb-2   right-10 flex h-[120px]  w-[100vw] justify-center md:hidden">
+              <img
+                src={aboutTextContainer}
+                className=" h-22 absolute top-0  z-0 h-[200px] w-[314px]"
+              />
+              <div class="absolute top-20 inset-0 flex items-center justify-center  bg-opacity-50">
+                <h2 class=" text-white p-2 h-[200px] w-[314px]" dir="rtl">
+                  לפני 28 שנים, בתור סטודנט למדתי מתמטיקה. אחרי סיום התואר
+                  וכשעברו מספר שנים, פגשתי בסניף מקדונלד בקניון קרית אונו תלמיד
+                  לשעבר שמאוד שמח לראות אותי ואמר "אתה שינית את חיי. מאז ועד
+                  היום מיישם את שיטות הלימוד שלי בהבנתי".
+                </h2>
+              </div>
+
+              {/* <div class="container mb-[-90px] ">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="oreder-1 h-[250px] w-[400px]   rounded-xl"
+                  class="oreder-1 h-[270px] w-[350px]   rounded-xl"
                   viewBox="90 20 200 91"
                   fill="none"
                 >
@@ -613,16 +616,16 @@ function Home() {
                     fill="#555FD9"
                   />
                 </svg>
-                <div class="content absolute top-0 mr-40 p-4 text-right text-[15px] font-medium leading-loose text-neutral-100 md:text-[20px]">
+                <div class="content absolute top-0  p-4 text-right text-[15px] font-medium leading-loose text-neutral-100 md:text-[20px]">
                   לפני 28 שנים, בתור סטודנט למדתי מתמטיקה. אחרי סיום התואר
                   וכשעברו מספר שנים, פגשתי בסניף מקדונלד בקניון קרית אונו תלמיד
                   לשעבר שמאוד שמח לראות אותי ואמר "אתה שינית את חיי. מאז ועד
                   היום מיישם את שיטות הלימוד שלי בהבנתי".
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
-        </div> */}
+        </div>
 
         {/* <div className="about-bg relative h-[752px]">
           <div className="absolute left-0 top-0 h-[784px] ">
