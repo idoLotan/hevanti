@@ -173,5 +173,17 @@ input:checked + div svg {
   @apply block;  
 }
 
+@keyframes flip-animation {
+  /* 0% {
+    transform:  rotate(0);
+  } */
+  50% {
+    transform:  rotate(180deg);
+  }
+  
+}
 
 
+.flip-item {
+  animation: flip-animation 1s ease-in-out;
+}

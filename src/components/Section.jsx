@@ -21,8 +21,9 @@ const Section = ({ section, activeIndex, index, toggleSection }) => {
   
               ></div>
             ) : (
+              
               <div
-                className="h-0 w-0 opacity-80
+                className="h-0 w-0 opacity-80  
   border-l-[9px] border-r-[9px]
   border-t-[9px] border-l-transparent
   border-r-transparent border-t-[#FF7848]"
@@ -40,7 +41,11 @@ const Section = ({ section, activeIndex, index, toggleSection }) => {
       </div>
       {activeIndex === index && (
         <div dir="rtl" className="accordion-content mt-1 flex ">
-          {section.content}
+        
+
+  {section.content}
+ 
+         
         </div>
       )}
     </div>
