@@ -1,0 +1,189 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+html{
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.section-1{
+  background-image: url('images/xcc-min.jpg');
+}
+
+.section-2{
+  background-image: url('images/howItWorks.png');
+
+}
+
+.about-text-window{
+  background-image: url('images/about-text-window.png');
+  
+}
+
+.about-bg{
+  background-image: url('images/about-bg.png');
+  
+}
+
+.about-text-container{
+  background-image: url('images/about-text-container.png');
+  
+}
+
+
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+summary:first-of-type {
+  list-style-type: none;
+}
+
+summary:after {
+border-radius: 5px;
+content: "+";
+color: #000;
+float: left;
+font-size: 40px;
+font-weight: bold;
+margin: -7px 12px 0 0;
+padding: 0;
+text-align: center;
+width: 20px;
+height: 35px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+details[open] summary:after {
+content: "-";
+ font-size: 40px;
+}
+
+
+
+.modal-overlay {
+  opacity: 1;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+ transition-delay: 500ms;
+ transition-property: background-color;
+ transition: opacity .25s ease;
+ margin-right:20px;
+ animation: fadeIn .5s;
+}
+
+.modal {
+  background-color: rgb(255, 255, 255);
+  transition: width .25s ease;
+  border-radius: 3px;
+  max-width: 500px;
+  padding: 0.5rem;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.09), 0 1px 1px rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 10%;
+  right: 0;
+  z-index: 1050;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: 0;
+  width:300px;
+}
+
+
+.modal-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-close-button {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  opacity: .3;
+  cursor: pointer;
+  border: none;
+}
+
+
+:active.shadow-start-btn {
+  box-shadow: 6px 6px 4px 0px rgba(66, 74, 164, 0.65) inset;
+
+}
+
+
+
+
+:active.shadow-send-btn {
+  box-shadow: 3px 3px 4px 0px rgba(224, 95, 50, 0.85) inset;
+
+}
+
+
+
+.pressed-button {
+  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+
+input:checked + div {  
+  @apply border-blue-100;  
+}  
+input:checked + div svg {  
+  @apply block;  
+}
+
+@keyframes flip-animation {
+  /* 0% {
+    transform:  rotate(0);
+  } */
+  50% {
+    transform:  rotate(180deg);
+  }
+  
+}
+
+
+.flip-item {
+  animation: flip-animation 1s ease-in-out;
+}
