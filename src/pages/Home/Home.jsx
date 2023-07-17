@@ -9,6 +9,7 @@ import AboutSection from "./AboutSection";
 import SubjectSection from "./SubjectSection";
 import ContantSection from "./ContantSection";
 import TeachersSection from "./TeachersSection";
+import QuestionsSection from "./QuestionsSection";
 
 function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,11 +29,7 @@ function Home() {
   };
 
 
-  const scrollToSection = () => {
-  const section = document.getElementById("contact");
-  section.scrollIntoView({ behavior: "smooth" });
-    };
-  
+
 
   return (
     <div className="home-page">
@@ -205,11 +202,12 @@ function Home() {
       <SubjectSection
         setSubjects={setSubjects}
         subjects={subjects}
-        scrollToSection={scrollToSection}
+     
       ></SubjectSection>
       <AboutSection></AboutSection>
       <TeachersSection></TeachersSection>
       <ContantSection toggelModal={toggelModal} subjects={subjects} ></ContantSection>
+      <QuestionsSection></QuestionsSection>
       <Footer></Footer>
     </div>
   );

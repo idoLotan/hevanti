@@ -4,20 +4,22 @@ import { ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage";
 import { v4 } from "uuid";
 import Btn from "../../components/ui/Btn";
 import Img from "../../components/ui/Img";
+import SearchItem from "./SearchItem";
+import SearchBar from "./SearchBar";
 
 const Lottery = () => {
   const [images, setImages] = useState(null);
   const [imageList, setImageList] = useState(null);
 
+
+  // useEffect(() => {
+   
+  // }, [searchText]);
+
   const imageListRef = ref(storage, `saasd/`);
-
-
-
   const fetchData = async () => {
     try {
       const response = await listAll(imageListRef);
-      console.log(response);
-
       const urls = await Promise.all(
         response.items.map(async (item) => {
           const url = await getDownloadURL(item);
@@ -29,10 +31,6 @@ const Lottery = () => {
       console.log(error);
     }
   };
-  useEffect(() => {
-    
-    fetchData();
-  }, []);
 
   const uploadImage = async (e) => {
     e.preventDefault();
@@ -46,7 +44,6 @@ const Lottery = () => {
         console.log(err);
       }
     }
-    fetchData();
   };
 
   return (
@@ -55,18 +52,22 @@ const Lottery = () => {
         <input type="file" onChange={(e) => setImages(e.target.files)} />
 
         <Btn
-          text={"upload image"}
+          text={"הירשם להגרלה"}
           onClick={uploadImage}
           style={"h-10 p-2 bg-red-500"}
         ></Btn>
 
         <label>שם הילד</label>
         <input type="text" />
-        <div className="flex">
+   
+
+        {/* <div className="flex">
           {imageList?.map((item) => (
             <Img src={item} key={item}></Img>
           ))}
-        </div>
+        </div> */}
+
+        <SearchBar></SearchBar>
       </div>
     </form>
   );

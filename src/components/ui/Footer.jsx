@@ -1,7 +1,9 @@
 import React from "react";
 import logo from "../../assets/images/Group.png";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate()
   return (
     <footer className="flex   justify-between bg-[#2A264D] p-3 font-bold text-white md:flex-row">
       <ul className="m-3 md:order-1 ">
@@ -59,9 +61,9 @@ const Footer = () => {
             <a href="#teachers">המורים שלנו</a>
           </li>
           <li className=" md:m-2 text-right hover:underline">
-            <a href="/accessibility" className="mb-10 hover:underline">
+            <div onClick={() => {navigate("/accessibility")}} className="mb-10 hover:underline">
               הצהרת נגישות
-            </a>
+            </div>
           </li>
         </div>
       </ul>
