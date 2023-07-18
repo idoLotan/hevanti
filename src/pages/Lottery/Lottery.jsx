@@ -2,19 +2,12 @@ import React, { useEffect, useState } from "react";
 import { storage } from "../../firebase-config";
 import { ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage";
 import { v4 } from "uuid";
-import Btn from "../../components/ui/Btn";
-import Img from "../../components/ui/Img";
-import SearchItem from "./SearchItem";
-import SearchBar from "./SearchBar";
+import AddImage from "./AddImage";
+
 
 const Lottery = () => {
   const [images, setImages] = useState(null);
   const [imageList, setImageList] = useState(null);
-
-
-  // useEffect(() => {
-   
-  // }, [searchText]);
 
   const imageListRef = ref(storage, `saasd/`);
   const fetchData = async () => {
@@ -47,8 +40,14 @@ const Lottery = () => {
   };
 
   return (
-    <form className="flex h-[100vh] w-[100vw] items-center justify-center">
-      <div className="flex flex-col items-end">
+    <div className="flex h-[100vh] w-[100vw] flex-col items-center justify-center mt-20">
+
+      {/* <Welcome></Welcome> */}
+      {/* <AddImage></AddImage>
+      <Form></Form> */}
+     
+  <AddImage title={"fdfg"}></AddImage>
+      {/* <div className="flex flex-col items-end">
         <input type="file" onChange={(e) => setImages(e.target.files)} />
 
         <Btn
@@ -58,18 +57,23 @@ const Lottery = () => {
         ></Btn>
 
         <label>שם הילד</label>
-        <input type="text" />
-   
+        <input type="text" /> */}
 
-        {/* <div className="flex">
+
+      {/* <div className="flex">
           {imageList?.map((item) => (
             <Img src={item} key={item}></Img>
           ))}
+          
         </div> */}
 
-        <SearchBar></SearchBar>
-      </div>
-    </form>
+      {/* 
+        <SearchBar></SearchBar> */}
+
+
+
+
+    </div>
   );
 };
 

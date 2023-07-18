@@ -164,15 +164,16 @@ const NavBar = () => {
             </li>
           </ul>
         </div>
-   
-        <img src={logo} className="h-12 absolute md:hidden right-[-60px] mt-2 md:relative md:right-0" ></img>
-      </div>
-      <img src={logo} className="h-12 absolute hidden md:block m-4  top-0  md:right-0 " ></img>
-   
 
-      {/* <div className="  w-[100%] flex justify-center  md:block">
-        <div className=" h-[2px] w-[500px] bg-[#555FD9]"></div>
-      </div> */}
+        <img
+          src={logo}
+          className="absolute right-[-60px] mt-2 h-12 md:relative md:right-0 md:hidden"
+        ></img>
+      </div>
+      <img
+        src={logo}
+        className="absolute top-0 m-4 hidden h-12  md:right-0  md:block "
+      ></img>
     </nav>
   );
 };
