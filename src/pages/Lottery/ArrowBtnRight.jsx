@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const ArrowBtnRight = ({setPageInedx, pageIndex}) => {
+const ArrowBtnRight = ({onClick, pageIndex, disabled}) => {
   const [isDisabled, setIsDisabled] = useState(false);
 
 console.log(pageIndex);
@@ -15,8 +15,8 @@ useEffect(()=> {
     }
 }, [pageIndex])
   return (
-    <div className="flex items-center justify-center" onClick={() => setPageInedx((prevIndex) => prevIndex - 1)}> 
-      {isDisabled ? (
+    <div className="flex items-center justify-center" onClick={onClick}> 
+      {disabled ? (
         <div className="flex items-center justify-center">
          
 

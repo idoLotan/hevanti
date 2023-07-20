@@ -189,3 +189,28 @@ input:checked + div svg {
 .flip-item {
   animation: flip-animation 1s ease-in-out;
 }
+
+
+/* Custom styles for the select container */
+.select-container {
+  position: relative;
+  width: 100px; /* Adjust this to match the desired width */
+}
+
+/* Custom styles for the arrow container */
+.arrow-container {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Custom styles for the arrow */
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 4px 4px 0;
+  border-color: #FF7848 transparent transparent;
+}
