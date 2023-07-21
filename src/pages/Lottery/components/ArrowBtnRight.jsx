@@ -1,19 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-const ArrowBtnRight = ({onClick, pageIndex, disabled}) => {
-  const [isDisabled, setIsDisabled] = useState(false);
+const ArrowBtnRight = ({onClick,  disabled}) => {
 
-console.log(pageIndex);
-
-
-useEffect(()=> {
-    
-    if(pageIndex == 1){
-        setIsDisabled(true)
-    }else{
-        setIsDisabled(false)
-    }
-}, [pageIndex])
   return (
     <div className="flex items-center justify-center" onClick={onClick}> 
       {disabled ? (

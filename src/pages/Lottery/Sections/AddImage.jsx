@@ -14,15 +14,12 @@
 //     addCard()
 //   }, [])
 
-
-
-  
 //   const addCard = () => {
 //     if(cards.length  < 3 ){
 //       const id = Date.now();
 //       const newCard = { id: id };
 //       setCards([newCard, ...cards]);
-//     }  
+//     }
 //   };
 
 //   const imageListRef = ref(storage, `saasd/`);
@@ -53,7 +50,6 @@
 //   //   }
 //   // };
 
-
 //   const uploadImages = async (e) => {
 //     e.preventDefault();
 //     if (images && images.length > 0) {
@@ -64,7 +60,7 @@
 //             await uploadBytes(imgRef, image);
 //           }
 //         });
-  
+
 //         await Promise.all(uploadPromises);
 //         console.log("All images uploaded successfully!");
 //       } catch (err) {
@@ -72,7 +68,6 @@
 //       }
 //     }
 //   };
-  
 
 //   return (
 //     <div>
@@ -100,19 +95,21 @@
 
 // export default AddImage;
 
-
-
 import React, { useEffect, useState } from "react";
-import CrossBtn from "./CrossBtn";
-import Card from "./Card";
+import CrossBtn from "../components/CrossBtn";
+import Card from "../components/Card";
 import { getDownloadURL, listAll, ref, uploadBytes } from "firebase/storage";
-import { storage } from "../../firebase-config";
+import { storage } from "../../../firebase-config";
 import { v4 } from "uuid";
+import ArrowBtnLeft from "../components/ArrowBtnLeft";
+import ArrowBtnRight from "../components/ArrowBtnRight";
 
-const AddImage = () => {
+const AddImage = ({ handleNextPage, handlePrevPage, pageIndex }) => {
   const [images, setImages] = useState([]);
   const [imageList, setImageList] = useState(null);
   const [cards, setCards] = useState([]);
+
+  console.log(images);
 
   useEffect(() => {
     addCard();
@@ -141,7 +138,6 @@ const AddImage = () => {
       console.log(error);
     }
   };
-
   const uploadImages = async (e) => {
     e.preventDefault();
     if (images && images.length > 0) {
@@ -155,33 +151,49 @@ const AddImage = () => {
 
         await Promise.all(uploadPromises);
         console.log("All images uploaded successfully!");
+
+        // Move to the next page after successful uploads
+        console.log("check");
       } catch (err) {
         console.log(err);
       }
+    } else {
+      handleNextPage();
     }
   };
 
   return (
     <div>
-      <section className="relative p-10">
-        <header className="w-[90%] mx-auto text-center text-[2.5rem] font-semibold leading-[4rem] text-orange-400">
+      <section className="relative ">
+        <header className="ab absolute -top-32 bottom-10 mx-auto w-[90%] text-center text-[2.5rem] font-semibold leading-[4rem] text-orange-400">
           שתף/שתפי את התמונות עם חולצות המותג שלנו/ או חולצות שבט און
         </header>
-        <div className="flex flex-col h-[600px] w-[90%] md:flex-row md:w-[80%] lg:w-[90%] 2xl:w-[90%] mx-auto justify-between rounded-2xl border border-indigo-600 bg-indigo-600">
+        <div className=" flex h-[600px]  w-[1088px] justify-between rounded-2xl border border-indigo-600 bg-indigo-600">
           <div
             id="right-side"
-            className="flex h-full md:flex-row items-center justify-center"
+            className="flex h-full items-center justify-center md:flex-row"
           >
             <CrossBtn title={"title"} onClick={addCard}></CrossBtn>
 
             {cards.map((card) => (
-              <Card key={card.id} id={card.id} setImages={setImages} images={images} />
+              <Card
+                key={card.id}
+                id={card.id}
+                setImages={setImages}
+                images={images}
+              />
             ))}
           </div>
         </div>
-        <button onClick={uploadImages} className="mt-4 w-[120px] h-[40px] bg-indigo-600 text-white text-xl font-semibold rounded-md">
+        {/* <button onClick={uploadImages} className="mt-4 w-[120px] h-[40px] bg-indigo-600 text-white text-xl font-semibold rounded-md">
           העלאה
-        </button>
+        </button> */}
+
+        <div className="absolute  z-10 mt-4 flex">
+          <ArrowBtnLeft onClick={uploadImages} pageIndex={pageIndex} />
+          <div className="p-3"></div>
+          <ArrowBtnRight onClick={uploadImages} disabled={true} />
+        </div>
       </section>
     </div>
   );

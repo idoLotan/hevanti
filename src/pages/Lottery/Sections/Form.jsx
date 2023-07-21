@@ -1,15 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 
-import { db } from "../../firebase-config";
+import { db } from "../../../firebase-config";
 import { addDoc, collection } from "firebase/firestore";
 import emailjs from "@emailjs/browser";
-import CheckBox from "../../components/ui/CheckBox";
+import CheckBox from "../../../components/ui/CheckBox";
 import { Dropdown } from "flowbite-react";
-import CustomSelect from "./DropDown";
+import CustomSelect from "../components/DropDown";
+import ArrowBtnLeft from "../components/ArrowBtnLeft";
+import ArrowBtnRight from "../components/ArrowBtnRight";
 
 // import CheckBox from "../ui/CheckBox";
 
-const Form = () => {
+const Form = ({ handleNextPage, handlePrevPage }) => {
   const userInputRef = collection(db, "userInput");
 
   const nameRef = useRef();
@@ -254,16 +256,16 @@ const Form = () => {
   return (
     <form
       onSubmit={sendEmail}
-      className=" flex h-[600px]  w-[484px] justify-between rounded-2xl border border-indigo-600 bg-indigo-600 p-10 md:w-[600px] lg:w-[800px] 2xl:w-[1088px]"
+    
     >
+        <div  className=" flex h-[600px]  w-[1088px] justify-between rounded-2xl border border-indigo-600 bg-indigo-600 p-20" >
       <div className=" mb-5 flex flex-col items-end  md:mb-0 md:flex-row  md:items-start ">
         <div className="flex flex-col  items-end md:flex-row  md:items-start ">
           <div className="flex flex-col">
             <div className=" text-xl font-medium text-neutral-100" dir="rtl">
-              במה אתה  מתעניין?
+              במה אתה מתעניין?
             </div>
             <div className=" flex md:flex-row">
-              
               <div className="flex-end  flex flex-col text-end">
                 <div className="mr-4 font-bold text-neutral-100">תקציב</div>
                 <div className="overflow-wrap flex ">
@@ -433,7 +435,9 @@ const Form = () => {
           ref={phoneRef}
         />
 
-        <h3 className=" mt-20 text-orange-400 text-xl font-semibold text-right">הגדל/י את הסיכוי שלך לזכות</h3>
+        <h3 className=" mt-20 text-right text-xl font-semibold text-orange-400">
+          הגדל/י את הסיכוי שלך לזכות
+        </h3>
         <label className="font-bold text-orange-400 ">שם חבר</label>
         <input
           aria-label="phone"
@@ -452,6 +456,13 @@ const Form = () => {
           className="mt-2 rounded-lg border border-[#555FD9] pr-1 text-end focus:outline-none"
           ref={phoneRef}
         />
+      </div>
+    
+      </div>
+        <div className="z-10  flex absolute mt-4 ">
+        <ArrowBtnLeft onClick={handleNextPage} disabled={true}/>
+        <div className="p-3"></div>
+        <ArrowBtnRight onClick={handlePrevPage} />
       </div>
     </form>
   );

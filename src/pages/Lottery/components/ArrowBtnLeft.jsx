@@ -1,18 +1,7 @@
-import React, { useEffect, useState } from "react";
 
-const ArrowBtnLeft = ({onClick, pageIndex, disabled}) => {
-  const [isDisabled, setIsDisabled] = useState(false);
 
-  console.log(pageIndex);
-  
+const ArrowBtnLeft = ({onClick,  disabled}) => {
 
-  useEffect(()=> {
-    if(pageIndex == 2){
-        setIsDisabled(true)
-    }else{
-        setIsDisabled(false)
-    }
-}, [pageIndex])
   return (
     <div onClick={onClick}>
       {disabled ? (

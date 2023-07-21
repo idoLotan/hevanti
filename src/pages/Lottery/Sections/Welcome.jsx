@@ -1,17 +1,17 @@
 import React from "react";
-import gift from "../../assets/images/LotteryImage/gift.png";
-import credit from "../../assets/images/LotteryImage/credit.png";
-import iPhone from "../../assets/images/LotteryImage/iphone.png";
-import xbox from "../../assets/images/LotteryImage/xbox.png";
+import gift from "../../../assets/images/LotteryImage/gift.png";
+import credit from "../../../assets/images/LotteryImage/credit.png";
+import iPhone from "../../../assets/images/LotteryImage/iphone.png";
+import xbox from "../../../assets/images/LotteryImage/xbox.png";
 
 const Welcome = ({handleNextPage}) => {
   return (
     <div>
-      <section className="relative p-10 ">
-        <header className="  text-center text-[64px] font-semibold text-orange-400">
+      <section className="relative  ">
+        <header className=" absolute -top-24 w-[100%]  text-center text-[64px] font-semibold text-orange-400">
           ברוך הבא
         </header>
-        <div className=" flex h-[600px] w-[484px] justify-between rounded-2xl border border-indigo-600 bg-indigo-600 md:w-[600px] lg:w-[800px] 2xl:w-[1088px]">
+        <div className=" flex h-[600px]  justify-between rounded-2xl border border-indigo-600 bg-indigo-600 w-[1088px]">
           <div
             id="left-side"
             className="  h-full   w-[50%] rounded-2xl border border-indigo-600 bg-neutral-100"

@@ -1,14 +1,14 @@
 import React from "react";
-import gift from "../../assets/images/LotteryImage/gift.png";
-import completed1min from "../../assets/images/LotteryImage/completed1-min.png";
-import completed2min from "../../assets/images/LotteryImage/completed2-min.png";
-import completed3min from "../../assets/images/LotteryImage/completed3-min.png";
+import gift from "../../../assets/images/LotteryImage/gift.png";
+import completed1min from "../../../assets/images/LotteryImage/completed1-min.png";
+import completed2min from "../../../assets/images/LotteryImage/completed2-min.png";
+import completed3min from "../../../assets/images/LotteryImage/completed3-min.png";
 
 const SubmissionCompleted = () => {
   return (
     <section className="relative p-10 ">
    
-      <div className=" flex h-[600px] w-[484px] flex-col justify-center rounded-2xl border border-indigo-600 bg-indigo-600 md:w-[600px] lg:w-[800px] 2xl:w-[1088px]">
+      <div className=" flex h-[600px] flex-col justify-center rounded-2xl border border-indigo-600 bg-indigo-600 w-[1088px]">
         <div
           dir="rtl"
           className=" h-20 w-[1188px] text-center text-[80px] font-semibold text-neutral-100 "
