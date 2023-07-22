@@ -1,33 +1,44 @@
-import React from "react";
+import React, { useEffect } from "react";
 import gift from "../../../assets/images/LotteryImage/gift.png";
 import completed1min from "../../../assets/images/LotteryImage/completed1-min.png";
 import completed2min from "../../../assets/images/LotteryImage/completed2-min.png";
 import completed3min from "../../../assets/images/LotteryImage/completed3-min.png";
+import { useNavigate } from "react-router-dom";
 
 const SubmissionCompleted = () => {
+  const navigate = useNavigate()
+
+// useEffect(()=> {
+//   setTimeout(()=>{
+//     navigate("/home")
+//   }, 2000)
+
+// }, [])
+
+
   return (
     <section className="relative p-10 ">
    
-      <div className=" flex h-[600px] flex-col justify-center rounded-2xl border border-indigo-600 bg-indigo-600 w-[1088px]">
+      <div className="rotate-90 md:rotate-0 flex h-[600px] md:flex-col items-center justify-center rounded-2xl border border-indigo-600 bg-indigo-600 w-[1088px]">
         <div
           dir="rtl"
-          className=" h-20 w-[1188px] text-center text-[80px] font-semibold text-neutral-100 "
+          className="-rotate-90 md:rotate-0 h-20  text-center text-[80px] font-semibold text-neutral-100 "
         >
           בהצלחה!
         </div>
         <div
           dir="rtl"
-          className=" w-[1188px] p-10 text-center text-[64px] font-semibold text-white"
+          className="-rotate-90 md:rotate-0  p-10 text-center text-[64px] font-semibold text-white"
         >
           תודה!
         </div>
-        <div className=" text-center text-white text-xl font-semibold">תאריך הגרלה 28.07.2023 - 15.08.2023</div>
+        <div className="-rotate-90 md:rotate-0  text-center text-white text-xl font-semibold">תאריך הגרלה 28.07.2023 - 15.08.2023</div>
       </div>
      
       <img
         src={gift}
         alt=""
-        className="absolute  bottom-[-4rem] left-[-10rem] h-[280px]"
+        className="absolute  bottom-[-4rem] md:left-[-10rem] h-[280px]"
       />
 
       {/* <img
@@ -46,13 +57,13 @@ const SubmissionCompleted = () => {
 <img
         src={completed2min}
         alt=""
-        className="absolute bottom-[0rem] right-[14rem] rotate-45  h-[280px]"
+        className="absolute bottom-[0rem] md:right-[14rem] rotate-45  h-[280px]"
       />
 
       <img
         src={completed3min}
         alt=""
-        className="absolute  bottom-[30rem] left-[-5rem] h-[280px]"
+        className="absolute  bottom-[30rem] md:left-[-5rem] h-[280px]"
       />
     </section>
   );

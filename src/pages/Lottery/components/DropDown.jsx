@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Select from "react-select";
 
 {
@@ -47,7 +47,19 @@ const options = [
     { value: "8", label: "יב" },
   ];
   
-const CustomSelect = () => {
+const CustomSelect = ({setLevel}) => {
+  const [selectedValue, setSelectedValue] = useState(options[0]);
+
+  // setSelectedValue(level);
+  
+
+  // Define the onChange handler
+  const handleChange = (selectedOption) => {
+    setSelectedValue(selectedOption);
+    setLevel(selectedValue)
+    console.log(selectedValue.label);
+    
+  };
   return (
     <div className="select-container text-[#FF7848] text-right">
       <Select
@@ -55,6 +67,8 @@ const CustomSelect = () => {
         styles={customStyles}
         isSearchable={false}
         placeholder="א-ג"
+        value={selectedValue}
+        onChange={handleChange}
       />
     </div>
   );

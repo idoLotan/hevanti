@@ -8,7 +8,7 @@ const ArrowBtnLeft = ({onClick,  disabled}) => {
         <div className="flex items-center justify-center ">
           
           <svg
-          className=" mr-96 cursor-pointer"
+          className=" md:mr-96 mr-20 cursor-pointer"
             width="49"
             height="48"
             viewBox="0 0 49 48"
@@ -35,7 +35,7 @@ const ArrowBtnLeft = ({onClick,  disabled}) => {
         <div className="flex items-center justify-center">
           
           <svg 
-            className="rotate-180 mr-96 cursor-pointer"
+            className="rotate-180 md:mr-96  mr-20 cursor-pointer"
             width="49"
             height="48"
             viewBox="0 0 49 48"

@@ -1,46 +1,30 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import SearchItem from "./SearchItem";
 
 const SearchBar = () => {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [searchText, setSearchText] = useState("");
-  const [searchResult, setSearchResult] = useState(null);
-  const brotherhoods = ["תל אביב", "חיפה", "קרית אונו", "אשדוד", "קרית ביאליק"];
+  const [query, setQuery] = useState("");
+  const [items, setItems] = useState(["תל אביב", "חיפה", "קרית אונו", "אשדוד", "קרית ביאליק"]);
+
 
   const handleInputChange = (e) => {
-    setSearchQuery(e.target.value);
+    setQuery(e.target.value);
   };
 
-  const handleSearch = (searchText) => {
-    const searchResults = [];
-    brotherhoods.forEach((brotherhood) => {
-      if (brotherhood.includes(searchText)) {
-        searchResults.push(brotherhood);
-      }
-    });
-    console.log(searchResults);
-    setSearchResult(searchResults);
-  };
+
+  const filterItems =  useMemo(() => {items.filter(item => {
+  return  item.toLowerCase().includes(query.toLowerCase())})}, [items, query])
 
   return (
     <div>
       <input
-      placeholder="אחווה"
-      dir="rtl"
-        type="text"
-        onKeyUp={(e) => {
-          handleSearch(e.target.value);
-        }}
+      value={query}
+        placeholder="אחווה"
+        dir="rtl"
+        type="search"
         onChange={handleInputChange}
-        value={searchQuery}
       />
-      {searchResult?.map((item) => (
-        <SearchItem
-          item={item}
-          key={item}
-          setSearchQuery={setSearchQuery}
-          setSearchResult={setSearchResult}
-        ></SearchItem>
+      {filterItems?.map((item) => (
+        <div>{item}</div>
       ))}
     </div>
   );

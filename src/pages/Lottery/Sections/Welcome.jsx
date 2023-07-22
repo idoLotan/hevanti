@@ -1,22 +1,23 @@
-import React from "react";
+
 import gift from "../../../assets/images/LotteryImage/gift.png";
 import credit from "../../../assets/images/LotteryImage/credit.png";
 import iPhone from "../../../assets/images/LotteryImage/iphone.png";
 import xbox from "../../../assets/images/LotteryImage/xbox.png";
 
-const Welcome = ({handleNextPage}) => {
+const Welcome = ({ handleNextPage, setUserCode }) => {
+
   return (
     <div>
       <section className="relative  ">
-        <header className=" absolute -top-24 w-[100%]  text-center text-[64px] font-semibold text-orange-400">
+        <header className=" absolute -top-96  md:-top-32 w-[100%]  text-center text-[64px] font-semibold text-orange-400">
           ברוך הבא
         </header>
-        <div className=" flex h-[600px]  justify-between rounded-2xl border border-indigo-600 bg-indigo-600 w-[1088px]">
+        <div className=" rotate-90 md:rotate-0 flex h-[600px]  w-[1088px] justify-between rounded-2xl border border-indigo-600 bg-indigo-600">
           <div
             id="left-side"
-            className="  h-full   w-[50%] rounded-2xl border border-indigo-600 bg-neutral-100"
+            className="-rotate-90 md:rotate-0 h-full   w-[50%] rounded-2xl border border-indigo-600 bg-neutral-100"
           >
-            <div className="flex h-full w-full flex-col items-end justify-start  rounded-br-[46px] rounded-tl-[46px] p-10    text-[14px] ">
+            <div className="flex   h-full w-full flex-col items-end justify-start  rounded-br-[46px] rounded-tl-[46px] p-10    text-[14px] ">
               <div className="flex flex-row items-center pr-4 pt-10  ">
                 <div className=" mr-4 w-[393px] text-right text-xl font-medium leading-normal text-indigo-600">
                   שעורי ההכנה לשנת הלימודים הקרובה, חווית אאאהה מובטחת עם המורים
@@ -89,17 +90,24 @@ const Welcome = ({handleNextPage}) => {
 
           <div
             id="right-side "
-            className="flex h-full w-[50%] flex-col  items-center justify-center"
+            className="  -rotate-90 md:rotate-0  flex h-full w-[50%] flex-col  items-center justify-center"
           >
-            <button onClick={handleNextPage} className="mb-4 h-14 w-[248px] rounded-xl border-2 bg-white p-2 text-center text-2xl font-semibold text-indigo-600">
+            <button
+              onClick={handleNextPage}
+              className="mb-4 h-14 w-[248px] rounded-xl border-2 bg-white p-2 text-center text-2xl font-semibold text-indigo-600"
+            >
               כניסה עם קוד
             </button>
             <input
+              onChange={(e) => setUserCode(e.target.value)}
               dir="rtl"
               placeholder="הקלד קוד"
               className="mb-10 h-14 w-[248px] rounded-xl border-2 bg-white pr-2  text-right text-2xl font-semibold text-indigo-600"
             />
-            <button onClick={handleNextPage} className="h-14 w-[248px] rounded-xl border-2 bg-white p-2 text-center text-2xl font-semibold text-indigo-600">
+            <button
+              onClick={handleNextPage}
+              className="h-14 w-[248px] rounded-xl border-2 bg-white p-2 text-center text-2xl font-semibold text-indigo-600"
+            >
               כניסה
             </button>
           </div>
@@ -107,22 +115,22 @@ const Welcome = ({handleNextPage}) => {
         <img
           src={gift}
           alt=""
-          className="absolute  bottom-[-4rem] left-[-10rem] h-[280px]"
+          className="absolute hidden md:block bottom-[-4rem] left-[-10rem] h-[280px]"
         />
         <img
           src={credit}
           alt=""
-          className="absolute  bottom-[-5rem] right-[12rem]"
+          className="absolute  hidden md:block bottom-[-5rem] right-[12rem]"
         />
         <img
           src={iPhone}
           alt=""
-          className="absolute left-[-10rem] top-[0rem] h-[352.28px]"
+          className="absolute hidden md:block left-[-10rem] top-[0rem] h-[352.28px]"
         />
         <img
           src={xbox}
           alt=""
-          className="absolute  bottom-[-5rem] right-[-8rem] h-[418px]"
+          className="absolute  hidden md:block bottom-[-5rem] right-[-8rem] h-[418px]"
         />
       </section>
     </div>
@@ -132,11 +140,12 @@ const Welcome = ({handleNextPage}) => {
 export default Welcome;
 
 
+
 // import React from "react";
-// import gift from "../../assets/images/LotteryImage/gift.png";
-// import credit from "../../assets/images/LotteryImage/credit.png";
-// import iPhone from "../../assets/images/LotteryImage/iphone.png";
-// import xbox from "../../assets/images/LotteryImage/xbox.png";
+// import gift from "../../../assets/images/LotteryImage/gift.png";
+// import credit from "../../../assets/images/LotteryImage/credit.png";
+// import iPhone from "../../../assets/images/LotteryImage/iphone.png";
+// import xbox from "../../../assets/images/LotteryImage/xbox.png";
 
 // const Welcome = () => {
 //   return (

@@ -16,7 +16,7 @@ const Card = ({ setImages, images }) => {
   };
 
   return (
-    <div className="Rectangle11 m-2 flex h-[392px] w-[304px] flex-col items-center justify-center rounded-xl bg-neutral-100">
+    <div className=" -rotate-90 h-[292px] md:rotate-0  m-2 flex md:h-[392px] w-[304px] flex-col items-center justify-center rounded-xl bg-neutral-100">
       {image ? (
         <img src={image} alt="Uploaded" className="h-48 w-48 object-contain" />
       ) : (

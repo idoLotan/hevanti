@@ -15,7 +15,7 @@ const ArrowBtnRight = ({onClick,  disabled}) => {
             </div>
           </div>
           <svg
-            className="rotate-180 ml-96 cursor-pointer"
+            className="rotate-180 md:ml-96 ml-20 cursor-pointer"
             width="49"
             height="48"
             viewBox="0 0 49 48"
@@ -41,7 +41,7 @@ const ArrowBtnRight = ({onClick,  disabled}) => {
             </div>
           </div>
           <svg
-          className=" ml-96 cursor-pointer"
+          className=" md:ml-96 ml-20 cursor-pointer"
             width="49"
             height="48"
             viewBox="0 0 49 48"

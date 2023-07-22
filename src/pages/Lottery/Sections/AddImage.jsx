@@ -153,6 +153,7 @@ const AddImage = ({ handleNextPage, handlePrevPage, pageIndex }) => {
         console.log("All images uploaded successfully!");
 
         // Move to the next page after successful uploads
+        handleNextPage();
         console.log("check");
       } catch (err) {
         console.log(err);
@@ -165,13 +166,13 @@ const AddImage = ({ handleNextPage, handlePrevPage, pageIndex }) => {
   return (
     <div>
       <section className="relative ">
-        <header className="ab absolute -top-32 bottom-10 mx-auto w-[90%] text-center text-[2.5rem] font-semibold leading-[4rem] text-orange-400">
+        <header className="ab absolute -top-96 md:-top-32 bottom-10 mx-auto w-[90%] text-center text-[2.5rem] font-semibold leading-[4rem] text-orange-400">
           שתף/שתפי את התמונות עם חולצות המותג שלנו/ או חולצות שבט און
         </header>
-        <div className=" flex h-[600px]  w-[1088px] justify-between rounded-2xl border border-indigo-600 bg-indigo-600">
+        <div className="rotate-90 md:rotate-0 flex h-[600px]  w-[1088px] justify-between rounded-2xl border border-indigo-600 bg-indigo-600">
           <div
             id="right-side"
-            className="flex h-full items-center justify-center md:flex-row"
+            className="flex h-full items-center justify-center md:flex-row "
           >
             <CrossBtn title={"title"} onClick={addCard}></CrossBtn>
 
@@ -189,10 +190,10 @@ const AddImage = ({ handleNextPage, handlePrevPage, pageIndex }) => {
           העלאה
         </button> */}
 
-        <div className="absolute  z-10 mt-4 flex">
-          <ArrowBtnLeft onClick={uploadImages} pageIndex={pageIndex} />
+        <div className="absolute  w-full  justify-center  z-10 mt-4 flex">
+          <ArrowBtnLeft onClick={uploadImages} pageIndex={pageIndex} disabled={true} />
           <div className="p-3"></div>
-          <ArrowBtnRight onClick={uploadImages} disabled={true} />
+          <ArrowBtnRight onClick={uploadImages}  />
         </div>
       </section>
     </div>
