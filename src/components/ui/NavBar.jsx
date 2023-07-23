@@ -20,6 +20,7 @@ const NavBar = () => {
               role="button"
             ></img>
             <ul className="flex flex-col items-end font-medium">
+          
               <li className="p-3" role="button" onClick={handleHBar}>
                 <a
                   href="#subjects"
@@ -29,6 +30,8 @@ const NavBar = () => {
                   מקצועות
                 </a>
               </li>
+
+
 
               <li className="p-3" role="button" onClick={handleHBar}>
                 <a
@@ -66,6 +69,16 @@ const NavBar = () => {
                   aria-current="page"
                 >
                   צור קשר
+                </a>
+              </li>
+              
+              <li  className="p-3" role="button" onClick={handleHBar}>
+                <a
+                  href="/lottery"
+                  className="rounded-full  px-3 	 py-2 text-lg  transition-all hover:-translate-y-0.5 hover:bg-white hover:text-black hover:shadow-[0_10px_25px_-15px_rgba(0,0,0,0.4)]"
+                  aria-current="page"
+                >
+                  הגרלה
                 </a>
               </li>
             </ul>
@@ -114,7 +127,7 @@ const NavBar = () => {
 
         <div className=" hidden items-center justify-end md:block ">
           <ul className="flex flex-row font-medium">
-          <li>
+            <li>
               <a
                 href="/lottery"
                 className=" rounded-full px-3 py-2 text-lg text-[#2A264D] transition-all hover:-translate-y-0.5 hover:bg-white hover:text-black hover:shadow-[0_10px_25px_-15px_rgba(0,0,0,0.4)]"
@@ -171,7 +184,6 @@ const NavBar = () => {
                 צור קשר
               </a>
             </li>
-          
           </ul>
         </div>
 
