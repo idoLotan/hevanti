@@ -174,7 +174,7 @@ const AddImage = ({ handleNextPage, handlePrevPage, pageIndex }) => {
             id="right-side"
             className="flex h-full items-center justify-center md:flex-row "
           >
-            <CrossBtn title={"title"} onClick={addCard}></CrossBtn>
+            <CrossBtn title={""} onClick={addCard}></CrossBtn>
 
             {cards.map((card) => (
               <Card

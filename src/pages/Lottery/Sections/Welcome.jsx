@@ -8,7 +8,7 @@ const Welcome = ({ handleNextPage, setUserCode }) => {
 
   return (
     <div>
-      <section className="relative  ">
+      <section className="relative">
         <header className=" absolute -top-96  md:-top-32 w-[100%]  text-center text-[64px] font-semibold text-orange-400">
           ברוך הבא
         </header>
