@@ -166,9 +166,9 @@ const AddImage = ({ handleNextPage, handlePrevPage, pageIndex }) => {
   return (
     <div>
       <section className="relative ">
-        <header className="ab absolute -top-96 md:-top-32 bottom-10 mx-auto w-[90%] text-center text-[2.5rem] font-semibold leading-[4rem] text-orange-400">
+        {/* <header className=" absolute -top-96 md:-top-32 bottom-10 mx-auto w-[90%] text-center text-[2.5rem] font-semibold leading-[4rem] text-orange-400">
           שתף/שתפי את התמונות עם חולצות המותג שלנו/ או חולצות שבט און
-        </header>
+        </header> */}
         <div className="rotate-90 md:rotate-0 flex h-[600px]  w-[1088px] justify-between rounded-2xl border border-indigo-600 bg-indigo-600">
           <div
             id="right-side"

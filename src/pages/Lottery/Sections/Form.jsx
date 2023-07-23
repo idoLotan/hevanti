@@ -139,7 +139,7 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
     }
 
     if (phone.trim() === "") {
-      newErrors.phone = "של נקלט מספר טלפון";
+      newErrors.phone = "לא נקלט מספר טלפון";
       isValid = false;
     }
     setErrors(newErrors); // Update the errors state
@@ -157,10 +157,10 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
     splitSubjectsIntoColumns(subjects);
 
   return (
-    <form onSubmit={handleFormSubmit}>
+    <form onSubmit={handleFormSubmit} className="relative top-[48px]">
       <div className="flex h-[600px] w-[1088px]  rotate-90 rounded-2xl border border-indigo-600 bg-indigo-600 p-20 md:rotate-0 md:justify-between">
         <div className=" flex flex-row justify-start md:w-full md:justify-evenly ">
-          <div className=" mb-5 flex flex-col items-end  md:mb-0 md:flex-row  md:items-start ">
+          <div className="  flex flex-col items-end  md:mb-0 md:flex-row  md:items-start ">
             <div className="flex flex-col  items-end md:flex-row  md:items-start ">
               <div className="flex -rotate-90 flex-col md:rotate-0">
                 <div
@@ -226,7 +226,7 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
             </div>
           </div>
 
-          <div className=" relative top-44 -rotate-90 md:rotate-0 ">
+          <div className=" relative top-44 md:top-0  -rotate-90 md:rotate-0 ">
             <CustomSelect setLevel={setLevel}></CustomSelect>
           </div>
         </div>

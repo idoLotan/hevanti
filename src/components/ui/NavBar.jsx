@@ -114,6 +114,15 @@ const NavBar = () => {
 
         <div className=" hidden items-center justify-end md:block ">
           <ul className="flex flex-row font-medium">
+          <li>
+              <a
+                href="/lottery"
+                className=" rounded-full px-3 py-2 text-lg text-[#2A264D] transition-all hover:-translate-y-0.5 hover:bg-white hover:text-black hover:shadow-[0_10px_25px_-15px_rgba(0,0,0,0.4)]"
+                aria-current="page"
+              >
+                הגרלה
+              </a>
+            </li>
             <li>
               <a
                 href="#subjects"
@@ -162,6 +171,7 @@ const NavBar = () => {
                 צור קשר
               </a>
             </li>
+          
           </ul>
         </div>
 
