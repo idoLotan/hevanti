@@ -38,7 +38,7 @@ const SubmissionCompleted = () => {
       <img
         src={gift}
         alt=""
-        className="absolute  bottom-[-4rem] md:left-[-10rem] h-[280px]"
+        className="absolute bottom-[-14rem] left-[10rem] md:bottom-[-4rem] md:left-[-10rem] h-[280px]"
       />
 
       {/* <img
@@ -50,7 +50,7 @@ const SubmissionCompleted = () => {
       <img
         src={completed2min}
         alt=""
-        className="absolute bottom-[30rem] right-[0rem]  h-[280px]"
+        className="absolute bottom-[30rem] right-[10rem]  md:right-[0rem] h-[280px]"
       />
 
       
@@ -63,7 +63,7 @@ const SubmissionCompleted = () => {
       <img
         src={completed3min}
         alt=""
-        className="absolute  bottom-[30rem] md:left-[-5rem] h-[280px]"
+        className="absolute  left-[10rem] bottom-[30rem] md:left-[-5rem] h-[280px]"
       />
     </section>
   );
