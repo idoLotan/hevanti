@@ -157,9 +157,9 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
     splitSubjectsIntoColumns(subjects);
 
   return (
-    <form onSubmit={handleFormSubmit} className="relative top-[48px]">
+    <form onSubmit={handleFormSubmit} className="relative top-[48px] ">
       <div className="flex h-[600px] w-[1088px]  rotate-90 rounded-2xl border border-indigo-600 bg-indigo-600 p-20 md:rotate-0 md:justify-between">
-        <div className=" flex flex-row justify-start md:w-full md:justify-evenly ">
+        <div className="scale-150 md:scale-100 flex flex-row justify-start md:w-full md:justify-evenly ">
           <div className="  flex flex-col items-end  md:mb-0 md:flex-row  md:items-start ">
             <div className="flex flex-col  items-end md:flex-row  md:items-start ">
               <div className="flex -rotate-90 flex-col md:rotate-0">
@@ -184,6 +184,7 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
                       <div className="flex flex-col items-end justify-center">
                         {buget.map((item) => (
                           <CheckBox
+                          className={"text-white"}
                             key={item.id}
                             checked={checkboxes[item.id]}
                             name={item.name}
@@ -196,6 +197,7 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
                       <div className="flex flex-col items-end justify-center">
                         {firstColumnSubjects.map((item) => (
                           <CheckBox
+                          className={"text-white"}
                             key={item.id}
                             id={item.id}
                             name={item.name}
@@ -209,6 +211,7 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
                       <div className="flex flex-col items-end justify-center">
                         {secondColumnSubjects.map((item) => (
                           <CheckBox
+                          className={"text-white"}
                             key={item.id}
                             id={item.id}
                             name={item.name}
@@ -231,7 +234,7 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
           </div>
         </div>
 
-        <div className="   order-1  mb-5 flex  -rotate-90 flex-col text-end  md:order-3 md:mb-0 md:w-[200px] md:rotate-0 ">
+        <div className=" scale-150  md:scale-100  order-1  mb-5 flex  -rotate-90 flex-col text-end  md:order-3 md:mb-0 md:w-[200px] md:rotate-0 ">
           <div className="font-bold">שם </div>
           <input
             aria-label="name"
@@ -285,7 +288,7 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
           />
         </div>
       </div>
-      <div className="  z-10 mt-4 flex w-full justify-center ">
+      <div className="  z-10 md:mt-4  mt-72 flex w-full justify-center ">
         <ArrowBtnLeft onClick={handleFormSubmit} />
         <div className="p-3"></div>
         <ArrowBtnRight onClick={handlePrevPage} disabled={true} />

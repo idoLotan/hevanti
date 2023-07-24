@@ -17,21 +17,23 @@ const SubmissionCompleted = () => {
 
 
   return (
-    <section className="relative p-10 ">
+    <section className="relative   ">
    
       <div className="rotate-90 md:rotate-0 flex h-[600px] md:flex-col items-center justify-center rounded-2xl border border-indigo-600 bg-indigo-600 w-[1088px]">
         <div
           dir="rtl"
-          className="-rotate-90 md:rotate-0 h-20  text-center text-[80px] font-semibold text-neutral-100 "
+          className="-rotate-90 md:rotate-0   text-center text-[80px] font-semibold text-neutral-100 "
         >
-          בהצלחה!
-        </div>
-        <div
+          <div>  בהצלחה!</div>
+          <div
           dir="rtl"
-          className="-rotate-90 md:rotate-0  p-10 text-center text-[64px] font-semibold text-white"
+          className="mt-[-20px] md:rotate-0 text-center text-[64px] font-semibold text-white"
         >
           תודה!
         </div>
+        
+        </div>
+
         <div className="-rotate-90 md:rotate-0  text-center text-white text-xl font-semibold">תאריך הגרלה 28.07.2023 - 15.08.2023</div>
       </div>
      

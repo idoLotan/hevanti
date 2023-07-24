@@ -7,7 +7,7 @@ const CheckBox = ({id, name, onChange, label, checked, className}) => {
 return (
 <div className="ml-0 mt-2" >
   <label className="flex items-center  cursor-pointer">
-    <span className="mr-2 select-none" tabindex="0" onKeyUp={handleKeyPress} >{label}</span>
+    <span className={`mr-2 select-none ${className} `} tabindex="0" onKeyUp={handleKeyPress} >{label}</span>
     <input type="checkbox" tabindex="0"  role="checkbox" aria-checked="false" id={id} checked={checked} onChange={onChange} name={name} value="yes" className="hidden" />
     <div className="relative">
       <div className="bg-white border border-[#555FD9] w-4 h-4 flex justify-center items-center">

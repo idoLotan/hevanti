@@ -169,31 +169,38 @@ const AddImage = ({ handleNextPage, handlePrevPage, pageIndex }) => {
         {/* <header className=" absolute -top-96 md:-top-32 bottom-10 mx-auto w-[90%] text-center text-[2.5rem] font-semibold leading-[4rem] text-orange-400">
           שתף/שתפי את התמונות עם חולצות המותג שלנו/ או חולצות שבט און
         </header> */}
-        <div className="rotate-90 md:rotate-0 flex h-[600px]  w-[1088px] justify-between rounded-2xl border border-indigo-600 bg-indigo-600">
+        <div className="flex h-[600px] w-[1088px] rotate-90  justify-between rounded-2xl border border-indigo-600 bg-indigo-600 md:rotate-0">
           <div
             id="right-side"
             className="flex h-full items-center justify-center md:flex-row "
           >
-            <CrossBtn title={""} onClick={addCard}></CrossBtn>
-
-            {cards.map((card) => (
-              <Card
-                key={card.id}
-                id={card.id}
-                setImages={setImages}
-                images={images}
-              />
-            ))}
+            <div className="order-2 md:order-1">
+              <CrossBtn title={""} onClick={addCard}></CrossBtn>
+            </div>
+            <div className="flex order-1 md:order-2">
+              {cards.map((card) => (
+                <Card
+                  key={card.id}
+                  id={card.id}
+                  setImages={setImages}
+                  images={images}
+                />
+              ))}
+            </div>
           </div>
         </div>
         {/* <button onClick={uploadImages} className="mt-4 w-[120px] h-[40px] bg-indigo-600 text-white text-xl font-semibold rounded-md">
           העלאה
         </button> */}
 
-        <div className="absolute  w-full  justify-center  z-10 mt-4 flex">
-          <ArrowBtnLeft onClick={uploadImages} pageIndex={pageIndex} disabled={true} />
+        <div className="absolute  z-10  mt-72  md:mt-5  flex w-full justify-center ">
+          <ArrowBtnLeft
+            onClick={uploadImages}
+            pageIndex={pageIndex}
+            disabled={true}
+          />
           <div className="p-3"></div>
-          <ArrowBtnRight onClick={uploadImages}  />
+          <ArrowBtnRight onClick={uploadImages} />
         </div>
       </section>
     </div>

@@ -28,9 +28,6 @@ function Home() {
     setIsOpen(!isOpen);
   };
 
-
-
-
   return (
     <div className="home-page">
       <ContactBtn></ContactBtn>
@@ -83,7 +80,7 @@ function Home() {
                 <Carousel></Carousel>
               </div>
 
-              <div className="mb-10 flex flex-col 2xl:mb-60 md:mr-10">
+              <div className="mb-10 flex flex-col md:mr-10 2xl:mb-20">
                 <h1 className="font-montserrat flex flex-col items-end text-right text-[24px] font-bold text-[#2A264D] md:flex-col md:text-[33px] 2xl:text-[42px]">
                   <div className="relative right-40 flex w-[100%] justify-start 2xl:bottom-20">
                     <svg
@@ -106,30 +103,29 @@ function Home() {
                     </svg>
                   </div>
                   <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="relative left-8 top-6 hidden md:block"
-                      width="38"
-                      height="41"
-                      fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="relative left-8 top-6 hidden md:block"
+                    width="38"
+                    height="41"
+                    fill="none"
+                  >
+                    <g
+                      opacity=".5"
+                      stroke="#FF7848"
+                      stroke-width="3"
+                      stroke-linecap="round"
                     >
-                      <g
+                      <path
                         opacity=".5"
-                        stroke="#FF7848"
-                        stroke-width="3"
-                        stroke-linecap="round"
-                      >
-                        <path
-                          opacity=".5"
-                          d="M14.272 34.907 36.12 30.34M10.42 26.777l16.357-10.7M4.917 20.055l7.207-11.776"
-                        />
-                      </g>
-                    </svg>
-                  
-                    <p className="flex flex-row justify-end ">
-                      התחל/י את מסע ההצלחה
-                    </p>
-                
-               
+                        d="M14.272 34.907 36.12 30.34M10.42 26.777l16.357-10.7M4.917 20.055l7.207-11.776"
+                      />
+                    </g>
+                  </svg>
+
+                  <p className="flex flex-row justify-end ">
+                    התחל/י את מסע ההצלחה
+                  </p>
+
                   <p className="flex items-center justify-end ">
                     <svg
                       role="presentation"
@@ -164,23 +160,23 @@ function Home() {
                 <h3 className="mb-6 max-w-2xl  text-center  font-light  text-gray-600 md:text-end ">
                   שחרר את הפוטנציאל שלך עם הוראה מעולה
                 </h3>
-                <button className=" flex justify-center md:justify-end">
-                  <div>
-                    <a
-                      href="#contact"
-                      className=" shadow-start-btn h-[46px] w-[210px] rounded-xl bg-[#555FD9] pb-2 pl-20 pr-20 pt-2 text-[20px] font-bold text-white"
-                      aria-current="page"
-                    >
+                <div className="flex  flex-col items-center justify-end md:flex-row ">
+                  <button className=" m-1 flex h-[36px] w-[157px] items-center justify-center rounded-xl bg-[#FF7848] font-semibold text-indigo-600  2xl:h-[46px] 2xl:w-[210px] 2xl:text-xl">
+                    <a href="/lottery" className=" " aria-current="page">
+                      הגרלה
+                    </a>
+                  </button>
+                  <button className="z-10 m-1 flex h-[36px] w-[157px] items-center justify-center rounded-xl border border-indigo-600 font-semibold text-indigo-600  2xl:h-[46px] 2xl:w-[210px] 2xl:text-xl">
+                    <a href="#contact" className=" " aria-current="page">
                       התחל
                     </a>
-                  </div>
-                </button>
+                  </button>
+                </div>
+
                 <div className="flex justify-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="relative top-[100px] hidden md:block 2xl:top-[300px]"
-                    width="50"
-                    height="48"
                     fill="none"
                   >
                     <g opacity=".2" stroke="#555FD9" stroke-width="2">
@@ -202,11 +198,13 @@ function Home() {
       <SubjectSection
         setSubjects={setSubjects}
         subjects={subjects}
-     
       ></SubjectSection>
       <AboutSection></AboutSection>
       <TeachersSection></TeachersSection>
-      <ContantSection toggelModal={toggelModal} subjects={subjects} ></ContantSection>
+      <ContantSection
+        toggelModal={toggelModal}
+        subjects={subjects}
+      ></ContantSection>
       <QuestionsSection></QuestionsSection>
       <Footer></Footer>
     </div>
