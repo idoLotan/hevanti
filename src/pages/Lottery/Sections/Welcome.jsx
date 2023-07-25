@@ -3,28 +3,79 @@ import credit from "../../../assets/images/LotteryImage/credit.png";
 import iPhone from "../../../assets/images/LotteryImage/iphone.png";
 import iPhone2 from "../../../assets/images/LotteryImage/iphone2.png";
 import xbox from "../../../assets/images/LotteryImage/xbox.png";
+import x from "../../../assets/images/LotteryImage/x.png";
+import v from "../../../assets/images/LotteryImage/v.png";
+import { useState } from "react";
+import { codes, codesGeneral } from "../../../data/data";
 
-const Welcome = ({ handleNextPage, setUserCode }) => {
+
+const Welcome = ({ handleNextPage, setUserCode, userCode, setIsScout }) => {
+  const [enterWithCode, setEnterWithCode] = useState(false);
+  const [codeValid, setCodeValid] = useState(true);
+  const [userClicked, setUserClicked] = useState(false);
+
+  console.log(userClicked)
+
+ const validateCode =    (code) => {
+  
+ 
+
+  if(!enterWithCode){
+    handleNextPage()
+    return 
+  }
+
+  const validate = codesGeneral.includes(code)
+  console.log(validate);
+  setCodeValid(validate)
+  setUserClicked(true)
+
+
+  
+
+  if(validate){
+    setTimeout(()=>{
+      handleNextPage()
+    }, 2000)
+  }
+
+ }
+
+
+
+
+
+  const handleEnterWithCode = () => {
+    setEnterWithCode(true);
+  };
+
   return (
     <div>
       <section className="relative">
-      {/* <ArrowBtnLeft  /> */}
+        {/* <ArrowBtnLeft  /> */}
         <header className=" absolute -top-96  w-[100%] text-center  text-[64px] font-semibold text-orange-400 md:-top-32">
           ברוך הבא
         </header>
+
         <div className=" flex h-[600px] w-[1088px] rotate-90  justify-between rounded-2xl border border-indigo-600 bg-indigo-600 md:rotate-0">
           <div
             id="left-side"
-            className=" pt-5 md:p-5 w-[42rem] md:ml-0 -rotate-90   rounded-2xl border border-indigo-600 bg-neutral-100 md:rotate-0"
+            className=" w-[42rem] -rotate-90 rounded-2xl border border-indigo-600   bg-neutral-100 pt-5 md:ml-0 md:rotate-0 md:p-5"
           >
             <div className="flex  h-full w-full flex-col items-end justify-start  rounded-br-[46px] rounded-tl-[46px]   text-[14px] ">
               <div className="flex flex-row items-center pr-4 pt-10  ">
-            
+                <div className="mr-4 w-[393px] text-right">
+                  <span className="text-xl font-medium leading-normal text-indigo-600">
+                    שעורי הכנה לשנת הלימודים הקרובה עם המורים של
+                  </span>
+                  <span className="text-xl font-semibold leading-normal text-indigo-600">
+                    {" "}
+                  </span>
+                  <span className="text-2xl font-semibold leading-normal text-orange-400">
+                    הֵבַנְתִּי
+                  </span>
+                </div>
 
-                <div className="mr-4 w-[393px] text-right"><span className="text-indigo-600 text-xl font-medium leading-normal">שעורי הכנה לשנת הלימודים הקרובה עם המורים של</span><span className="text-indigo-600 text-xl font-semibold leading-normal"> </span><span className="text-orange-400 text-2xl font-semibold leading-normal">הֵבַנְתִּי</span></div>
-               
-             
-              
                 <div className="  flex min-h-[50px] min-w-[50px] items-center justify-center   rounded-full border border-indigo-600 text-[32px] font-semibold text-indigo-600">
                   1
                 </div>
@@ -35,14 +86,12 @@ const Welcome = ({ handleNextPage, setUserCode }) => {
                     30
                   </span>
                   <span className="text-xl font-medium text-indigo-600 ">
-                    {" "}
-                    שוברים של{" "}
+                    שוברים של
                   </span>
                   <span className="text-2xl font-medium text-orange-400">
                     90%
                   </span>
                   <span className="text-xl font-medium text-indigo-600">
-                    {" "}
                     הנחה לשיעור בודד
                   </span>
                 </div>
@@ -52,19 +101,20 @@ const Welcome = ({ handleNextPage, setUserCode }) => {
                 </div>
               </div>
               <div className=" flex flex-row items-center pr-4 pt-10">
-                <div className="200 mr-4  text-center flex justify-center items-center" dir="rtl">
-                  <span className="text-2xl font-semibold text-orange-400 m-1">
+                <div
+                  className="200 mr-4  flex items-center justify-center text-center"
+                  dir="rtl"
+                >
+                  <span className="m-1 text-2xl font-semibold text-orange-400">
                     5
                   </span>
-                  
+
                   <span className="text-xl font-medium text-indigo-600">
-                
-                    שוברים ל "סופר פארם" בשווי 
+                    שוברים ל "סופר פארם" בשווי
                   </span>
-                  <span className="text-2xl font-semibold text-orange-400 m-2">
+                  <span className="m-2 text-2xl font-semibold text-orange-400">
                     200₪
                   </span>
-             
                 </div>
 
                 <div className="  flex min-h-[50px] min-w-[50px] items-center justify-center   rounded-full border border-indigo-600 text-[32px] font-semibold text-indigo-600">
@@ -82,7 +132,7 @@ const Welcome = ({ handleNextPage, setUserCode }) => {
               </div>
               <div className=" flex flex-row items-center pr-4 pt-10">
                 <div className="  IphoneSe mr-4 text-center text-4xl font-semibold text-orange-400">
-                iPad 10.9
+                  iPad 10.9
                 </div>
                 <div className="  flex min-h-[50px] min-w-[50px] items-center justify-center   rounded-full border border-indigo-600 text-[32px] font-semibold text-indigo-600">
                   5
@@ -95,25 +145,48 @@ const Welcome = ({ handleNextPage, setUserCode }) => {
             id="right-side "
             className="  flex h-full  w-[50%] -rotate-90 flex-col items-center  justify-center md:rotate-0"
           >
+            {enterWithCode ? (
+              <div className=" relative mb-5 flex h-14 w-[248px] justify-center rounded-xl border-2 bg-white pr-2 text-center text-lg font-semibold   text-[#2A264D] text-opacity-80 focus:outline-none focus:ring-transparent">
+                <input
+                  onChange={(e) => setUserCode(e.target.value)}
+                  dir="rtl"
+                  placeholder={`${codeValid ? "הקלד קוד" : "הקלד קוד נכון"}`}
+                  className="text-center focus:outline-none focus:ring-transparent"
+                />
+                {userClicked && (
+                  <div>
+                    {codeValid ? (
+                      <img
+                        src={v}
+                        className={` absolute right-1 top-4 h-5 `}
+                        alt=""
+                      />
+                    ) : (
+                      <img
+                        src={x}
+                        className={` absolute right-1 top-4 h-5`}
+                        alt=""
+                      />
+                    )}
+                  </div>
+                )}
+              </div>
+            ) : (
+              <button
+                onClick={handleEnterWithCode}
+                className="mb-5 h-14 w-[248px] rounded-xl border-2 bg-white p-2 text-center text-2xl font-semibold text-indigo-600"
+              >
+                כניסה עם קוד
+              </button>
+            )}
+
             <button
-              onClick={handleNextPage}
-              className="mb-4 h-14 w-[248px] rounded-xl border-2 bg-white p-2 text-center text-2xl font-semibold text-indigo-600"
-            >
-              כניסה עם קוד
-            </button>
-            <input
-              onChange={(e) => setUserCode(e.target.value)}
-              dir="rtl"
-              placeholder="הקלד קוד"
-              className=" mb-10 flex h-14 w-[248px] justify-center rounded-xl border-2 bg-white pr-2 text-center   text-lg font-semibold text-indigo-600"
-            />
-            <button
-              onClick={handleNextPage}
+              onClick={() => validateCode(userCode)}
               className="h-14 w-[248px] rounded-xl border-2 bg-white p-2 text-center text-2xl font-semibold text-indigo-600"
             >
               כניסה
             </button>
-            <div className=" absolute bottom-20 md:bottom-10 right-10  ">
+            <div className=" absolute bottom-20 right-10 md:bottom-10  ">
               <span className="text-[20px] font-semibold text-orange-400">
                 *
               </span>
@@ -124,8 +197,6 @@ const Welcome = ({ handleNextPage, setUserCode }) => {
           </div>
         </div>
 
-
-      
         <img
           src={gift}
           alt=""
@@ -144,14 +215,13 @@ const Welcome = ({ handleNextPage, setUserCode }) => {
         <img
           src={xbox}
           alt=""
-          className="absolute right-[12rem] bottom-[-23rem]  h-[418px] md:bottom-[-5rem] md:right-[-8rem]"
+          className="absolute bottom-[-23rem] right-[12rem]  h-[418px] md:bottom-[-5rem] md:right-[-8rem]"
         />
-          <img
+        <img
           src={iPhone2}
           alt=""
-          className="absolute md:hidden left-[14rem] top-20   h-[280px] md:bottom-[-5rem] md:right-[-8rem]"
+          className="absolute left-[14rem] top-20 h-[280px]   md:bottom-[-5rem] md:right-[-8rem] md:hidden"
         />
-     
       </section>
     </div>
   );

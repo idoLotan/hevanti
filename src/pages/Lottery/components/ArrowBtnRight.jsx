@@ -8,14 +8,14 @@ const ArrowBtnRight = ({onClick,  disabled}) => {
         <div className="flex items-center justify-center">
          
 
-          <div className="Group143 relative h-20 w-20">
+          {/* <div className="Group143 relative h-20 w-20">
             <div className="Ellipse61 absolute left-0 top-0 h-20 w-20 rounded-full border border-orange-400" />
             <div className=" absolute left-[30.48px] top-[19.05px] h-[41.90px] w-5 text-center text-4xl font-semibold text-orange-400">
               1
             </div>
-          </div>
+          </div> */}
           <svg
-          className=" md:ml-96 ml-20 cursor-pointer"
+          className="  ml-20 cursor-pointer"
             width="49"
             height="48"
             viewBox="0 0 49 48"
@@ -52,14 +52,14 @@ const ArrowBtnRight = ({onClick,  disabled}) => {
         </div>
       ) : (
         <div className="flex items-center justify-center">
-          <div className="Group142 relative h-20 w-20 ">
+          {/* <div className="Group142 relative h-20 w-20 ">
             <div className="Ellipse62 absolute left-0 top-0 h-20 w-20 rounded-full bg-orange-400" />
             <div className=" absolute left-[33.33px] top-[19.05px] h-[41.90px] w-[13.33px] text-center text-4xl font-semibold text-neutral-100">
               1
             </div>
-          </div>
+          </div> */}
           <svg
-          className=" md:ml-96 ml-20 cursor-pointer"
+          className=" ml-20 cursor-pointer"
             width="49"
             height="48"
             viewBox="0 0 49 48"
