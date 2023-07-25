@@ -19,10 +19,12 @@ const Welcome = ({ handleNextPage, setUserCode }) => {
           >
             <div className="flex  h-full w-full flex-col items-end justify-start  rounded-br-[46px] rounded-tl-[46px]   text-[14px] ">
               <div className="flex flex-row items-center pr-4 pt-10  ">
-                <div className=" mr-4 w-[393px] text-right text-xl font-medium leading-normal text-indigo-600">
-                  שעורי ההכנה לשנת הלימודים הקרובה, חווית אאאהה מובטחת עם המורים
-                  של הֵבַנְתִּי
-                </div>
+            
+
+                <div className="mr-4 w-[393px] text-right"><span className="text-indigo-600 text-xl font-medium leading-normal">שעורי הכנה לשנת הלימודים הקרובה עם המורים של</span><span className="text-indigo-600 text-xl font-semibold leading-normal"> </span><span className="text-orange-400 text-2xl font-semibold leading-normal">הֵבַנְתִּי</span></div>
+               
+             
+              
                 <div className="  flex min-h-[50px] min-w-[50px] items-center justify-center   rounded-full border border-indigo-600 text-[32px] font-semibold text-indigo-600">
                   1
                 </div>
@@ -50,18 +52,19 @@ const Welcome = ({ handleNextPage, setUserCode }) => {
                 </div>
               </div>
               <div className=" flex flex-row items-center pr-4 pt-10">
-                <div className="200 mr-4  text-center">
-                  <span className="text-2xl font-semibold text-orange-400">
+                <div className="200 mr-4  text-center flex justify-center items-center" dir="rtl">
+                  <span className="text-2xl font-semibold text-orange-400 m-1">
                     5
                   </span>
+                  
                   <span className="text-xl font-medium text-indigo-600">
-                    {" "}
-                    שוברים ל "סופר פארם" בשווי "
+                
+                    שוברים ל "סופר פארם" בשווי 
                   </span>
-                  <span className="text-2xl font-semibold text-orange-400">
+                  <span className="text-2xl font-semibold text-orange-400 m-2">
                     200₪
                   </span>
-                  <span className="text-xl font-medium text-indigo-600">"</span>
+             
                 </div>
 
                 <div className="  flex min-h-[50px] min-w-[50px] items-center justify-center   rounded-full border border-indigo-600 text-[32px] font-semibold text-indigo-600">
@@ -79,7 +82,7 @@ const Welcome = ({ handleNextPage, setUserCode }) => {
               </div>
               <div className=" flex flex-row items-center pr-4 pt-10">
                 <div className="  IphoneSe mr-4 text-center text-4xl font-semibold text-orange-400">
-                  iPhone SE
+                iPad 10.9
                 </div>
                 <div className="  flex min-h-[50px] min-w-[50px] items-center justify-center   rounded-full border border-indigo-600 text-[32px] font-semibold text-indigo-600">
                   5

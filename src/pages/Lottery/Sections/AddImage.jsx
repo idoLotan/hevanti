@@ -165,10 +165,12 @@ const AddImage = ({ handleNextPage, handlePrevPage, pageIndex }) => {
 
   return (
     <div>
-      <section className="relative ">
-        {/* <header className=" absolute -top-96 md:-top-32 bottom-10 mx-auto w-[90%] text-center text-[2.5rem] font-semibold leading-[4rem] text-orange-400">
-          שתף/שתפי את התמונות עם חולצות המותג שלנו/ או חולצות שבט און
-        </header> */}
+      <section className="relative">
+        <header className=" absolute w-full flex justify-center -top-96 bottom-10 mx-auto text-center  text-[2.5rem] font-semibold leading-[4rem] text-orange-400 md:-top-32">
+          <p className="w-[650px]">
+            שתף/שתפי את התמונות עם חולצות המותג שלנו/ או חולצות שבט און
+          </p>
+        </header>
         <div className="flex h-[600px] w-[1088px] rotate-90  justify-between rounded-2xl border border-indigo-600 bg-indigo-600 md:rotate-0">
           <div
             id="right-side"
@@ -177,7 +179,7 @@ const AddImage = ({ handleNextPage, handlePrevPage, pageIndex }) => {
             <div className="order-2 md:order-1">
               <CrossBtn title={""} onClick={addCard}></CrossBtn>
             </div>
-            <div className="flex order-1 md:order-2">
+            <div className="order-1 flex md:order-2">
               {cards.map((card) => (
                 <Card
                   key={card.id}
@@ -193,7 +195,7 @@ const AddImage = ({ handleNextPage, handlePrevPage, pageIndex }) => {
           העלאה
         </button> */}
 
-        <div className="absolute  z-10  mt-72  md:mt-5  flex w-full justify-center ">
+        <div className="absolute  z-10  mt-72  flex  w-full justify-center md:mt-5 ">
           <ArrowBtnLeft
             onClick={uploadImages}
             pageIndex={pageIndex}

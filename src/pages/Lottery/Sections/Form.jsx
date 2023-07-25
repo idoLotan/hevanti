@@ -157,10 +157,13 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
     splitSubjectsIntoColumns(subjects);
 
   return (
-    <form onSubmit={handleFormSubmit} className="relative top-[48px] ">
-      <div className="flex h-[600px] w-[1088px]  rotate-90 rounded-2xl border border-indigo-600 bg-indigo-600 p-20 md:rotate-0 md:justify-between">
-        <div className="scale-150 md:scale-100 flex flex-row justify-start md:w-full md:justify-evenly ">
-          <div className="  flex flex-col items-end  md:mb-0 md:flex-row  md:items-start ">
+    <form onSubmit={handleFormSubmit} className="relative md:top-[48px]  top-[175px]">
+        <header dir="rtl" className=" absolute -top-[20rem] md:-top-20 bottom-10 mx-auto w-[100%] text-center text-[2.5rem] font-semibold leading-[4rem] text-orange-400">
+         צריך שיעורים פרטיים ב:
+        </header>
+      <div className=" flex h-[600px] w-[1088px]  rotate-90 rounded-2xl border border-indigo-600 bg-indigo-600 p-20 md:rotate-0 md:justify-between">
+        <div className="order-2 md:order-1  flex flex-row justify-start md:w-full md:justify-evenly ">
+          <div className=" scale-150 md:scale-100 relative left-40  top-40 md:left-0 md:top-0 flex flex-col items-end  md:mb-0 md:flex-row  md:items-start ">
             <div className="flex flex-col  items-end md:flex-row  md:items-start ">
               <div className="flex -rotate-90 flex-col md:rotate-0">
                 <div
@@ -171,17 +174,17 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
                 </div>
                 <div className=" flex md:flex-row">
                   <div className="flex-end  flex flex-col text-end">
-                    <div className="flex justify-end">
+                    <div className="flex justify-between">
                       <div className="mr-4 font-bold text-neutral-100">
                         תקציב
                       </div>
-                      <div className="mr-4 font-bold text-neutral-100">
+                      <div className=" font-bold text-neutral-100">
                         קטגוריות
                       </div>
                     </div>
 
                     <div className="flex">
-                      <div className="flex flex-col items-end justify-center">
+                      <div className="flex flex-col items-end justify-center ">
                         {buget.map((item) => (
                           <CheckBox
                           className={"text-white"}
@@ -194,7 +197,7 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
                           ></CheckBox>
                         ))}
                       </div>
-                      <div className="flex flex-col items-end justify-center">
+                      <div className="flex flex-col items-end justify-center ml-5">
                         {firstColumnSubjects.map((item) => (
                           <CheckBox
                           className={"text-white"}
@@ -208,7 +211,7 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
                         ))}
                       </div>
 
-                      <div className="flex flex-col items-end justify-center">
+                      <div className="flex flex-col items-end justify-center ml-5">
                         {secondColumnSubjects.map((item) => (
                           <CheckBox
                           className={"text-white"}
@@ -229,12 +232,13 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
             </div>
           </div>
 
-          <div className=" relative top-44 md:top-0  -rotate-90 md:rotate-0 ">
-            <CustomSelect setLevel={setLevel}></CustomSelect>
-          </div>
+         
         </div>
 
-        <div className=" scale-150  md:scale-100  order-1  mb-5 flex  -rotate-90 flex-col text-end  md:order-3 md:mb-0 md:w-[200px] md:rotate-0 ">
+        <div className=" text-white scale-150  md:scale-100 order-1  mb-5 flex  relative bottom-[5rem] md:bottom-[0rem]  -rotate-90 flex-col text-end justify-center  md:justify-start md:order-3 md:mb-0 md:w-[200px] md:rotate-0 ">
+        <div className=" absolute top-36 right-60  md:top-2  md:right-80  md:rotate-0 ">
+            <CustomSelect setLevel={setLevel}></CustomSelect>
+          </div>
           <div className="font-bold">שם </div>
           <input
             aria-label="name"
@@ -265,7 +269,12 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
             ref={emailRef}
           />
           {errors?.email && <p className="text-red">{errors?.email}</p>}
-          <h3 className=" mt-20 text-right text-xl font-semibold text-orange-400">
+         
+        </div>
+
+
+        <div className=" scale-150 md:scale-100  left-80  order-3 md:order-2 -rotate-90 md:rotate-0 flex flex-col items-end relative md:top-40 md:left-44">
+        <h3 className=" mt-20 text-right text-xl font-semibold text-orange-400">
             הגדל/י את הסיכוי שלך לזכות
           </h3>
           <label className="font-bold text-orange-400 ">שם חבר</label>
