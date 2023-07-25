@@ -8,12 +8,12 @@ import { useNavigate } from "react-router-dom";
 const SubmissionCompleted = () => {
   const navigate = useNavigate()
 
-// useEffect(()=> {
-//   setTimeout(()=>{
-//     navigate("/home")
-//   }, 2000)
+useEffect(()=> {
+  setTimeout(()=>{
+    navigate("/home")
+  }, 2000)
 
-// }, [])
+}, [])
 
 
   return (
@@ -34,7 +34,7 @@ const SubmissionCompleted = () => {
         
         </div>
 
-        <div className="-rotate-90 md:rotate-0  text-center text-white text-xl font-semibold">תאריך הגרלה 28.07.2023 - 15.08.2023</div>
+        <div className="-rotate-90 md:rotate-0  absolute  right-40 md:right-[22rem] md:bottom-4  text-center text-white text-xl font-semibold">תאריך הגרלה 28.07.2023 + 15.08.2023</div>
       </div>
      
       <img

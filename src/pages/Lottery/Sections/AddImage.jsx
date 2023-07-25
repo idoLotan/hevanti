@@ -182,6 +182,7 @@ const AddImage = ({ handleNextPage, handlePrevPage, pageIndex }) => {
             <div className="order-1 flex md:order-2">
               {cards.map((card) => (
                 <Card
+                 cards={cards}
                   key={card.id}
                   id={card.id}
                   setImages={setImages}

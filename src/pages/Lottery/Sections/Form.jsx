@@ -127,22 +127,35 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
       phone: "",
     };
 
+   
+
     // Perform validation checks
     if (name.trim() === "") {
       newErrors.name = "לא נקלט שם";
       isValid = false;
-    }
-
-    if (email.trim() === "") {
-      newErrors.email = "לא נקלט אימייל";
-      isValid = false;
+      alert("לא נקלט שם")
+      setErrors(newErrors);
+      return
     }
 
     if (phone.trim() === "") {
       newErrors.phone = "לא נקלט מספר טלפון";
       isValid = false;
+      alert("לא נקלט מספר טלפון")
+      setErrors(newErrors);
+      return
     }
-    setErrors(newErrors); // Update the errors state
+
+    if (email.trim() === "") {
+      newErrors.email = "לא נקלט אימייל";
+      isValid = false;
+      alert("לא נקלט אימייל")
+      setErrors(newErrors);
+      return
+    }
+
+    
+   
     return isValid;
   };
 
@@ -161,7 +174,7 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
         <header dir="rtl" className=" absolute -top-[20rem] md:-top-20 bottom-10 mx-auto w-[100%] text-center text-[2.5rem] font-semibold leading-[4rem] text-orange-400">
          צריך שיעורים פרטיים ב:
         </header>
-      <div className=" flex h-[600px] w-[1088px]  rotate-90 rounded-2xl border border-indigo-600 bg-indigo-600 p-20 md:rotate-0 md:justify-between">
+      <div className="z-1 relative flex h-[600px] w-[1088px]  rotate-90 rounded-2xl border border-indigo-600 bg-indigo-600 p-20 md:rotate-0 md:justify-between">
         <div className="order-2 md:order-1  flex flex-row justify-start md:w-full md:justify-evenly ">
           <div className=" scale-150 md:scale-100 relative left-40  top-40 md:left-0 md:top-0 flex flex-col items-end  md:mb-0 md:flex-row  md:items-start ">
             <div className="flex flex-col  items-end md:flex-row  md:items-start ">
@@ -235,11 +248,11 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
          
         </div>
 
-        <div className=" text-white scale-150  md:scale-100 order-1  mb-5 flex  relative bottom-[5rem] md:bottom-[0rem]  -rotate-90 flex-col text-end justify-center  md:justify-start md:order-3 md:mb-0 md:w-[200px] md:rotate-0 ">
+        <div className="  scale-150  md:scale-100 order-1  mb-5 flex  relative bottom-[7rem] md:bottom-[0rem]  -rotate-90 flex-col text-end justify-center   md:justify-start md:order-3 md:mb-0 md:w-[200px] md:rotate-0 ">
         <div className=" absolute top-36 right-60  md:top-2  md:right-80  md:rotate-0 ">
             <CustomSelect setLevel={setLevel}></CustomSelect>
           </div>
-          <div className="font-bold">שם </div>
+          <div className="font-bold text-white">שם </div>
           <input
             aria-label="name"
             id="name"
@@ -249,7 +262,7 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
             ref={nameRef}
           />
           {errors?.name && <p className="text-red">{errors?.name}</p>}
-          <div className="font-bold"> טלפון</div>
+          <div className="font-bold text-white"> טלפון</div>
           <input
             aria-label="phone"
             id="phone"
@@ -259,7 +272,7 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
             ref={phoneRef}
           />
           {errors?.phone && <p className="">{errors?.phone}</p>}
-          <div className="font-bold"> דואר אלקטרוני</div>
+          <div className="font-bold text-white"> דואר אלקטרוני</div>
           <input
             aria-label="phone"
             id="email"
@@ -273,8 +286,8 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
         </div>
 
 
-        <div className=" scale-150 md:scale-100  left-80  order-3 md:order-2 -rotate-90 md:rotate-0 flex flex-col items-end relative md:top-40 md:left-44">
-        <h3 className=" mt-20 text-right text-xl font-semibold text-orange-400">
+        <div className=" scale-150 md:scale-100  left-80 bottom-20  order-3 md:order-2 -rotate-90 md:rotate-0 flex flex-col items-end justify-start relative md:top-48 md:left-[11.7rem]">
+        <h3 className="pb-2 mt-20 text-right text-xl font-semibold text-orange-400">
             הגדל/י את הסיכוי שלך לזכות
           </h3>
           <label className="font-bold text-orange-400 ">שם חבר</label>
@@ -283,7 +296,7 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
             id="phone"
             name="phone"
             type="text "
-            className="mt-2 rounded-lg border border-[#555FD9] pr-1 text-end focus:outline-none"
+            className="mt-2 rounded-lg border border-[#555FD9] pl-2  text-end focus:outline-none"
             ref={friendNameRef}
           />
           <label className="font-bold text-orange-400 ">מספר טלפון</label>
@@ -292,12 +305,12 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
             id="email"
             name="email"
             type="text "
-            className="mt-2 rounded-lg border border-[#555FD9] pr-1 text-end focus:outline-none"
+            className="mt-2 rounded-lg border border-[#555FD9] pl-2 text-end focus:outline-none"
             ref={friendPhoneRef}
           />
         </div>
       </div>
-      <div className="  z-10 md:mt-4  mt-72 flex w-full justify-center ">
+      <div className=" relative z-2 md:mt-4  mt-72 flex w-full justify-center ">
         <ArrowBtnLeft onClick={handleFormSubmit} />
         <div className="p-3"></div>
         <ArrowBtnRight onClick={handlePrevPage} disabled={true} />

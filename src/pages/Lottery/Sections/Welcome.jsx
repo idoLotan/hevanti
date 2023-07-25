@@ -113,20 +113,23 @@ const Welcome = ({ handleNextPage, setUserCode }) => {
             >
               כניסה
             </button>
-            <div className=" text-right">
-              <span className="text-[10px] font-semibold text-orange-400">
+            <div className=" absolute bottom-20 md:bottom-10 right-10  ">
+              <span className="text-[20px] font-semibold text-orange-400">
                 *
               </span>
-              <span className="text-[10px] font-semibold text-neutral-100">
+              <span className="text-[14px] font-semibold text-neutral-100">
                 סיכוי כפול לזכות בלוטו
               </span>
             </div>
           </div>
         </div>
+
+
+      
         <img
           src={gift}
           alt=""
-          className="absolute left-[6rem] top-[45rem] h-[280px]  md:bottom-[-4rem] md:left-[-10rem] md:top-[25rem]"
+          className="absolute left-[12rem] top-[45rem] h-[280px]  md:bottom-[-4rem] md:left-[-10rem] md:top-[25rem]"
         />
         <img
           src={credit}
@@ -141,7 +144,7 @@ const Welcome = ({ handleNextPage, setUserCode }) => {
         <img
           src={xbox}
           alt=""
-          className="absolute right-[12rem]   h-[418px] md:bottom-[-5rem] md:right-[-8rem]"
+          className="absolute right-[12rem] bottom-[-23rem]  h-[418px] md:bottom-[-5rem] md:right-[-8rem]"
         />
           <img
           src={iPhone2}
@@ -155,126 +158,3 @@ const Welcome = ({ handleNextPage, setUserCode }) => {
 };
 
 export default Welcome;
-
-// import React from "react";
-// import gift from "../../../assets/images/LotteryImage/gift.png";
-// import credit from "../../../assets/images/LotteryImage/credit.png";
-// import iPhone from "../../../assets/images/LotteryImage/iphone.png";
-// import xbox from "../../../assets/images/LotteryImage/xbox.png";
-
-// const Welcome = () => {
-//   return (
-//     <div>
-//       <section className="relative p-10">
-//         <header className="text-center text-[3rem] font-semibold text-orange-400 sm:text-[4rem]">
-//           ברוך הבא
-//         </header>
-//         <div className="flex flex-col md:flex-row-reverse lg:justify-between rounded-2xl border border-indigo-600 bg-indigo-600 md:w-[600px] lg:w-[800px] 2xl:w-[1088px] mx-auto">
-//           <div
-//             id="left-side"
-//             className="h-[300px] md:w-[50%] rounded-2xl border border-indigo-600 bg-neutral-100"
-//           >
-//             <div className="flex flex-col h-full px-6 py-4 md:px-10 md:py-8 text-right text-xl text-indigo-600">
-//               <div className="flex items-center justify-end">
-//                 <div className="w-[393px] text-xl font-medium leading-normal">
-//                   שעורי ההכנה לשנת הלימודים הקרובה, חווית אאאהה מובטחת עם המורים של הֵבַנְתִּי
-//                 </div>
-//                 <div className="flex items-center justify-center w-14 h-14 rounded-full border border-indigo-600 text-xl font-semibold text-indigo-600">
-//                   1
-//                 </div>
-//               </div>
-//               <div className="flex items-center justify-end mt-6">
-//                 <div className="text-right">
-//                   <span className="text-2xl font-medium text-orange-400">30</span>
-//                   <span className="text-xl font-medium text-indigo-600">
-//                     {" "}
-//                     שוברים של{" "}
-//                   </span>
-//                   <span className="text-2xl font-medium text-orange-400">90%</span>
-//                   <span className="text-xl font-medium text-indigo-600">
-//                     {" "}
-//                     הנחה לשיעור בודד
-//                   </span>
-//                 </div>
-//                 <div className="flex items-center justify-center w-14 h-14 ml-4 rounded-full border border-indigo-600 text-xl font-semibold text-indigo-600">
-//                   2
-//                 </div>
-//               </div>
-//               <div className="flex items-center justify-end mt-6">
-//                 <div className="text-right">
-//                   <span className="text-2xl font-semibold text-orange-400">5</span>
-//                   <span className="text-xl font-medium text-indigo-600">
-//                     {" "}
-//                     שוברים ל "סופר פארם" בשווי "
-//                   </span>
-//                   <span className="text-2xl font-semibold text-orange-400">
-//                     200₪
-//                   </span>
-//                   <span className="text-xl font-medium text-indigo-600">"</span>
-//                 </div>
-//                 <div className="flex items-center justify-center w-14 h-14 ml-4 rounded-full border border-indigo-600 text-xl font-semibold text-indigo-600">
-//                   3
-//                 </div>
-//               </div>
-//               <div className="flex items-center justify-end mt-6">
-//                 <div className="text-right text-4xl font-semibold text-orange-400">
-//                   Sony Playstation 5
-//                 </div>
-//                 <div className="flex items-center justify-center w-14 h-14 ml-4 rounded-full border border-indigo-600 text-xl font-semibold text-indigo-600">
-//                   4
-//                 </div>
-//               </div>
-//               <div className="flex items-center justify-end mt-6">
-//                 <div className="text-right text-4xl font-semibold text-orange-400">
-//                   iPhone SE
-//                 </div>
-//                 <div className="flex items-center justify-center w-14 h-14 ml-4 rounded-full border border-indigo-600 text-xl font-semibold text-indigo-600">
-//                   5
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-
-//           <div
-//             id="right-side"
-//             className="flex flex-col justify-center items-center md:w-[50%] md:border-l md:border-indigo-600"
-//           >
-//             <button className="mb-4 h-14 w-[248px] rounded-xl border-2 bg-white p-2 text-center text-2xl font-semibold text-indigo-600">
-//               כניסה עם קוד
-//             </button>
-//             <input
-//               dir="rtl"
-//               placeholder="הקלד קוד"
-//               className="mb-10 h-14 w-[248px] rounded-xl border-2 bg-white pr-2 text-right text-2xl font-semibold text-indigo-600"
-//             />
-//             <button className="h-14 w-[248px] rounded-xl border-2 bg-white p-2 text-center text-2xl font-semibold text-indigo-600">
-//               כניסה
-//             </button>
-//           </div>
-//         </div>
-//         <img
-//           src={gift}
-//           alt=""
-//           className="absolute bottom-[-4rem] left-[-10rem] h-[280px]"
-//         />
-//         <img
-//           src={credit}
-//           alt=""
-//           className="absolute bottom-[-5rem] right-[12rem]"
-//         />
-//         <img
-//           src={iPhone}
-//           alt=""
-//           className="absolute left-[-10rem] top-[0rem] h-[352.28px]"
-//         />
-//         <img
-//           src={xbox}
-//           alt=""
-//           className="absolute bottom-[-5rem] right-[-8rem] h-[418px]"
-//         />
-//       </section>
-//     </div>
-//   );
-// };
-
-// export default Welcome;
