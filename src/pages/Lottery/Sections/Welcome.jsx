@@ -14,36 +14,47 @@ const Welcome = ({ handleNextPage, setUserCode, userCode, setIsScout }) => {
   const [codeValid, setCodeValid] = useState(true);
   const [userClicked, setUserClicked] = useState(false);
 
-  console.log(userClicked)
+  // sendWhatsAppMessage("+972549840535", "hey")
 
- const validateCode =    (code) => {
+
+
+  // const sendWhatsAppMessage = async (toNumber, message) => {
+  //   const accountSid = "YOUR_TWILIO_ACCOUNT_SID";
+  //   const authToken = "YOUR_TWILIO_AUTH_TOKEN";
+  //   const client = Twilio(accountSid, authToken);
   
- 
-
-  if(!enterWithCode){
-    handleNextPage()
-    return 
-  }
-
-  const validate = codesGeneral.includes(code)
-  console.log(validate);
-  setCodeValid(validate)
-  setUserClicked(true)
-
-
+  //   try {
+  //     const result = await client.messages.create({
+  //       from: "whatsapp:+TWILIO_PHONE_NUMBER",
+  //       to: `whatsapp:${toNumber}`,
+  //       body: message,
+  //     });
   
-
-  if(validate){
-    setTimeout(()=>{
-      handleNextPage()
-    }, 2000)
-  }
-
- }
+  //     console.log("Message sent successfully:", result.sid);
+  //   } catch (error) {
+  //     console.error("Error sending message:", error.message);
+  //   }
+  // };
 
 
 
+  const validateCode = (code) => {
+    if (!enterWithCode) {
+      handleNextPage();
+      return;
+    }
 
+    const validate = codesGeneral.includes(code);
+    console.log(validate);
+    setCodeValid(validate);
+    setUserClicked(true);
+
+    if (validate) {
+      setTimeout(() => {
+        handleNextPage();
+      }, 2000);
+    }
+  };
 
   const handleEnterWithCode = () => {
     setEnterWithCode(true);

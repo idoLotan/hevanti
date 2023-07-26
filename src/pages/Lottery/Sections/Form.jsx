@@ -1,16 +1,12 @@
-import { useEffect, useRef, useState } from "react";
-
+import { useRef, useState } from "react";
 import { db } from "../../../firebase-config";
 import { addDoc, collection } from "firebase/firestore";
 import emailjs from "@emailjs/browser";
 import CheckBox from "../../../components/ui/CheckBox";
-import { Dropdown } from "flowbite-react";
 import CustomSelect from "../components/DropDown";
 import ArrowBtnLeft from "../components/ArrowBtnLeft";
 import ArrowBtnRight from "../components/ArrowBtnRight";
 import { buget, subjects } from "../../../data/data";
-
-// import CheckBox from "../ui/CheckBox";
 
 const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
   const userInputRef = collection(db, "userInput");
@@ -70,6 +66,8 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
       //
       handleNextPage();
     }
+    sendEmail(emailRef.current.value);
+    sendEmailToOfer()
   };
 
   const handleCheckboxChange = (event) => {
@@ -80,40 +78,49 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
     }));
   };
 
-  const sendEmail = (e) => {
-    e.preventDefault();
-    const checkedItems = getCheckedItems();
-    const form = e.target;
-    const emailInput = form.querySelector("#email");
-    const nameInput = form.querySelector("#name");
-    const phoneInput = form.querySelector("#phone");
-    const messageInput = form.querySelector("#message");
+  const sendEmail = (recipientEmail) => {
+    const emailParams = {
+      email: recipientEmail,
+      // Any other template parameters you defined in your EmailJS template
+    };
+    emailjs
+      .send(
+        "service_qwkz0cj",
+        "template_k2329q5",
+        emailParams,
+        "A4s812mw0f4laL3BV"
+      )
+      .then((response) => {
+        console.log("Email sent successfully!", response);
+      })
+      .catch((error) => {
+        console.error("Failed to send email:", error);
+      });
+  };
 
-    // Access the values of the form elements
-    const email = emailInput.value;
-    const name = nameInput.value;
-    const phone = phoneInput.value;
-    const message = messageInput.value;
-
-    // Add the checked items to the form data
-    checkedItems.forEach((item) => {
-      const input = document.createElement("input");
-      input.type = "hidden";
-      input.name = "checkedItems";
-      input.value = item;
-      form.appendChild(input);
-    });
-
-    // emailjs.sendForm(
-    //   "service_ouhaspm",
-    //   "template_ino3nuf",
-    //   form,
-    //   "Q0KuceYtG9tHt_72N"
-    // );
-
-    console.log(form);
-
-    handleFormSubmit();
+  const sendEmailToOfer = () => {
+    console.log("first");
+    
+    const emailParams = {
+      email: "ofer@shalrom.com",
+      userEmail: emailRef.current.value,
+      name: nameRef.current.value,
+      phone: phoneRef.current.value,
+      // Any other template parameters you defined in your EmailJS template
+    };
+    emailjs
+      .send(
+        "service_qwkz0cj",
+        "template_fka8n44",
+        emailParams,
+        "A4s812mw0f4laL3BV"
+      )
+      .then((response) => {
+        console.log("Email sent successfully!", response);
+      })
+      .catch((error) => {
+        console.error("Failed to send email:", error);
+      });
   };
 
   const validateForm = () => {
@@ -127,35 +134,31 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
       phone: "",
     };
 
-   
-
     // Perform validation checks
     if (name.trim() === "") {
       newErrors.name = "לא נקלט שם";
       isValid = false;
-      alert("לא נקלט שם")
+      alert("לא נקלט שם");
       setErrors(newErrors);
-      return
+      return;
     }
 
     if (phone.trim() === "") {
       newErrors.phone = "לא נקלט מספר טלפון";
       isValid = false;
-      alert("לא נקלט מספר טלפון")
+      alert("לא נקלט מספר טלפון");
       setErrors(newErrors);
-      return
+      return;
     }
 
     if (email.trim() === "") {
       newErrors.email = "לא נקלט אימייל";
       isValid = false;
-      alert("לא נקלט אימייל")
+      alert("לא נקלט אימייל");
       setErrors(newErrors);
-      return
+      return;
     }
 
-    
-   
     return isValid;
   };
 
@@ -170,13 +173,19 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
     splitSubjectsIntoColumns(subjects);
 
   return (
-    <form onSubmit={handleFormSubmit} className="relative md:top-[48px]  top-[175px]">
-        <header dir="rtl" className=" absolute -top-[20rem] md:-top-20 bottom-10 mx-auto w-[100%] text-center text-[2.5rem] font-semibold leading-[4rem] text-orange-400">
-         צריך שיעורים פרטיים ב:
-        </header>
+    <form
+      onSubmit={handleFormSubmit}
+      className="relative top-[175px]  md:top-[48px]"
+    >
+      <header
+        dir="rtl"
+        className=" absolute -top-[20rem] bottom-10 mx-auto w-[100%] text-center text-[2.5rem] font-semibold leading-[4rem] text-orange-400 md:-top-20"
+      >
+        צריך שיעורים פרטיים ב:
+      </header>
       <div className="z-1 relative flex h-[600px] w-[1088px]  rotate-90 rounded-2xl border border-indigo-600 bg-indigo-600 p-20 md:rotate-0 md:justify-between">
-        <div className="order-2 md:order-1  flex flex-row justify-start md:w-full md:justify-evenly ">
-          <div className=" scale-150 md:scale-100 relative left-40  top-40 md:left-0 md:top-0 flex flex-col items-end  md:mb-0 md:flex-row  md:items-start ">
+        <div className="order-2 flex  flex-row justify-start md:order-1 md:w-full md:justify-evenly ">
+          <div className=" relative left-40 top-40 flex  scale-150 flex-col items-end md:left-0 md:top-0 md:mb-0  md:scale-100 md:flex-row  md:items-start ">
             <div className="flex flex-col  items-end md:flex-row  md:items-start ">
               <div className="flex -rotate-90 flex-col md:rotate-0">
                 <div
@@ -200,7 +209,7 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
                       <div className="flex flex-col items-end justify-center ">
                         {buget.map((item) => (
                           <CheckBox
-                          className={"text-white"}
+                            className={"text-white"}
                             key={item.id}
                             checked={checkboxes[item.id]}
                             name={item.name}
@@ -210,10 +219,10 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
                           ></CheckBox>
                         ))}
                       </div>
-                      <div className="flex flex-col items-end justify-center ml-5">
+                      <div className="ml-5 flex flex-col items-end justify-center">
                         {firstColumnSubjects.map((item) => (
                           <CheckBox
-                          className={"text-white"}
+                            className={"text-white"}
                             key={item.id}
                             id={item.id}
                             name={item.name}
@@ -224,10 +233,10 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
                         ))}
                       </div>
 
-                      <div className="flex flex-col items-end justify-center ml-5">
+                      <div className="ml-5 flex flex-col items-end justify-center">
                         {secondColumnSubjects.map((item) => (
                           <CheckBox
-                          className={"text-white"}
+                            className={"text-white"}
                             key={item.id}
                             id={item.id}
                             name={item.name}
@@ -244,12 +253,10 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
               </div>
             </div>
           </div>
-
-         
         </div>
 
-        <div className="  scale-150  md:scale-100 order-1  mb-5 flex  relative bottom-[7rem] md:bottom-[0rem]  -rotate-90 flex-col text-end justify-center   md:justify-start md:order-3 md:mb-0 md:w-[200px] md:rotate-0 ">
-        <div className=" absolute top-36 right-60  md:top-2  md:right-80  md:rotate-0 ">
+        <div className="  relative  bottom-[7rem] order-1  mb-5 flex  -rotate-90 scale-150 flex-col  justify-center text-end md:bottom-[0rem] md:order-3   md:mb-0 md:w-[200px] md:rotate-0 md:scale-100 md:justify-start ">
+          <div className=" absolute right-60 top-36  md:right-80  md:top-2  md:rotate-0 ">
             <CustomSelect setLevel={setLevel}></CustomSelect>
           </div>
           <div className="font-bold text-white">שם </div>
@@ -282,12 +289,10 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
             ref={emailRef}
           />
           {errors?.email && <p className="text-red">{errors?.email}</p>}
-         
         </div>
 
-
-        <div className=" scale-150 md:scale-100  left-80 bottom-20  order-3 md:order-2 -rotate-90 md:rotate-0 flex flex-col items-end justify-start relative md:top-48 md:left-[11.7rem]">
-        <h3 className="pb-2 mt-20 text-right text-xl font-semibold text-orange-400">
+        <div className=" relative bottom-20  left-80 order-3  flex -rotate-90 scale-150 flex-col items-end justify-start md:left-[11.7rem] md:top-48 md:order-2 md:rotate-0 md:scale-100">
+          <h3 className="mt-20 pb-2 text-right text-xl font-semibold text-orange-400">
             הגדל/י את הסיכוי שלך לזכות
           </h3>
           <label className="font-bold text-orange-400 ">שם חבר</label>
@@ -310,7 +315,7 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
           />
         </div>
       </div>
-      <div className=" relative z-2 md:mt-4  mt-72 flex w-full justify-center ">
+      <div className=" z-2 relative mt-72  flex w-full justify-center md:mt-4 ">
         <ArrowBtnLeft onClick={handleFormSubmit} />
         <div className="p-3"></div>
         <ArrowBtnRight onClick={handlePrevPage} disabled={true} />

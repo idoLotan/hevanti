@@ -22,7 +22,7 @@ useEffect(()=> {
       <div className="rotate-90 md:rotate-0 flex h-[600px] md:flex-col items-center justify-center rounded-2xl border border-indigo-600 bg-indigo-600 w-[1088px]">
         <div
           dir="rtl"
-          className="-rotate-90 md:rotate-0   text-center text-[80px] font-semibold text-neutral-100 "
+          className="-rotate-90 md:rotate-0   text-center text-[80px] font-semibold text-[#FF7848] "
         >
           <div>  בהצלחה!</div>
           <div
