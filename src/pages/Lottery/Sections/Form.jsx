@@ -7,11 +7,16 @@ import CustomSelect from "../components/DropDown";
 import ArrowBtnLeft from "../components/ArrowBtnLeft";
 import ArrowBtnRight from "../components/ArrowBtnRight";
 import { buget, subjects } from "../../../data/data";
+import { useNavigate } from "react-router-dom";
 
 const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
+  const navigate = useNavigate();
   const userInputRef = collection(db, "userInput");
   const [level, setLevel] = useState();
   const [errors, setErrors] = useState();
+  const [friendName, setFriendName] = useState("");
+  const [friendPhone, setFriendPhone] = useState("");
+  const [isFirendSend, setIsFirendSend] = useState(false);
 
   const nameRef = useRef();
   const emailRef = useRef();
@@ -33,6 +38,14 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
     psychometric: false,
     tongue: false,
   });
+
+  const handleSendFriend = (e) => {
+    e.preventDefault();
+    setFriendPhone("");
+    setFriendName("");
+    setIsFirendSend(true);
+    sendEmailToOfer()
+  };
 
   function getCheckedItems() {
     const checkedItems = [];
@@ -66,8 +79,8 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
       //
       handleNextPage();
     }
-    // sendEmail(emailRef.current.value);
-    // sendEmailToOfer()
+    sendEmail(emailRef.current.value);
+    sendEmailToOfer();
   };
 
   const handleCheckboxChange = (event) => {
@@ -104,6 +117,10 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
       userEmail: emailRef.current.value,
       name: nameRef.current.value,
       phone: phoneRef.current.value,
+      friendName: friendNameRef.current.value,
+      friendPhone: friendPhoneRef.current.value,
+      level: level?.label,
+      userCode: userCode,
       // Any other template parameters you defined in your EmailJS template
     };
     emailjs
@@ -288,8 +305,7 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
           />
           {errors?.email && <p className="text-red">{errors?.email}</p>}
         </div>
-
-        <div className=" relative bottom-20  left-80 order-3  flex -rotate-90 scale-150 flex-col items-end justify-start md:left-[11.7rem] md:top-48 md:order-2 md:rotate-0 md:scale-100">
+        <div className=" relative bottom-20  left-64 order-3  flex -rotate-90 scale-150 flex-col items-end justify-start md:left-[11.7rem] md:top-40 md:order-2 md:rotate-0 md:scale-100">
           <h3 className="mt-20 pb-2 text-right text-xl font-semibold text-orange-400">
             הגדל/י את הסיכוי שלך לזכות
           </h3>
@@ -299,8 +315,10 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
             id="phone"
             name="phone"
             type="text "
-            className="mt-2 rounded-lg border border-[#555FD9] pl-2  text-end focus:outline-none"
+            className="flex mt-2 rounded-lg border border-[#555FD9] pr-2  text-end focus:outline-none "
+            onChange={(e) => setFriendName(e.target.value)}
             ref={friendNameRef}
+            value={friendName}
           />
           <label className="font-bold text-orange-400 ">מספר טלפון</label>
           <input
@@ -308,10 +326,70 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
             id="email"
             name="email"
             type="text "
-            className="mt-2 rounded-lg border border-[#555FD9] pl-2 text-end focus:outline-none"
+            className="flex mt-2 rounded-lg border border-[#555FD9] pr-2  text-end focus:outline-none "
+            onChange={(e) => setFriendPhone(e.target.value)}
             ref={friendPhoneRef}
+            value={friendPhone}
           />
+          
+          <button
+          dir="rtl"
+            onClick={handleSendFriend}
+            class=" mt-4 h-[40px] w-[191px] rounded-lg bg-[#555FD9] font-bold text-orange-400 shadow-[0_8px_20px_0px_rgba(0,0,0,0.19)]"
+          >
+            {isFirendSend ?  " שלח/י שוב": " שלח/י"}
+          </button>
         </div>
+        {/* <div className=" relative bottom-20  left-80 order-3  flex -rotate-90 scale-150 flex-col items-end justify-start md:left-[11.7rem] md:top-48 md:order-2 md:rotate-0 md:scale-100">
+          <h3 className="mt-20 pb-2 text-right text-xl font-semibold text-orange-400">
+            הגדל/י את הסיכוי שלך, שלח/י לחבר וקבל עוד שני מספרי הגרלה
+          </h3>
+
+         
+          
+              <label className="font-bold text-orange-400 ">שם חבר</label>
+              <input
+                aria-label="name"
+                id="name"
+                name="name"
+                type="text "
+                className="mt-2 rounded-lg border border-[#555FD9] pr-2  text-start focus:outline-none "
+                onChange={(e) => setFriendName(e.target.value)}
+                ref={friendNameRef}
+                value={friendName}
+              />
+       
+          
+              <label className="font-bold text-orange-400 ">מספר טלפון</label>
+              <input
+                onChange={(e) => setFriendPhone(e.target.value)}
+                aria-label="phone"
+                id="phone"
+                name="phone"
+                type="text "
+                className="mt-2 rounded-lg border border-[#555FD9] pr-2  text-start focus:outline-none"
+                ref={friendPhoneRef}
+                value={friendPhone}
+              />
+           
+         <button class="shadow-send-btn mt-2 h-[40px] w-[200px] rounded-lg bg-[#555FD9] font-bold text-orange-400 shadow-[0_8px_20px_0px_rgba(0,0,0,0.19)]">
+              שלח\י
+            </button> 
+            
+          <button
+            onClick={handleSendFriend}
+            className="m-2 rounded bg-orange-400 p-2 text-white"
+          >
+    
+            שלח חבר
+          </button> 
+          <button
+            onClick={() => navigate("/terms")}
+            className="mt-2 font-bold text-orange-400 "
+          >
+            תקנון
+          </button>
+        </div> */}
       </div>
       <div className=" z-2 relative mt-72  flex w-full justify-center md:mt-4 ">
         <ArrowBtnLeft onClick={handleFormSubmit} />
