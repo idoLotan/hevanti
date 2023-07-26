@@ -66,8 +66,8 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
       //
       handleNextPage();
     }
-    sendEmail(emailRef.current.value);
-    sendEmailToOfer()
+    // sendEmail(emailRef.current.value);
+    // sendEmailToOfer()
   };
 
   const handleCheckboxChange = (event) => {
@@ -99,8 +99,6 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
   };
 
   const sendEmailToOfer = () => {
-    console.log("first");
-    
     const emailParams = {
       email: "ofer@shalrom.com",
       userEmail: emailRef.current.value,

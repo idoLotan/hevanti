@@ -3,10 +3,6 @@ import CrossBtn from "./CrossBtn";
 
 const Card = ({ setImages, images, cards }) => {
   const [image, setImage] = useState(null);
- 
-
-
-  
 
   const handleImageChange = (e) => {
     if (e.target.files.length) {
@@ -23,7 +19,7 @@ const Card = ({ setImages, images, cards }) => {
 
 
   return (
-    <div className={`-rotate-90 h-[292px] w-[254px] m-10 md:m-2 md:rotate-0  ${mobileLargeState ? 'h-[400px] w-[344px]' : 'h-[302px] w-[304px]'} flex md:h-[392px] md:w-[304px] flex-col items-center justify-center rounded-xl bg-neutral-100`} >
+    <div className={`-rotate-90 h-[292px] w-[254px] md:m-2 md:rotate-0  ${mobileLargeState ? 'h-[400px] w-[344px]  m-10' : ' m-2 h-[302px] w-[304px]'} flex md:h-[392px] md:w-[304px] flex-col items-center justify-center rounded-xl bg-neutral-100`} >
       {image ? (
         <img src={image} alt="Uploaded" className="h-48 w-48 object-contain" />
       ) : (
