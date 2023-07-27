@@ -10,8 +10,10 @@ import SubjectSection from "./SubjectSection";
 import ContantSection from "./ContantSection";
 import TeachersSection from "./TeachersSection";
 import QuestionsSection from "./QuestionsSection";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+  const navigate = useNavigate()
   const [isOpen, setIsOpen] = useState(false);
   const [subjects, setSubjects] = useState({
     chemistry: false,
@@ -161,10 +163,10 @@ function Home() {
                   שחרר את הפוטנציאל שלך עם הוראה מעולה
                 </h3>
                 <div className="flex  flex-col items-center justify-end md:flex-row ">
-                  <button className=" m-1 flex h-[36px] w-[157px] items-center justify-center rounded-xl bg-[#FF7848] font-semibold text-indigo-600  2xl:h-[46px] 2xl:w-[210px] 2xl:text-xl">
-                    <a href="/lottery" className=" " aria-current="page">
+                  <button onClick={() => navigate("/lottery")} className=" m-1 flex h-[36px] w-[157px] items-center justify-center rounded-xl bg-[#FF7848] font-semibold text-indigo-600  2xl:h-[46px] 2xl:w-[210px] 2xl:text-xl">
+                  
                       הגרלה
-                    </a>
+                    
                   </button>
                   <button className="z-10 m-1 flex h-[36px] w-[157px] items-center justify-center rounded-xl border border-indigo-600 font-semibold text-indigo-600  2xl:h-[46px] 2xl:w-[210px] 2xl:text-xl">
                     <a href="#contact" className=" " aria-current="page">

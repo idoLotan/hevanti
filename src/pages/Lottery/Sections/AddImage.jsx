@@ -168,8 +168,7 @@ const AddImage = ({ handleNextPage, handlePrevPage, pageIndex }) => {
       <section className="relative">
         <header className=" absolute w-full flex justify-center -top-96 bottom-10 mx-auto text-center  text-[2.5rem] font-semibold leading-[4rem] text-orange-400 md:-top-32">
           <p className="w-[650px]">
-            שתף/שתפי את התמונות עם חולצות המותג שלנו/ או חולצות שבט און
-          </p>
+          שתף/שתפי את התמונות עם חולצות הֵבַנְתִּי - שבט און</p>
         </header>
         <div className="flex h-[600px] w-[1088px] rotate-90  justify-between rounded-2xl border border-indigo-600 bg-indigo-600 md:rotate-0">
           <div

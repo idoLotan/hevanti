@@ -71,7 +71,7 @@ const Welcome = ({ handleNextPage, setUserCode, userCode, setIsScout }) => {
         <div className=" flex h-[600px] w-[1088px] rotate-90  justify-between rounded-2xl border border-indigo-600 bg-indigo-600 md:rotate-0">
           <div
             id="left-side"
-            className=" w-[42rem] -rotate-90 rounded-2xl border border-indigo-600   bg-neutral-100 pt-5 md:ml-0 md:rotate-0 md:p-5"
+            className=" md:w-[50%] w-[42rem]  -rotate-90 rounded-2xl border border-indigo-600   bg-neutral-100 pt-5 md:ml-0 md:rotate-0 md:p-5"
           >
             <div className="flex  h-full w-full flex-col items-end justify-start  rounded-br-[46px] rounded-tl-[46px]   text-[14px] ">
               <div className="flex flex-row items-center pr-4 pt-10  ">
@@ -185,7 +185,7 @@ const Welcome = ({ handleNextPage, setUserCode, userCode, setIsScout }) => {
             ) : (
               <button
                 onClick={handleEnterWithCode}
-                className="mb-5 h-14 w-[248px] rounded-xl border-2 bg-white p-2 text-center text-2xl font-semibold text-indigo-600"
+                className="mb-5 h-14 w-[248px] cursor-pointer rounded-xl border-2 bg-white p-2 text-center text-2xl font-semibold text-indigo-600"
               >
                 כניסה עם קוד
               </button>
@@ -193,7 +193,7 @@ const Welcome = ({ handleNextPage, setUserCode, userCode, setIsScout }) => {
 
             <button
               onClick={() => validateCode(userCode)}
-              className="h-14 w-[248px] rounded-xl border-2 bg-white p-2 text-center text-2xl font-semibold text-indigo-600"
+              className="h-14 w-[248px] cursor-pointer rounded-xl border-2 bg-white p-2 text-center text-2xl font-semibold text-indigo-600"
             >
               כניסה
             </button>

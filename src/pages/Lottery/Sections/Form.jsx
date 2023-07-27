@@ -44,7 +44,7 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
     setFriendPhone("");
     setFriendName("");
     setIsFirendSend(true);
-    sendEmailToOfer()
+    sendEmailToOfer();
   };
 
   function getCheckedItems() {
@@ -221,6 +221,19 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
                     </div>
 
                     <div className="flex">
+                      <button
+                        onClick={() => navigate("/terms")}
+                        className="absolute top-[-1rem] left-[2rem]   underline md:top-20 md:left-[-6rem] mt-2 font-bold text-orange-400 "
+                      >
+                        תקנון
+                      </button>
+                      <div className={"text-white absolute top-[-1rem] md:top-[3rem] left-[-3rem] md:left-[-6rem]"}>
+                      <CheckBox
+                          //  className={"text-white absolute m-5"}
+                           label={"אישור"}
+                          ></CheckBox>
+                      </div>
+                   
                       <div className="flex flex-col items-end justify-center ">
                         {buget.map((item) => (
                           <CheckBox
@@ -315,7 +328,7 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
             id="phone"
             name="phone"
             type="text "
-            className="flex mt-2 rounded-lg border border-[#555FD9] pr-2  text-end focus:outline-none "
+            className="mt-2 flex rounded-lg border border-[#555FD9] pr-2  text-end focus:outline-none "
             onChange={(e) => setFriendName(e.target.value)}
             ref={friendNameRef}
             value={friendName}
@@ -326,18 +339,18 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
             id="email"
             name="email"
             type="text "
-            className="flex mt-2 rounded-lg border border-[#555FD9] pr-2  text-end focus:outline-none "
+            className="mt-2 flex rounded-lg border border-[#555FD9] pr-2  text-end focus:outline-none "
             onChange={(e) => setFriendPhone(e.target.value)}
             ref={friendPhoneRef}
             value={friendPhone}
           />
-          
+
           <button
-          dir="rtl"
+            dir="rtl"
             onClick={handleSendFriend}
             class=" mt-4 h-[40px] w-[191px] rounded-lg bg-[#555FD9] font-bold text-orange-400 shadow-[0_8px_20px_0px_rgba(0,0,0,0.19)]"
           >
-            {isFirendSend ?  " שלח/י שוב": " שלח/י"}
+            {isFirendSend ? " שלח/י שוב" : " שלח/י"}
           </button>
         </div>
         {/* <div className=" relative bottom-20  left-80 order-3  flex -rotate-90 scale-150 flex-col items-end justify-start md:left-[11.7rem] md:top-48 md:order-2 md:rotate-0 md:scale-100">
@@ -376,13 +389,7 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
               שלח\י
             </button> 
             
-          <button
-            onClick={handleSendFriend}
-            className="m-2 rounded bg-orange-400 p-2 text-white"
-          >
-    
-            שלח חבר
-          </button> 
+        
           <button
             onClick={() => navigate("/terms")}
             className="mt-2 font-bold text-orange-400 "
