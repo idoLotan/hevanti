@@ -55,24 +55,7 @@ const MyModal = ({ isShowing, onClose, children, style }) =>
               </div>
             </div>
           </div>
-          {/* <div
-            classNameName={
-              " transition-width duration-250 fixed right-[50%] top-[50%] z-40 h-[200px] w-[300px] rounded-md border bg-white"
-            }
-          >
-            <div className="flex justify-end">
-              <button
-                type="button"
-                className="cursor-pointer text-2xl font-bold text-gray-700 opacity-30 hover:opacity-75"
-                data-dismiss="modal"
-                aria-label="Close"
-                onClick={onClose}
-              >
-                &times;
-              </button>
-            </div>
-          
-          </div> */}
+   
         </React.Fragment>,
         document.body
       )

@@ -65,7 +65,7 @@ const Welcome = ({ handleNextPage, setUserCode, userCode, setIsScout }) => {
       <section className="relative">
         {/* <ArrowBtnLeft  /> */}
         <header className=" absolute -top-96  w-[100%] text-center  text-[64px] font-semibold text-orange-400 md:-top-32">
-          ברוך הבא
+        ברוכים הבאים
         </header>
 
         <div className=" flex h-[600px] w-[1088px] rotate-90  justify-between rounded-2xl border border-indigo-600 bg-indigo-600 md:rotate-0">
@@ -80,7 +80,6 @@ const Welcome = ({ handleNextPage, setUserCode, userCode, setIsScout }) => {
                     שעורי הכנה לשנת הלימודים הקרובה עם המורים של
                   </span>
                   <span className="text-xl font-semibold leading-normal text-indigo-600">
-                    {" "}
                   </span>
                   <span className="text-2xl font-semibold leading-normal text-orange-400">
                     הֵבַנְתִּי

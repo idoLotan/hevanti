@@ -14,8 +14,8 @@ const Footer = () => {
             </a>
           </li>
           <li>
-            <a href="mailto:ofer@sharlom.com" className="cursor-pointer p-1">
-              ofer@sharlom.com
+            <a href="mailto:ofer@shalrom.com" className="cursor-pointer p-1">
+            ofer@shalrom.com
             </a>
           </li>
         </div>

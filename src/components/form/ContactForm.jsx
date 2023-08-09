@@ -220,6 +220,7 @@ const ContactForm = ({ toggelModal, subjectsClicked }) => {
       phone: phoneRef.current.value,
       usersText: textRef.current.value,
     };
+    console.log(formData.items)
     const response = await addDoc(userInputRef, formData);
     console.log("response", response);
     toggelModal();
@@ -233,16 +234,17 @@ const ContactForm = ({ toggelModal, subjectsClicked }) => {
     }));
   };
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
     const checkedItems = getCheckedItems();
     const form = e.target;
-    const emailInput = form.querySelector("#email");
-    const nameInput = form.querySelector("#name");
-    const phoneInput = form.querySelector("#phone");
-    const messageInput = form.querySelector("#message");
+    
+    // Access the values of the form elements using references
+    const emailInput = emailRef.current;
+    const nameInput = nameRef.current;
+    const phoneInput = phoneRef.current;
+    const messageInput = textRef.current;
 
-    // Access the values of the form elements
     const email = emailInput.value;
     const name = nameInput.value;
     const phone = phoneInput.value;
@@ -250,22 +252,73 @@ const ContactForm = ({ toggelModal, subjectsClicked }) => {
 
     // Add the checked items to the form data
     checkedItems.forEach((item) => {
-      const input = document.createElement("input");
-      input.type = "hidden";
-      input.name = "checkedItems";
-      input.value = item;
-      form.appendChild(input);
+        const input = document.createElement("input");
+        input.type = "hidden";
+        input.name = "checkedItems";
+        input.value = item;
+        form.appendChild(input);
     });
 
-    emailjs.sendForm(
-      "service_ouhaspm",
-      "template_ino3nuf",
-      form,
-      "Q0KuceYtG9tHt_72N"
-    );
+    console.log(messageInput.value);
 
-    handleFormSubmit();
-  };
+    try {
+        // Assuming emailjs.sendForm returns a Promise
+        await emailjs.sendForm(
+            "service_qwkz0cj",
+            "template_fka8n44",
+            form,
+            "A4s812mw0f4laL3BV"
+        );
+
+        // Assuming handleFormSubmit is an asynchronous function
+        await handleFormSubmit();
+    } catch (error) {
+        console.error("An error occurred:", error);
+        // Handle the error appropriately
+    }
+};
+
+
+  // const sendEmail = (e) => {
+  //   e.preventDefault();
+  //   const checkedItems = getCheckedItems();
+  //   const form = e.target;
+  //   const emailInput = emailRef.current.value;
+  //   const nameInput = nameRef.current.value;
+  //   const phoneInput = phoneRef.current.value;
+  //   const messageInput = textRef.current.value;
+
+  //   console.log(messageInput)
+
+  //   // Access the values of the form elements
+  //   const email = emailInput.value;
+  //   const name = nameInput.value;
+  //   const phone = phoneInput.value;
+  //   const message = messageInput.value;
+
+  //   // Add the checked items to the form data
+  //   checkedItems.forEach((item) => {
+  //     const input = document.createElement("input");
+  //     input.type = "hidden";
+  //     input.name = "checkedItems";
+  //     input.value = item;
+  //     form.appendChild(input);
+  //   });
+
+  //   console.log(form.messageInput);
+    
+
+    
+
+  //   emailjs.sendForm(
+  //     "service_qwkz0cj",
+  //     "template_fka8n44",
+  //     form,
+  //     "A4s812mw0f4laL3BV"
+  //   );
+
+  //   handleFormSubmit();
+  // };
 
   return (
     <form

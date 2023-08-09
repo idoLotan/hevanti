@@ -94,7 +94,7 @@ const NavBar = () => {
             y2="-1.5"
             transform="matrix(1 0.000147656 -6.04879e-05 1 0 3.99707)"
             stroke="#FF7848"
-            stroke-width="3"
+            strokeWidth="3"
             stroke-linecap="round"
           />
           <line
@@ -103,7 +103,7 @@ const NavBar = () => {
             x2="22.5"
             y2="15.0011"
             stroke="#FF7848"
-            stroke-width="3"
+            strokeWidth="3"
             stroke-linecap="round"
           />
           <line
@@ -112,7 +112,7 @@ const NavBar = () => {
             x2="14.5"
             y2="27.5"
             stroke="#FF7848"
-            stroke-width="3"
+            strokeWidth="3"
             stroke-linecap="round"
           />
         </svg>

@@ -58,7 +58,7 @@ function Home() {
                   d="M21.35 32.857H17.3L8.3 38v-5.143H2V2h36v11.314M9.2 10.685h5.4M9.2 17.2H20"
                   stroke="#555FD9"
                   stroke-opacity=".15"
-                  stroke-width="4"
+                  strokeWidth="4"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                 />
@@ -66,7 +66,7 @@ function Home() {
                   d="m24.5 28.057 5.4 5.429L38 21.543"
                   stroke="#555FD9"
                   stroke-opacity=".15"
-                  stroke-width="4"
+                  strokeWidth="4"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                 />
@@ -114,7 +114,7 @@ function Home() {
                     <g
                       opacity=".5"
                       stroke="#FF7848"
-                      stroke-width="3"
+                      strokeWidth="3"
                       stroke-linecap="round"
                     >
                       <path
@@ -163,11 +163,11 @@ function Home() {
                   שחרר את הפוטנציאל שלך עם הוראה מעולה
                 </h3>
                 <div className="flex  flex-col items-center justify-end md:flex-row ">
-                  <button onClick={() => navigate("/lottery")} className=" m-1 flex h-[36px] w-[157px] items-center justify-center rounded-xl bg-[#FF7848] font-semibold text-indigo-600  2xl:h-[46px] 2xl:w-[210px] 2xl:text-xl">
+                  {/* <button onClick={() => navigate("/lottery")} className=" m-1 flex h-[36px] w-[157px] items-center justify-center rounded-xl bg-[#FF7848] font-semibold text-indigo-600  2xl:h-[46px] 2xl:w-[210px] 2xl:text-xl">
                   
                       הגרלה
                     
-                  </button>
+                  </button> */}
                   <button className="z-10 m-1 flex h-[36px] w-[157px] items-center justify-center rounded-xl border border-indigo-600 font-semibold text-indigo-600  2xl:h-[46px] 2xl:w-[210px] 2xl:text-xl">
                     <a href="#contact" className=" " aria-current="page">
                       התחל
@@ -181,7 +181,7 @@ function Home() {
                     className="relative top-[100px] hidden md:block 2xl:top-[300px]"
                     fill="none"
                   >
-                    <g opacity=".2" stroke="#555FD9" stroke-width="2">
+                    <g opacity=".2" stroke="#555FD9" strokeWidth="2">
                       <path d="M20.466 40.924h9.673" stroke-linecap="round" />
                       <path d="M20.362 34.062v3.36h9.64v-3.36" />
                       <path

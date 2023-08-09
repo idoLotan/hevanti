@@ -61,7 +61,7 @@ const CustomSelect = ({setLevel}) => {
     
   };
   return (
-    <div className="select-container text-[#FF7848] text-right">
+    <div className="select-container text-[#FF7848] text-right w-[136px]">
       <Select
         options={options}
         styles={customStyles}

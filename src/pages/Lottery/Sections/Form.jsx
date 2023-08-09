@@ -79,8 +79,8 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
       //
       handleNextPage();
     }
-    sendEmail(emailRef.current.value);
-    sendEmailToOfer();
+    // sendEmail(emailRef.current.value);
+    // sendEmailToOfer();
   };
 
   const handleCheckboxChange = (event) => {
@@ -199,23 +199,24 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
         צריך שיעורים פרטיים ב:
       </header>
       <div className="z-1 relative flex h-[600px] w-[1088px]  rotate-90 rounded-2xl border border-indigo-600 bg-indigo-600 p-20 md:rotate-0 md:justify-between">
-        <div className="order-2 flex  flex-row justify-start md:order-1 md:w-full md:justify-evenly ">
+        <div className="order-2 flex  flex-row justify-start  md:order-1 md:w-full md:justify-evenly ">
           <div className=" relative left-40 top-40 flex  scale-150 flex-col items-end md:left-0 md:top-0 md:mb-0  md:scale-100 md:flex-row  md:items-start ">
-            <div className="flex flex-col  items-end md:flex-row  md:items-start ">
-              <div className="flex -rotate-90 flex-col md:rotate-0">
+            <div className="flex w-60  flex-col items-end md:w-full md:flex-row md:items-start ">
+              <div className="flex -rotate-90 flex-col md:rotate-0 ">
                 <div
-                  className=" text-xl font-medium text-neutral-100"
                   dir="rtl"
+                  className=" text-xl font-medium text-neutral-100"
                 >
                   במה אתה מתעניין?
                 </div>
                 <div className=" flex md:flex-row">
                   <div className="flex-end  flex flex-col text-end">
                     <div className="flex justify-between">
-                      <div className="mr-4 font-bold text-neutral-100">
+                      <div className="mr-4  text-right text-base  font-normal text-neutral-100 ">
                         תקציב
                       </div>
-                      <div className=" font-bold text-neutral-100">
+
+                      <div className=" text-right text-base font-normal text-neutral-100">
                         קטגוריות
                       </div>
                     </div>
@@ -223,17 +224,21 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
                     <div className="flex">
                       <button
                         onClick={() => navigate("/terms")}
-                        className="absolute top-[-1rem] left-[2rem]   underline md:top-20 md:left-[-6rem] mt-2 font-bold text-orange-400 "
+                        className="absolute left-[2rem] top-[-1rem]   mt-2 font-bold text-orange-400 underline md:left-[-6rem] md:top-20 "
                       >
                         תקנון
                       </button>
-                      <div className={"text-white absolute top-[-1rem] md:top-[3rem] left-[-3rem] md:left-[-6rem]"}>
-                      <CheckBox
+                      <div
+                        className={
+                          "absolute left-[-3rem] top-[-1rem] text-white md:left-[-6rem] md:top-[3rem]"
+                        }
+                      >
+                        <CheckBox
                           //  className={"text-white absolute m-5"}
-                           label={"אישור"}
-                          ></CheckBox>
+                          label={"אישור"}
+                        ></CheckBox>
                       </div>
-                   
+
                       <div className="flex flex-col items-end justify-center ">
                         {buget.map((item) => (
                           <CheckBox
@@ -283,120 +288,93 @@ const Form = ({ handleNextPage, handlePrevPage, userCode }) => {
           </div>
         </div>
 
-        <div className="  relative  bottom-[7rem] order-1  mb-5 flex  -rotate-90 scale-150 flex-col  justify-center text-end md:bottom-[0rem] md:order-3   md:mb-0 md:w-[200px] md:rotate-0 md:scale-100 md:justify-start ">
-          <div className=" absolute right-60 top-36  md:right-80  md:top-2  md:rotate-0 ">
+        <div className="  relative   bottom-[6rem] order-1  mb-5 flex  -rotate-90 scale-150 flex-col  justify-center text-end md:bottom-[0rem] md:order-3   md:mb-0  md:rotate-0 md:scale-100  md:justify-start ">
+          <div className=" absolute right-64 top-32  md:right-80  md:top-2  md:rotate-0 ">
             <CustomSelect setLevel={setLevel}></CustomSelect>
           </div>
-          <div className="font-bold text-white">שם </div>
+          <div className=" text-xl font-medium text-neutral-100">שם</div>
           <input
             aria-label="name"
             id="name"
             name="name"
             type="text "
-            className="mt-2 rounded-lg border border-[#555FD9] pr-1 text-end focus:outline-none"
+            className="mt-2  h-10 w-60 rounded-xl border border-[#555FD9] bg-neutral-100 pr-1 text-end focus:outline-none"
             ref={nameRef}
           />
           {errors?.name && <p className="text-red">{errors?.name}</p>}
-          <div className="font-bold text-white"> טלפון</div>
+          <div className="text-xl font-medium text-neutral-100"> טלפון</div>
           <input
             aria-label="phone"
             id="phone"
             name="phone"
             type="text "
-            className="mt-2 rounded-lg border border-[#555FD9] pr-1 text-end focus:outline-none"
+            className="mt-2  h-10 w-60 rounded-xl border border-[#555FD9] bg-neutral-100 pr-1 text-end focus:outline-none"
             ref={phoneRef}
           />
           {errors?.phone && <p className="">{errors?.phone}</p>}
-          <div className="font-bold text-white"> דואר אלקטרוני</div>
+          <div className="text-xl font-medium text-neutral-100">
+            דואר אלקטרוני
+          </div>
           <input
             aria-label="phone"
             id="email"
             name="email"
             type="text "
-            className="mt-2 rounded-lg border border-[#555FD9] pr-1 text-end focus:outline-none"
+            className="mt-2  h-10 w-60 rounded-xl border border-[#555FD9] bg-neutral-100 pr-1 text-end focus:outline-none"
             ref={emailRef}
           />
           {errors?.email && <p className="text-red">{errors?.email}</p>}
         </div>
-        <div className=" relative bottom-20  left-64 order-3  flex -rotate-90 scale-150 flex-col items-end justify-start md:left-[11.7rem] md:top-40 md:order-2 md:rotate-0 md:scale-100">
-          <h3 className="mt-20 pb-2 text-right text-xl font-semibold text-orange-400">
+
+        <div className=" relative bottom-20  order-3 w-full items-center  flex -rotate-90 scale-150 flex-col  justify-start md:top-40  md:order-2 md:rotate-0 md:scale-100">
+       
+          <div className="absolute  bottom-0  md:bottom-40 flex flex-col  justify-between items-center md:border-dotted md:border-white md:border-2 rounded-xl p-10">
+          <h3 className=" pb-2 text-right text-xl  font-semibold text-orange-400">
             הגדל/י את הסיכוי שלך לזכות
           </h3>
-          <label className="font-bold text-orange-400 ">שם חבר</label>
-          <input
-            aria-label="phone"
-            id="phone"
-            name="phone"
-            type="text "
-            className="mt-2 flex rounded-lg border border-[#555FD9] pr-2  text-end focus:outline-none "
-            onChange={(e) => setFriendName(e.target.value)}
-            ref={friendNameRef}
-            value={friendName}
-          />
-          <label className="font-bold text-orange-400 ">מספר טלפון</label>
-          <input
-            aria-label="phone"
-            id="email"
-            name="email"
-            type="text "
-            className="mt-2 flex rounded-lg border border-[#555FD9] pr-2  text-end focus:outline-none "
-            onChange={(e) => setFriendPhone(e.target.value)}
-            ref={friendPhoneRef}
-            value={friendPhone}
-          />
-
-          <button
-            dir="rtl"
-            onClick={handleSendFriend}
-            class=" mt-4 h-[40px] w-[191px] rounded-lg bg-[#555FD9] font-bold text-orange-400 shadow-[0_8px_20px_0px_rgba(0,0,0,0.19)]"
-          >
-            {isFirendSend ? " שלח/י שוב" : " שלח/י"}
-          </button>
-        </div>
-        {/* <div className=" relative bottom-20  left-80 order-3  flex -rotate-90 scale-150 flex-col items-end justify-start md:left-[11.7rem] md:top-48 md:order-2 md:rotate-0 md:scale-100">
-          <h3 className="mt-20 pb-2 text-right text-xl font-semibold text-orange-400">
-            הגדל/י את הסיכוי שלך, שלח/י לחבר וקבל עוד שני מספרי הגרלה
-          </h3>
-
-         
-          
-              <label className="font-bold text-orange-400 ">שם חבר</label>
+        <div className="flex  flex-col  md:flex-row">
+        <button
+              dir="rtl"
+              onClick={handleSendFriend}
+              class=" mt-4 h-[40px] w-[191px] rounded-lg bg-[#555FD9] font-bold text-orange-400 shadow-[0_8px_20px_0px_rgba(0,0,0,0.19)]"
+            >
+              {isFirendSend ? " שלח/י שוב" : " שלח/י"}
+            </button>
+            <div className="flex flex-col text-right">
+              <label className=" text-xl font-medium text-orange-100 ">
+                שם חבר
+              </label>
               <input
-                aria-label="name"
-                id="name"
-                name="name"
-                type="text "
-                className="mt-2 rounded-lg border border-[#555FD9] pr-2  text-start focus:outline-none "
-                onChange={(e) => setFriendName(e.target.value)}
-                ref={friendNameRef}
-                value={friendName}
-              />
-       
-          
-              <label className="font-bold text-orange-400 ">מספר טלפון</label>
-              <input
-                onChange={(e) => setFriendPhone(e.target.value)}
                 aria-label="phone"
                 id="phone"
                 name="phone"
                 type="text "
-                className="mt-2 rounded-lg border border-[#555FD9] pr-2  text-start focus:outline-none"
+                className="ml-5  h-10 w-60 rounded-xl border border-[#555FD9] bg-neutral-100 pr-1 text-end focus:outline-none"
+                onChange={(e) => setFriendName(e.target.value)}
+                ref={friendNameRef}
+                value={friendName}
+              />
+            </div>
+
+            <div className="flex flex-col text-right">
+              <label className="text-xl font-medium text-neutral-100">
+                מספר טלפון
+              </label>
+              <input
+                aria-label="phone"
+                id="email"
+                name="email"
+                type="text "
+                className="ml-5  h-10 w-60 rounded-xl border border-[#555FD9] bg-neutral-100 pr-1 text-end focus:outline-none"
+                onChange={(e) => setFriendPhone(e.target.value)}
                 ref={friendPhoneRef}
                 value={friendPhone}
               />
+            </div>
+        </div>
            
-         <button class="shadow-send-btn mt-2 h-[40px] w-[200px] rounded-lg bg-[#555FD9] font-bold text-orange-400 shadow-[0_8px_20px_0px_rgba(0,0,0,0.19)]">
-              שלח\י
-            </button> 
-            
-        
-          <button
-            onClick={() => navigate("/terms")}
-            className="mt-2 font-bold text-orange-400 "
-          >
-            תקנון
-          </button>
-        </div> */}
+          </div>
+        </div>
       </div>
       <div className=" z-2 relative mt-72  flex w-full justify-center md:mt-4 ">
         <ArrowBtnLeft onClick={handleFormSubmit} />
