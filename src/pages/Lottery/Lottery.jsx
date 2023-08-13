@@ -5,7 +5,7 @@ import Welcome from "./Sections/Welcome";
 import SubmissionCompleted from "./Sections/SubmissionCompleted";
 import SearchBar from "./components/SearchBar";
 import Terms from "./Sections/Terms";
-import { codes } from "../../data/data";
+import { codes } from "../../data/codes";
 import {  firebase } from "firebase/app";
 import emailjs from "@emailjs/browser";
 

@@ -6,35 +6,13 @@ import xbox from "../../../assets/images/LotteryImage/xbox.png";
 import x from "../../../assets/images/LotteryImage/x.png";
 import v from "../../../assets/images/LotteryImage/v.png";
 import { useState } from "react";
-import { codes, codesGeneral } from "../../../data/data";
+import { codes, codesGeneral } from "../../../data/codes";
 
 
 const Welcome = ({ handleNextPage, setUserCode, userCode, setIsScout }) => {
   const [enterWithCode, setEnterWithCode] = useState(false);
   const [codeValid, setCodeValid] = useState(true);
   const [userClicked, setUserClicked] = useState(false);
-
-  // sendWhatsAppMessage("+972549840535", "hey")
-
-
-
-  // const sendWhatsAppMessage = async (toNumber, message) => {
-  //   const accountSid = "YOUR_TWILIO_ACCOUNT_SID";
-  //   const authToken = "YOUR_TWILIO_AUTH_TOKEN";
-  //   const client = Twilio(accountSid, authToken);
-  
-  //   try {
-  //     const result = await client.messages.create({
-  //       from: "whatsapp:+TWILIO_PHONE_NUMBER",
-  //       to: `whatsapp:${toNumber}`,
-  //       body: message,
-  //     });
-  
-  //     console.log("Message sent successfully:", result.sid);
-  //   } catch (error) {
-  //     console.error("Error sending message:", error.message);
-  //   }
-  // };
 
 
 

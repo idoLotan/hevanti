@@ -40,8 +40,10 @@ const Section = ({ section, activeIndex, index, toggleSection }) => {
         <div className="h-[2px] w-[100%] bg-[#555FD9] opacity-50 "></div>
       </div>
       {activeIndex === index && (
-        <div dir="rtl" className=" mt-1 flex ">
+        <div dir="rtl" className=" flex-col mt-1 flex ">
           {section.content}
+          <b className="pt-2">{section.subTitle}</b>
+          {section.subContent}
         </div>
       )}
     </div>
