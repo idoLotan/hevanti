@@ -10,7 +10,7 @@ return (
     <span className={`mr-2 select-none ${className} `} tabindex="0" onKeyUp={handleKeyPress} >{label}</span>
     <input type="checkbox" tabindex="0"  role="checkbox" aria-checked="false" id={id} checked={checked} onChange={onChange} name={name} value="yes" className="hidden" />
     <div className="relative">
-      <div className="bg-white border border-[#555FD9] w-4 h-4 flex justify-center items-center">
+      <div className="bg-white border border-[#555FD9] rounded border-opacity-50  w-4 h-4 flex justify-center items-center">
         <svg role="presentation" className="fill-current hidden w-3 h-3 text-blue-100 pointer-events-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" version="1.1" viewBox="0 0 17 12" xmlns="http://www.w3.org/2000/svg">
           <g fill="none" fill-rule="evenodd">
             <g transform="translate(-9 -11)" fill="#FF7848" fill-rule="nonzero">

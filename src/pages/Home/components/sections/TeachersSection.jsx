@@ -1,14 +1,14 @@
 import React from "react";
-import joana from "../../assets/images/joana.png";
-import meir from "../../assets/images/meir.png";
-import ofir from "../../assets/images/ofir.png";
-import amit from "../../assets/images/amit.png";
-import sigal from "../../assets/images/sigal.png";
-import TeachersCarousel from "../../components/ui/TeachersCarousel";
+import joana from "assets/images/joana.png";
+import meir from "assets/images/meir.png";
+import ofir from "assets/images/ofir.png";
+import amit from "assets/images/amit.png";
+import sigal from "assets/images/sigal.png";
+import TeachersCarousel from "components/ui/TeachersCarousel";
 
 const TeachersSection = () => {
   return (
-    <div id="teachers" className="flex flex-col items-center justify-center">
+    <div id="teachers" className="flex flex-col items-center justify-center section-1">
       <div className="mr-5 mt-5 flex w-[100%]  justify-end">
         <svg
           role="presentation"

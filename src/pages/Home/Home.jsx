@@ -5,15 +5,16 @@ import Footer from "../../components/ui/Footer";
 import Carousel from "../../components/ui/Carousel";
 import MyModal from "../../components/ui/MyModal";
 import ContactBtn from "../../components/ui/ContactBtn";
-import AboutSection from "./AboutSection";
-import SubjectSection from "./SubjectSection";
-import ContantSection from "./ContantSection";
-import TeachersSection from "./TeachersSection";
-import QuestionsSection from "./QuestionsSection";
+import AboutSection from "./components/sections/AboutSection";
+import SubjectSection from "./components/sections/SubjectSection";
+import ContantSection from "./components/sections/ContantSection";
+import TeachersSection from "./components/sections/TeachersSection";
+import QuestionsSection from "./components/sections/QuestionsSection";
 import { useNavigate } from "react-router-dom";
+import LessonsSection from "./components/sections/LessonsSection";
 
 function Home() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [subjects, setSubjects] = useState({
     chemistry: false,
@@ -24,6 +25,11 @@ function Home() {
     biology: false,
     psychometric: false,
     tongue: false,
+    ils150: false,
+    ils200: false,
+    ils250: false,
+    vip: false,
+  
   });
 
   const toggelModal = () => {
@@ -43,7 +49,7 @@ function Home() {
         <div className="flex items-center justify-end ">
           <NavBar />
         </div>
-
+     
         <div className="">
           <div className="max-md:w-full">
             <div className="relative flex flex-col items-center justify-center md:flex-row">
@@ -124,7 +130,10 @@ function Home() {
                     </g>
                   </svg>
 
-                  <p className="flex flex-row justify-end ">
+                  <p>שיעורים פרטיים בכל המקצועות </p>
+                  <p> בפריסה ארצית </p>
+
+                  {/* <p className="flex flex-row justify-end ">
                     התחל/י את מסע ההצלחה
                   </p>
 
@@ -156,19 +165,20 @@ function Home() {
                       <rect x="48" y="31" width="8" height="2" fill="#555FD9" />
                     </svg>
                     <p className=""> שלך עם</p>
-                  </p>
+                  </p> */}
                 </h1>
-                <div class="ml-1 mr-1 h-[2px] bg-[#555FD9] "></div>
-                <h3 className="mb-6 max-w-2xl  text-center  font-light  text-gray-600 md:text-end ">
-                  שחרר את הפוטנציאל שלך עם הוראה מעולה
+                <div class="ml-1 mr-1 h-[2px] bg-[#555FD9] opacity-50 "></div>
+                <h3 className="mb-6 max-w-2xl  text-right text-[22px]  text-indigo-950 md:text-end ">
+                  פיקוח וליווי מנהל אישי
                 </h3>
+
                 <div className="flex  flex-col items-center justify-end md:flex-row ">
                   {/* <button onClick={() => navigate("/lottery")} className=" m-1 flex h-[36px] w-[157px] items-center justify-center rounded-xl bg-[#FF7848] font-semibold text-indigo-600  2xl:h-[46px] 2xl:w-[210px] 2xl:text-xl">
                   
                       הגרלה
                     
                   </button> */}
-                  <button className="z-10 m-1 flex h-[36px] w-[157px] items-center justify-center rounded-xl border border-indigo-600 font-semibold text-indigo-600  2xl:h-[46px] 2xl:w-[210px] 2xl:text-xl">
+                  <button className=" m-1 flex h-[36px] w-[157px] items-center justify-center rounded-xl bg-[#555FD9] font-semibold text-white  2xl:h-[46px] 2xl:w-[210px] 2xl:text-xl">
                     <a href="#contact" className=" " aria-current="page">
                       התחל
                     </a>
@@ -202,7 +212,12 @@ function Home() {
         subjects={subjects}
       ></SubjectSection>
       <AboutSection></AboutSection>
+      <LessonsSection
+        setSubjects={setSubjects}
+        subjects={subjects}
+      ></LessonsSection>
       <TeachersSection></TeachersSection>
+
       <ContantSection
         toggelModal={toggelModal}
         subjects={subjects}

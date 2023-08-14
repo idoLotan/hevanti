@@ -1,12 +1,12 @@
 import React from "react";
-import { handleKeyPress } from "../../helper";
-import tounge from "../../assets/images/tounge.png";
-import physics from "../../assets/images/physics.png";
-import psychometric from "../../assets/images/psychometric.png";
-import computer from "../../assets/images/computer.png";
-import chemistry from "../../assets/images/chemistry.png";
-import abc from "../../assets/images/abc.png";
-import math from "../../assets/images/math.png";
+import { handleKeyPress } from "../../../../helper";
+import tounge from "../../../../assets/images/tounge.png";
+import physics from "../../../../assets/images/physics.png";
+import psychometric from "../../../../assets/images/psychometric.png";
+import computer from "../../../../assets/images/computer.png";
+import chemistry from "../../../../assets/images/chemistry.png";
+import abc from "../../../../assets/images/abc.png";
+import math from "../../../../assets/images/math.png";
 
 const SubjectSection = ({setSubjects}) => {
   const handleSubjectChange = (subject) => {
@@ -40,7 +40,7 @@ const SubjectSection = ({setSubjects}) => {
             onClick={() => handleSubjectChange("physics")}
             tabindex="0"
             onKeyUp={handleKeyPress}
-            className="group m-3 flex h-[119px] w-[181px]   cursor-pointer flex-col items-center justify-center border-2 border-[#FF7848] pt-3 hover:border-[#555FD9]"
+            className="group m-3 flex h-[119px] w-[181px]   cursor-pointer flex-col items-center justify-center border-2 rounded-2xl border-[#FF7848] pt-3 hover:border-[#555FD9]"
           >
             <img src={physics} className="h-12" alt="" />
            
@@ -51,7 +51,7 @@ const SubjectSection = ({setSubjects}) => {
             onClick={() => handleSubjectChange("math")}
             tabindex="0"
             onKeyUp={handleKeyPress}
-            className="group m-3 flex h-[119px] w-[181px] cursor-pointer flex-col items-center justify-center border-2 border-[#FF7848] pt-3 hover:border-[#555FD9]"
+            className="group m-3 flex h-[119px] w-[181px] cursor-pointer flex-col items-center justify-center border-2 rounded-2xl  border-[#FF7848] pt-3 hover:border-[#555FD9]"
           >
            
             <img src={math} className="h-12" alt="" />
@@ -64,7 +64,7 @@ const SubjectSection = ({setSubjects}) => {
             onClick={() => handleSubjectChange("english")}
             tabindex="0"
             onKeyUp={handleKeyPress}
-            className="group m-3 flex h-[119px] w-[181px] cursor-pointer flex-col items-center justify-center border-2 border-[#FF7848] pt-3 hover:border-[#555FD9]"
+            className="group m-3 flex h-[119px] w-[181px] cursor-pointer flex-col items-center justify-center border-2  rounded-2xl border-[#FF7848] pt-3 hover:border-[#555FD9]"
           >
       
             <img src={abc} className="h-12"alt="" />
@@ -75,7 +75,7 @@ const SubjectSection = ({setSubjects}) => {
             onClick={() => handleSubjectChange("chemistry")}
             tabindex="0"
             onKeyUp={handleKeyPress}
-            className="group m-3 flex h-[119px] w-[181px] cursor-pointer flex-col items-center justify-center border-2 border-[#FF7848] pt-3 hover:border-[#555FD9]"
+            className="group m-3 flex h-[119px] w-[181px] cursor-pointer flex-col items-center justify-center border-2  rounded-2xl border-[#FF7848] pt-3 hover:border-[#555FD9]"
           >
           
                
@@ -91,7 +91,7 @@ const SubjectSection = ({setSubjects}) => {
             onClick={() => handleSubjectChange("computerScience")}
             tabindex="0"
             onKeyUp={handleKeyPress}
-            className="group m-3 flex h-[119px] w-[181px] cursor-pointer flex-col items-center justify-center border-2 border-[#FF7848] pt-3 hover:border-[#555FD9]"
+            className="group m-3 flex h-[119px] w-[181px] cursor-pointer flex-col items-center justify-center border-2  rounded-2xl border-[#FF7848] pt-3 hover:border-[#555FD9]"
           >
         
           <img src={computer} className="h-12" alt="" />
@@ -104,7 +104,7 @@ const SubjectSection = ({setSubjects}) => {
             onClick={() => handleSubjectChange("tongue")}
             tabindex="0"
             onKeyUp={handleKeyPress}
-            className="group m-3 flex h-[119px] w-[181px] cursor-pointer flex-col items-center justify-center border-2 border-[#FF7848] pt-3 hover:border-[#555FD9]"
+            className="group m-3 flex h-[119px] w-[181px] cursor-pointer flex-col items-center justify-center border-2  rounded-2xl border-[#FF7848] pt-3 hover:border-[#555FD9]"
           >
           
           <img src={tounge} className="h-11" alt="" />
@@ -115,7 +115,7 @@ const SubjectSection = ({setSubjects}) => {
             onClick={() => handleSubjectChange("psychometric")}
             tabindex="0"
             onKeyUp={handleKeyPress}
-            className="group m-3 flex h-[119px] w-[181px] cursor-pointer flex-col items-center justify-center border-2 border-[#FF7848] pt-3 hover:border-[#555FD9]"
+            className="group m-3 flex h-[119px] w-[181px] cursor-pointer flex-col items-center justify-center border-2   rounded-2xl border-[#FF7848] pt-3 hover:border-[#555FD9]"
           >
 
           
@@ -129,7 +129,7 @@ const SubjectSection = ({setSubjects}) => {
             onClick={() => handleSubjectChange("biology")}
             tabindex="0"
             onKeyUp={handleKeyPress}
-            className="group m-3 flex h-[119px] w-[181px] cursor-pointer flex-col items-center justify-center border-2 border-[#FF7848] pt-3 hover:border-[#555FD9]"
+            className="group m-3 flex h-[119px] w-[181px] cursor-pointer flex-col items-center justify-center border-2  rounded-2xl border-[#FF7848] pt-3 hover:border-[#555FD9]"
           >
             <svg
               role="presentation"

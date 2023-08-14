@@ -279,46 +279,6 @@ const ContactForm = ({ toggelModal, subjectsClicked }) => {
 };
 
 
-  // const sendEmail = (e) => {
-  //   e.preventDefault();
-  //   const checkedItems = getCheckedItems();
-  //   const form = e.target;
-  //   const emailInput = emailRef.current.value;
-  //   const nameInput = nameRef.current.value;
-  //   const phoneInput = phoneRef.current.value;
-  //   const messageInput = textRef.current.value;
-
-  //   console.log(messageInput)
-
-  //   // Access the values of the form elements
-  //   const email = emailInput.value;
-  //   const name = nameInput.value;
-  //   const phone = phoneInput.value;
-  //   const message = messageInput.value;
-
-  //   // Add the checked items to the form data
-  //   checkedItems.forEach((item) => {
-  //     const input = document.createElement("input");
-  //     input.type = "hidden";
-  //     input.name = "checkedItems";
-  //     input.value = item;
-  //     form.appendChild(input);
-  //   });
-
-  //   console.log(form.messageInput);
-    
-
-    
-
-  //   emailjs.sendForm(
-  //     "service_qwkz0cj",
-  //     "template_fka8n44",
-  //     form,
-  //     "A4s812mw0f4laL3BV"
-  //   );
-
-  //   handleFormSubmit();
-  // };
 
   return (
     <form
@@ -337,7 +297,7 @@ const ContactForm = ({ toggelModal, subjectsClicked }) => {
             aria-label="message"
             name="message"
             id="message"
-            className="bg:w-[212px] left-5 top-3  h-[136px] w-[300px] rounded-lg border border-[#555FD9] p-1 pr-1 text-right  focus:outline-none"
+            className="bg:w-[212px] left-5 top-3  h-[136px] w-[300px] rounded-lg border-2 border-opacity-50 border-[#555FD9] p-1 pr-1 text-right  focus:outline-none"
             placeholder="...הקלד כאן"
             ref={textRef}
           ></textarea>
@@ -437,7 +397,7 @@ const ContactForm = ({ toggelModal, subjectsClicked }) => {
 
           <div className="order-1 flex md:flex-row">
             <div className="flex-end  order-2 flex flex-col text-end md:order-3">
-              <div className="mr-4 font-bold">קטגוריות</div>
+              <div className="mr-4 font-bold">מקצוע</div>
               <div className="overflow-wrap flex ">
                 <div>
                   <div className="mr-2 flex justify-end">
@@ -580,7 +540,7 @@ const ContactForm = ({ toggelModal, subjectsClicked }) => {
           id="name"
           name="name"
           type="text "
-          className="mt-2 rounded-lg border border-[#555FD9] pr-1 text-end focus:outline-none"
+          className="mt-2 rounded-lg border border-opacity-50  border-[#555FD9] pr-1 text-end focus:outline-none"
           ref={nameRef}
         />
         <div className="font-bold"> טלפון</div>
@@ -589,7 +549,7 @@ const ContactForm = ({ toggelModal, subjectsClicked }) => {
           id="phone"
           name="phone"
           type="text "
-          className="mt-2 rounded-lg border border-[#555FD9] pr-1 text-end focus:outline-none"
+          className="mt-2 rounded-lg border border-opacity-50 border-[#555FD9] pr-1 text-end focus:outline-none"
           ref={emailRef}
         />
         <div className="font-bold"> דואר אלקטרוני</div>
@@ -598,7 +558,7 @@ const ContactForm = ({ toggelModal, subjectsClicked }) => {
           id="email"
           name="email"
           type="text "
-          className="mt-2 rounded-lg border border-[#555FD9] pr-1 text-end focus:outline-none"
+          className="mt-2 rounded-lg border border-opacity-50 border-[#555FD9] pr-1 text-end focus:outline-none"
           ref={phoneRef}
         />
       </div>

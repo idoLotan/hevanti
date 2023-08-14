@@ -1,11 +1,11 @@
 import React from "react";
- import ContactForm from "../../components/form/ContactForm";
+ import ContactForm from "components/form/ContactForm";
 const ContantSection = ({toggelModal, subjects}) => {
     
     
   return (
     <section
-      className="section-1 relative flex  h-[1000px] flex-col  p-3 md:h-[400px] "
+      className=" relative flex  h-[1000px] flex-col  p-3 md:h-[400px] "
       id="contact"
     >
       <h2 className=" text-right text-[32px] font-bold text-[#555FD9]">
