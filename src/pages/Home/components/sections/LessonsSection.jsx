@@ -66,6 +66,15 @@ const LessonsSection = ({ setSubjects, subjects }) => {
         bulletPoints={vipBulletPoints}
         handleSubjectChange={handleSubjectChange}
       ></Card>
+      
+      <Card
+      popular={true}
+        icon={superIcon}
+        title={"שיעור מקצועי מפוקח"}
+        price={"₪180-₪250"}
+        bulletPoints={supervisedBulletPoints}
+        handleSubjectChange={handleSubjectChange}
+      ></Card>
       <Card
         icon={handShake}
         title={"שיעור מותאם אישית"}
@@ -74,17 +83,10 @@ const LessonsSection = ({ setSubjects, subjects }) => {
         handleSubjectChange={handleSubjectChange}
       ></Card>
       <Card
-        icon={superIcon}
-        title={"שיעור מקצועי מפוקח"}
-        price={"₪180-₪250"}
-        bulletPoints={basicBulletPoints}
-        handleSubjectChange={handleSubjectChange}
-      ></Card>
-      <Card
         icon={star}
         title={"שיעור בסיסי"}
-        price={"₪130-₪180"}
-        bulletPoints={supervisedBulletPoints}
+        price={"₪80"}
+        bulletPoints={ basicBulletPoints}
         handleSubjectChange={handleSubjectChange}
       ></Card>
     </section>

@@ -31,7 +31,7 @@ const Section = ({ section, activeIndex, index, toggleSection }) => {
             )}
           </div>
           <div className="">
-            <span dir="rtl" class="mr-1">
+            <span dir="rtl" className="mr-1 font-[500]">
               {section.title}
             </span>
           </div>

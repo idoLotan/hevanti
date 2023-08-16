@@ -55,7 +55,7 @@ const SubjectSection = ({setSubjects}) => {
           >
            
             <img src={math} className="h-12" alt="" />
-            <h2 className="p-3 text-[#555FD9] group-hover:text-[#FF7848]">
+            <h2 className="p-3 text-[#555FD9] ">
               מתמטיקה
             </h2>
           </div>
@@ -80,7 +80,7 @@ const SubjectSection = ({setSubjects}) => {
           
                
           <img src={chemistry} className="h-12" alt="" />
-            <h2 className="p-3 text-[#555FD9] group-hover:text-[#FF7848]">
+            <h2 className="p-3 text-[#555FD9] ">
               כימיה
             </h2>
           </div>
@@ -95,7 +95,7 @@ const SubjectSection = ({setSubjects}) => {
           >
         
           <img src={computer} className="h-12" alt="" />
-            <h2 className="p-3 text-[#555FD9] group-hover:text-[#FF7848]">
+            <h2 className="p-3 text-[#555FD9] ">
               מדעי המחשב
             </h2>
           </div>
@@ -120,7 +120,7 @@ const SubjectSection = ({setSubjects}) => {
 
           
             <img src={psychometric} alt=""  className="h-12" />
-            <h2 className="p-3 text-[#555FD9] group-hover:text-[#FF7848]">
+            <h2 className="p-3 text-[#555FD9] ">
               פסיכומטרי
             </h2>
           </div>
