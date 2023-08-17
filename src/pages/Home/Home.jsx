@@ -37,7 +37,7 @@ function Home() {
   };
 
   return (
-    <div className="home-page">
+    <div className="home-page ">
       <ContactBtn></ContactBtn>
 
       <MyModal isShowing={isOpen} onClose={toggelModal}></MyModal>

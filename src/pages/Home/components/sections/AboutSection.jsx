@@ -11,16 +11,17 @@ import aboutTextWindow from "assets/images/about-text-window.png";
 // import TeachersCarousel from "../../../../components/ui/TeachersCarousel";
 
 const AboutSection = () => {
+  
   return (
     <div>
-      <section className="about-bg  relative" id="about">
+      <section className="about-bg  relative " id="about">
         <div className="  relative  flex  flex-col   items-center  justify-around  p-6 md:flex-row">
           <div className="Rectangle100 relative order-1  mb-4 flex w-[90%] animate-fade-right   flex-col  items-end rounded-br-[46px] rounded-tl-[46px]  bg-[#555FD9] bg-opacity-20 p-2 text-[14px] md:bottom-28    md:h-[280px]  md:w-[560px] md:text-[16px] 2xl:bottom-28   2xl:min-w-[660px]">
             <img
-              className="absolute  left-[-3rem] top-[-2rem] w-12"
+              className="absolute  left-[-3rem] top-[-2rem] hidden md:block w-12"
               src={lines}
             />
-            <img className="absolute  right-[-5rem] 2xl:right-[-14rem] w-8" src={message} />
+            <img className="absolute hidden md:block  right-[-5rem] 2xl:right-[-14rem] w-8" src={message} />
             <img
               className="absolute  bottom-[-10rem] left-0 w-7"
               src={star}
