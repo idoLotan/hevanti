@@ -238,46 +238,46 @@ const ContactForm = ({ toggelModal, subjectsClicked }) => {
   const sendEmail = async (e) => {
     e.preventDefault();
     toggelModal();
-    // const checkedItems = getCheckedItems();
-    // const form = e.target;
+    const checkedItems = getCheckedItems();
+    const form = e.target;
     
-    // // Access the values of the form elements using references
-    // const emailInput = emailRef.current;
-    // const nameInput = nameRef.current;
-    // const phoneInput = phoneRef.current;
-    // const messageInput = textRef.current;
+    // Access the values of the form elements using references
+    const emailInput = emailRef.current;
+    const nameInput = nameRef.current;
+    const phoneInput = phoneRef.current;
+    const messageInput = textRef.current;
 
-    // const email = emailInput.value;
-    // const name = nameInput.value;
-    // const phone = phoneInput.value;
-    // const message = messageInput.value;
+    const email = emailInput.value;
+    const name = nameInput.value;
+    const phone = phoneInput.value;
+    const message = messageInput.value;
 
-    // // Add the checked items to the form data
-    // checkedItems.forEach((item) => {
-    //     const input = document.createElement("input");
-    //     input.type = "hidden";
-    //     input.name = "checkedItems";
-    //     input.value = item;
-    //     form.appendChild(input);
-    // });
+    // Add the checked items to the form data
+    checkedItems.forEach((item) => {
+        const input = document.createElement("input");
+        input.type = "hidden";
+        input.name = "checkedItems";
+        input.value = item;
+        form.appendChild(input);
+    });
 
-    // console.log(messageInput.value);
+    console.log(messageInput.value);
 
-    // try {
-    //     // Assuming emailjs.sendForm returns a Promise
-    //     await emailjs.sendForm(
-    //         "service_qwkz0cj",
-    //         "template_fka8n44",
-    //         form,
-    //         "A4s812mw0f4laL3BV"
-    //     );
+    try {
+        // Assuming emailjs.sendForm returns a Promise
+        await emailjs.sendForm(
+            "service_qwkz0cj",
+            "template_fka8n44",
+            form,
+            "A4s812mw0f4laL3BV"
+        );
 
-    //     // Assuming handleFormSubmit is an asynchronous function
-    //     await handleFormSubmit();
-    // } catch (error) {
-    //     console.error("An error occurred:", error);
-    //     // Handle the error appropriately
-    // }
+        // Assuming handleFormSubmit is an asynchronous function
+        await handleFormSubmit();
+    } catch (error) {
+        console.error("An error occurred:", error);
+        // Handle the error appropriately
+    }
 };
 
 

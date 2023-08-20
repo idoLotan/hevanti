@@ -58,7 +58,7 @@ const LessonsSection = ({ setSubjects, subjects }) => {
     
     
   return (
-    <section className="flex w-full justify-center items-center p-10 flex-col md:flex-row" herf="#buget">
+    <section id="buget" className="flex w-full justify-center items-center p-10 flex-col md:flex-row" herf="#buget">
       <Card
         title={"שיעור VIP"}
         price={"₪250+"}
