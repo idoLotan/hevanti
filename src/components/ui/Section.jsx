@@ -2,7 +2,7 @@ import { handleKeyPress } from "../../helper";
 
 const Section = ({ section, activeIndex, index, toggleSection }) => {
   return (
-    <div className="accordion-item p-2 ">
+    <div className="accordion-item p-2 md:scale-90 2xl:scale-100">
       <div
         tabindex="0"
         role="button"

@@ -288,9 +288,9 @@ const ContactForm = ({ toggelModal, subjectsClicked }) => {
       className=" z-10 flex  w-[1491px] flex-col items-center justify-between rounded-xl bg-[#555FD9]  bg-opacity-10 p-5 md:flex-row md:items-start"
     >
       <div className="order-3 mb-5 flex flex-col md:order-1 md:mb-0 ">
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-start">
           <div className="flex w-[100%] justify-end">
-            <h1 className=" text-[20px] font-bold text-[#2A264D]">
+            <h1 className=" text-[18px] font-bold text-[#2A264D]">
               תאר\י את הקשיים והמטרות
             </h1>
           </div>
@@ -299,7 +299,7 @@ const ContactForm = ({ toggelModal, subjectsClicked }) => {
             aria-label="message"
             name="message"
             id="message"
-            className="bg:w-[212px] left-5 top-3  h-[136px] w-[300px] rounded-lg border-2 border-opacity-50 border-[#555FD9] p-1 pr-1 text-right  focus:outline-none"
+            className="bg:w-[212px] left-5 top-3  h-[136px] w-[240px] rounded-lg border-2 border-opacity-50 border-[#555FD9] p-1 pr-1 text-right  focus:outline-none"
             placeholder="...הקלד כאן"
             ref={textRef}
           ></textarea>
@@ -307,7 +307,7 @@ const ContactForm = ({ toggelModal, subjectsClicked }) => {
         <div className="flex  w-[100%] flex-col items-center md:items-start">
           <button
             type="submit"
-            className="shadow-send-btn mt-2 h-[40px] w-[200px] rounded-lg bg-[#FF7848] font-bold text-white  "
+            className="shadow-send-btn mt-2 h-[40px] w-[240px] rounded-lg bg-[#FF7848] font-bold text-white  "
           >
             שלח/י
           </button>
@@ -536,7 +536,7 @@ const ContactForm = ({ toggelModal, subjectsClicked }) => {
       </div>
 
       <div className="order-1 mb-5 flex w-[100%] flex-col  text-end md:order-3 md:mb-0 md:w-[200px] ">
-        <div className="font-bold">שם </div>
+        <div className="">שם </div>
         <input
           aria-label="name"
           id="name"
@@ -545,7 +545,7 @@ const ContactForm = ({ toggelModal, subjectsClicked }) => {
           className="mt-2 rounded-lg border border-opacity-50  border-[#555FD9] pr-1 text-end focus:outline-none"
           ref={nameRef}
         />
-        <div className="font-bold"> טלפון</div>
+        <div className=""> טלפון</div>
         <input
           aria-label="phone"
           id="phone"
@@ -554,7 +554,7 @@ const ContactForm = ({ toggelModal, subjectsClicked }) => {
           className="mt-2 rounded-lg border border-opacity-50 border-[#555FD9] pr-1 text-end focus:outline-none"
           ref={emailRef}
         />
-        <div className="font-bold"> דואר אלקטרוני</div>
+        <div className=""> דואר אלקטרוני</div>
         <input
           aria-label="phone"
           id="email"

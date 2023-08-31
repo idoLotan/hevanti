@@ -58,7 +58,7 @@ const Carousel = () => {
           </div>
         </div>
       </div>
-      <img src={arrow} className="w-28 hidden md:block -rotate-45 m-10 relative top-40" alt="" />
+     
     </div>
   );
 };

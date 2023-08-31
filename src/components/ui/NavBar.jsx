@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import esc from "../../assets/images/esc.png";
-import logo from "../../assets/images/Group.png";
+import esc from "assets/images/esc.png";
+import logo from "assets/images/Group.png";
+import instagram from "assets/images/instagram-f.png";
+import facebook from "assets/images/facebook-f.png";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,6 +13,22 @@ const NavBar = () => {
   return (
     <nav className="w-[100%] min-w-[700px] pl-2">
       <div className="relative mx-auto ml-[110px] mr-20 flex h-[65px]  items-center justify-start border-0 border-[#555FD9]  border-opacity-50 md:justify-end md:border-b-2 2xl:ml-[235px]  2xl:mr-[150px] ">
+      <div className="flex absolute p-5 left-0 ">
+        <div className="relative cursor-pointer pr-5 hidden lg:block">
+          <img src={instagram} alt="" className="z-0" />
+          <a
+            href="https://www.instagram.com/meveenorg/?igshid=MzRlODBiNWFlZA=="
+            className="absolute left-0 top-0 z-10 h-10 w-10 "
+          ></a>
+        </div>
+        <div className="relative cursor-pointer hidden lg:block">
+          <img src={facebook} alt="" className="z-0  pr-5" />
+          <a
+            href="https://www.facebook.com/OferAvital100?mibextid=LQQJ4d"
+            className="absolute left-0 top-0 z-10 h-10 w-10 "
+          ></a>
+        </div>
+      </div>
         {isOpen && (
           <div className="fixed  right-0  top-0 z-50 flex h-[100vh] w-[100vw] flex-row items-start justify-between bg-[#2A264D] p-5 text-white">
             <img

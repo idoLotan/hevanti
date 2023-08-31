@@ -8,8 +8,10 @@ import TeachersCarousel from "components/ui/TeachersCarousel";
 
 const TeachersSection = () => {
   return (
-    <div id="teachers" className="flex flex-col items-center justify-center section-1">
-      <div className="mr-5 mt-5 flex w-[100%]  justify-end">
+    <section id="teachers" className="pb-2 flex flex-col items-center justify-center section-1">
+
+
+      <div className="md:scale-90 2xl:scale-100   mt-5 flex w-[100%] 2xl:mr-96  justify-end">
         <svg
           role="presentation"
           xmlns="http://www.w3.org/2000/svg"
@@ -40,9 +42,9 @@ const TeachersSection = () => {
         <h2 className=" text-center text-[32px] font-bold text-[#555FD9]">
           המורים/מורות של
         </h2>
-      </div>
-      <div className="hidden lg:block">
-        <div className="flex h-80 w-[100%] flex-row justify-evenly p-2 ">
+      </div>  
+      <div className=" md:scale-90 2xl:scale-100 hidden lg:block">
+        <div className="flex  w-[100%] flex-row justify-evenly pb-24 ">
           <div className="m-5 flex h-[150px] w-[150px] flex-col items-center">
             <img src={ofir} className="" alt="תמונה של המורה אופיר" />
             <h2 className="text-[20px] font-semibold leading-8  text-[#555FD9]">
@@ -92,9 +94,11 @@ const TeachersSection = () => {
           </div>
         </div>
       </div>
+      
+    
 
       <TeachersCarousel></TeachersCarousel>
-    </div>
+    </section>
   );
 };
 
